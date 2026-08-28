@@ -3,14 +3,19 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Text.Unicode;
+using Finstance.dbContext;
 using Finstance.Parsers;
 using Finstance.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using Tabula;
 using Tabula.Detectors;
 using Tabula.Extractors;
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.Content;
+
+DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +25,19 @@ builder.Services.AddScoped<IBankStatementParser, YapiKrediParser>();
 builder.Services.AddScoped<IBankStatementParser, QnbParser>();
 builder.Services.AddScoped<StatementService>();
 
+var connectionStringBuilder = new NpgsqlConnectionStringBuilder
+{
+    Host = builder.Configuration["POSTGRES_HOST"] ?? "localhost",
+    Port = int.TryParse(builder.Configuration["POSTGRES_PORT"], out var port) ? port : 5432,
+    Database = builder.Configuration["POSTGRES_DB"],
+    Username = builder.Configuration["POSTGRES_USER"],
+    Password = builder.Configuration["POSTGRES_PASSWORD"]
+};
+
+builder.Services.AddDbContext<DataBaseContext>(options =>
+{
+    options.UseNpgsql(connectionStringBuilder.ConnectionString);
+});
 
 var app = builder.Build();
 
@@ -34,7 +52,7 @@ app.MapPost("upload", async (IFormFile file, StatementService service) =>
 {
     using var stream = file.OpenReadStream();
 
-    using var doc = PdfDocument.Open(stream, new ParsingOptions { ClipPaths = true});
+    using var doc = PdfDocument.Open(stream, new ParsingOptions { ClipPaths = true });
 
     var result = service.Process(doc);
 

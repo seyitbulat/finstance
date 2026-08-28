@@ -1,0 +1,17 @@
+namespace Finstance.dbContext.Models;
+
+
+
+public class ExpenseModel
+{
+    public int Id { get; set; }
+    public DateOnly Date { get; set; }
+    public decimal Amount { get; set; }
+
+    public int LocationId { get; set; }
+    public int UserId { get; set; }
+    
+    public ExpenseLocationModel Location { get; set; }
+    public UserModel User { get; set; }
+
+}

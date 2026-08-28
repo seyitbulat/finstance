@@ -3,6 +3,6 @@
 namespace Finstance.Models;
 
 
-public record StatementResult(DateOnly CutOffDate, List<ExpenseModel> Expenses)
+public record StatementResult(string BankType, DateOnly CutOffDate, List<ExpenseModel> Expenses)
 {
 }

@@ -14,7 +14,9 @@ namespace Finstance.Parsers;
 
 public class QnbParser : IBankStatementParser
 {
-    private CultureInfo cultureInfo = new CultureInfo("tr-TR");
+    private CultureInfo cultureInfo = CultureInfo.InvariantCulture;
+
+    private string bankType = "Qnb";
 
     private string[] dateFormats =
     {
@@ -112,7 +114,7 @@ public class QnbParser : IBankStatementParser
 
                                 DateOnly date = DateOnly.MinValue;
 
-                                DateOnly.TryParseExact(tarih, dateFormats, new CultureInfo("tr-TR"), DateTimeStyles.None, out date);
+                                DateOnly.TryParseExact(tarih, dateFormats, cultureInfo, DateTimeStyles.None, out date);
 
                                 string location = "NULL";
                                 if (firstCell.Length > tarih.Length)
@@ -166,4 +168,8 @@ public class QnbParser : IBankStatementParser
         return expenses;
     }
 
+    public string GetBankType()
+    {
+        return bankType;
+    }
 }

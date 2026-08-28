@@ -31,7 +31,8 @@ public class StatementService
 
         var expenses = parser.ParseExpenses(doc);
 
-        return new StatementResult(cutOffDate, expenses);
+        var bankType = parser.GetBankType();
+        return new StatementResult(bankType,cutOffDate, expenses);
 
     }
 

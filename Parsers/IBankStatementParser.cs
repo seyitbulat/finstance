@@ -16,4 +16,7 @@ public interface IBankStatementParser
 
     List<ExpenseModel> ParseExpenses(PdfDocument doc);
 
+
+    string GetBankType();
+
 }

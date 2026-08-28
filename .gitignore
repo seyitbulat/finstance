@@ -17,6 +17,10 @@
 # Mono auto generated files
 mono_crash.*
 
+
+# Migration Files
+Migrations/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -431,3 +435,4 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+

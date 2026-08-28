@@ -16,6 +16,7 @@ public class YapiKrediParser : IBankStatementParser
 {
     private CultureInfo cultureInfo = new CultureInfo("tr-TR");
 
+    private string bankType = "YapıKredi";
     private string[] dateFormats =
     {
             "d MMMM yyyy",
@@ -168,4 +169,9 @@ public class YapiKrediParser : IBankStatementParser
         return expenses;
     }
 
+
+    public string GetBankType()
+    {
+        return bankType;
+    }
 }
