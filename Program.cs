@@ -21,10 +21,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddScoped<IBankStatementParser, YapiKrediParser>();
-builder.Services.AddScoped<IBankStatementParser, QnbParser>();
-builder.Services.AddScoped<StatementService>();
-
 var connectionStringBuilder = new NpgsqlConnectionStringBuilder
 {
     Host = builder.Configuration["POSTGRES_HOST"] ?? "localhost",
@@ -39,6 +35,14 @@ builder.Services.AddDbContext<DataBaseContext>(options =>
     options.UseNpgsql(connectionStringBuilder.ConnectionString);
 });
 
+
+
+builder.Services.AddScoped<IBankStatementParser, YapiKrediParser>();
+builder.Services.AddScoped<IBankStatementParser, QnbParser>();
+builder.Services.AddScoped<StatementService>();
+
+builder.Services.AddScoped<DataService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,19 +50,31 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 
-
-
-app.MapPost("upload", async (IFormFile file, StatementService service) =>
+app.MapPost("upload", async (IFormFile file, StatementService statementService, DataService dataService) =>
 {
     using var stream = file.OpenReadStream();
-
     using var doc = PdfDocument.Open(stream, new ParsingOptions { ClipPaths = true });
 
-    var result = service.Process(doc);
+    var (bankType, cutOffDate) = statementService.ExtractMetadata(doc);
+
+    if (await dataService.IsStatementExistsAsync(cutOffDate))
+        return Results.Conflict("Bu ekstre zaten işlenmiş.");
+
+    var result = statementService.Process(doc);
+
+    await dataService.SaveAsync(result);
+
 
     return TypedResults.Ok(result);
-
 }).DisableAntiforgery();
+
+
+app.MapGet("getMonthlyReport", (DateOnly date, DataService dataService) =>
+{
+    var response = dataService.GetMonthlyReport(date);
+
+    return TypedResults.Ok(response);
+});
 
 app.Run();
 

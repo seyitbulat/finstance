@@ -16,15 +16,16 @@ public class StatementService
     {
         _parsers = parsers;
     }
-
+    
+    public (string BankType, DateOnly CutOffDate) ExtractMetadata(PdfDocument doc)
+    {
+        var parser = ResolveParser(doc);
+        return (parser.GetBankType(), parser.ExtractCutOffDate(doc));
+    }
 
     public StatementResult Process(PdfDocument doc)
     {
-
-        var parser = _parsers.FirstOrDefault(p => p.CanHandle(doc));
-
-        if (parser == null)
-            throw new Exception("Unknown Bank");
+        var parser = ResolveParser(doc);
 
 
         var cutOffDate = parser.ExtractCutOffDate(doc);
@@ -32,8 +33,19 @@ public class StatementService
         var expenses = parser.ParseExpenses(doc);
 
         var bankType = parser.GetBankType();
-        return new StatementResult(bankType,cutOffDate, expenses);
+        return new StatementResult(bankType, cutOffDate, expenses);
 
+    }
+
+
+    public IBankStatementParser ResolveParser(PdfDocument doc)
+    {
+        var parser = _parsers.FirstOrDefault(p => p.CanHandle(doc));
+
+        if (parser == null)
+            throw new Exception("Unknown Bank");
+
+        return parser;
     }
 
 }

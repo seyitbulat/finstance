@@ -7,23 +7,16 @@ namespace Finstance.dbContext;
 
 public class DataBaseContext : DbContext
 {
-    public DbSet<CategoryModel> Categories { get; set; }
     public DbSet<ExpenseModel> Expenses { get; set; }
     public DbSet<UserModel> Users { get; set; }
     public DbSet<ExpenseLocationModel> Locations { get; set; }
+    public DbSet<BankStatementModel> BankStatements { get; set; }
 
     public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options){}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
-        modelBuilder.Entity<CategoryModel>(entity =>
-        {
-           entity.HasKey(e => e.Id);
-           entity.Property(e => e.Name);
-           entity.Property(e => e.Description); 
-        });
 
         modelBuilder.Entity<UserModel>(entity =>
         {
@@ -39,7 +32,7 @@ public class DataBaseContext : DbContext
 
             entity.Property(e => e.Name);
 
-            entity.HasOne(e => e.Category).WithMany().HasForeignKey(e => e.CategoryId);
+            entity.Property(e => e.Category);
         });
 
         modelBuilder.Entity<ExpenseModel>(entity =>
@@ -49,6 +42,7 @@ public class DataBaseContext : DbContext
             entity.Property(e => e.Amount).HasColumnType("decimal");
             entity.HasOne(e => e.Location).WithMany().HasForeignKey(e => e.LocationId);
             entity.HasOne(e => e.User).WithMany().HasForeignKey(e => e.UserId);
+            entity.HasOne(e => e.BankStatement).WithMany().HasForeignKey(e => e.BankStatementId);
         });
     }
 }
