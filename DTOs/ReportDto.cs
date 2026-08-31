@@ -20,6 +20,7 @@ public class ReportDetailDto
     public int BankStatementId { get; set; }
 
     public string LocationName { get; set; }
+    public string Category { get; set; }
     public DateOnly CutOffDate { get; set; }
 
 }

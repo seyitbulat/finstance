@@ -12,6 +12,8 @@ public class ExpenseModel
     public int UserId { get; set; }
     public int BankStatementId { get; set; }
     
+    public bool IsInstalment {get; set;}
+
     public ExpenseLocationModel Location { get; set; }
     public UserModel User { get; set; }
     public BankStatementModel BankStatement { get; set; }

@@ -41,6 +41,13 @@ builder.Services.AddScoped<IBankStatementParser, YapiKrediParser>();
 builder.Services.AddScoped<IBankStatementParser, QnbParser>();
 builder.Services.AddScoped<StatementService>();
 
+builder.Services.AddSingleton<CategoryResolverService>(sp =>
+{
+    var env = sp.GetRequiredService<IWebHostEnvironment>();
+    var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
+    return new CategoryResolverService(jsonPath);
+});
+
 builder.Services.AddScoped<DataService>();
 
 var app = builder.Build();

@@ -10,9 +10,11 @@ namespace Finstance.Services;
 public class DataService
 {
     private readonly DataBaseContext _dbContext;
-    public DataService(DataBaseContext dbContext)
+    private readonly CategoryResolverService _categoryResolver;
+    public DataService(DataBaseContext dbContext, CategoryResolverService categoryResolver)
     {
         _dbContext = dbContext;
+        _categoryResolver = categoryResolver;
     }
 
     public async Task<bool> IsStatementExistsAsync(DateOnly cutOffDate)
@@ -39,7 +41,7 @@ public class DataService
                 var newLocation = new ExpenseLocationModel
                 {
                     Name = name,
-                    Category = ExpenseCategory.Diger
+                    Category = _categoryResolver.Resolve(name)
                 };
                 _dbContext.Locations.Add(newLocation);
                 await _dbContext.SaveChangesAsync();
@@ -82,7 +84,8 @@ public class DataService
                 CutOffDate = x.BankStatement.CutOffDate,
                 Date = x.Date,
                 LocationId = x.Location.Id,
-                LocationName = x.Location.Name
+                LocationName = x.Location.Name,
+                Category = x.Location.Category.ToString()
             };
         }).ToList();
 
