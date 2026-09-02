@@ -130,7 +130,8 @@ public class QnbParser : IBankStatementParser
                                 int index = dateIndex + 2;
                                 decimal amount = 0;
                                 string amountString = "NULL";
-
+                                var isInstalment = false;
+                                var amountIndex = 0;
 
                                 while (!decimal.TryParse(cells[index], cultureInfo, out amount))
                                 {
@@ -147,12 +148,19 @@ public class QnbParser : IBankStatementParser
 
                                 amountString = amount.ToString();
 
+                                
+                                if((amountIndex + 1) <= cells.Count)
+                                {
+                                    if(cells[amountIndex + 1].Contains("/"))
+                                    {
+                                        isInstalment = true;
+                                    }
+                                }
 
 
 
 
-
-                                expenses.Add(new ExpenseModel(date, location, amount));
+                                expenses.Add(new ExpenseModel(date, location, amount, isInstalment));
 
                             }
                         }

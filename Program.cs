@@ -6,6 +6,7 @@ using System.Text.Unicode;
 using Finstance.dbContext;
 using Finstance.Parsers;
 using Finstance.Services;
+using Finstance.Services.Resolvers;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
@@ -41,13 +42,15 @@ builder.Services.AddScoped<IBankStatementParser, YapiKrediParser>();
 builder.Services.AddScoped<IBankStatementParser, QnbParser>();
 builder.Services.AddScoped<StatementService>();
 
-builder.Services.AddSingleton<CategoryResolverService>(sp =>
+
+builder.Services.AddScoped<StringMatchResolver>(sp =>
 {
     var env = sp.GetRequiredService<IWebHostEnvironment>();
     var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
-    return new CategoryResolverService(jsonPath);
+    return new StringMatchResolver(jsonPath);
 });
 
+builder.Services.AddScoped<CategoryPipeline>();
 builder.Services.AddScoped<DataService>();
 
 var app = builder.Build();

@@ -1,14 +1,16 @@
 using System.Text.Json;
 using Finstance.dbContext.Models;
+using Finstance.Services.Resolvers;
 
-namespace Finstance.Services;
+namespace Finstance.Services.Resolvers;
 
 
-public class CategoryResolverService
+public class StringMatchResolver : ICategoryResolver
 {
+    public int Priority {get;set;}
     private readonly Dictionary<ExpenseCategory, List<string>> _categoryKeywords;
 
-    public CategoryResolverService(string jsonPath)
+    public StringMatchResolver(string jsonPath)
     {
         var json = File.ReadAllText(jsonPath);
         var raw = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(json)
@@ -27,12 +29,24 @@ public class CategoryResolverService
         }
     }
 
-    public ExpenseCategory Resolve(string locationName)
+    public ExpenseCategory? Resolve(string locationName)
     {
         if (string.IsNullOrWhiteSpace(locationName))
             return ExpenseCategory.Diger;
 
-        var normalized = locationName.ToUpperInvariant();
+        var normalized = string.Concat(locationName.ToUpperInvariant().Select(x =>
+ {
+     switch (x)
+     {
+         case 'Ö': x = 'O'; break;
+         case 'İ': x = 'I'; break;
+         case 'Ü': x = 'U'; break;
+         case 'Ş': x = 'S'; break;
+         case 'Ç': x = 'C'; break;
+         case 'Ğ': x = 'G'; break;
+     }
+     return x;
+ }));
 
         foreach (var (category, keywords) in _categoryKeywords)
         {

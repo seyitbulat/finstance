@@ -2,6 +2,7 @@ using Finstance.dbContext;
 using Finstance.dbContext.Models;
 using Finstance.DTOs;
 using Finstance.Models;
+using Finstance.Services.Resolvers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Finstance.Services;
@@ -10,11 +11,12 @@ namespace Finstance.Services;
 public class DataService
 {
     private readonly DataBaseContext _dbContext;
-    private readonly CategoryResolverService _categoryResolver;
-    public DataService(DataBaseContext dbContext, CategoryResolverService categoryResolver)
+    private readonly StringMatchResolver _categoryResolver;
+    private readonly CategoryPipeline _categoryPipeline;
+    public DataService(DataBaseContext dbContext, CategoryPipeline categoryPipeline)
     {
         _dbContext = dbContext;
-        _categoryResolver = categoryResolver;
+        _categoryPipeline = categoryPipeline;
     }
 
     public async Task<bool> IsStatementExistsAsync(DateOnly cutOffDate)
@@ -41,7 +43,7 @@ public class DataService
                 var newLocation = new ExpenseLocationModel
                 {
                     Name = name,
-                    Category = _categoryResolver.Resolve(name)
+                    Category = _categoryPipeline.Process(name)
                 };
                 _dbContext.Locations.Add(newLocation);
                 await _dbContext.SaveChangesAsync();
@@ -65,7 +67,8 @@ public class DataService
                 Amount = expense.Amount,
                 LocationId = existingLocations[expense.Location],
                 UserId = 1,
-                BankStatementId = bankStatement.Id
+                BankStatementId = bankStatement.Id,
+                IsInstalment = expense.IsInstalment
             };
             _dbContext.Expenses.Add(dbExpense);
         }

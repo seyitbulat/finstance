@@ -135,6 +135,8 @@ public class YapiKrediParser : IBankStatementParser
                                 bool amountFound = false;
                                 bool isPayment = false;
                                 var amountString = "";
+                                var isInstalment = false;
+                                var amountIndex = 0;
                                 while (index < cells.Count)
                                 {
                                     string cell = cells[index].Trim();
@@ -146,6 +148,7 @@ public class YapiKrediParser : IBankStatementParser
                                     if (decimal.TryParse(cell, cultureInfo, out amount))
                                     {
                                         amountFound = true;
+                                        amountIndex = index;
                                         break; 
                                     }
                                     index++;
@@ -156,12 +159,18 @@ public class YapiKrediParser : IBankStatementParser
                                 }
                                 amountString = amount.ToString();
 
+                                if((amountIndex + 1) <= cells.Count)
+                                {
+                                    if(cells[amountIndex + 1].Contains("/"))
+                                    {
+                                        isInstalment = true;
+                                    }
+                                }
 
 
 
 
-
-                                expenses.Add(new ExpenseModel(date, location.TrimStart().TrimEnd(), amount));
+                                expenses.Add(new ExpenseModel(date, location.TrimStart().TrimEnd(), amount, isInstalment));
 
                             }
                         }
