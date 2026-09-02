@@ -11,7 +11,6 @@ namespace Finstance.Services;
 public class DataService
 {
     private readonly DataBaseContext _dbContext;
-    private readonly StringMatchResolver _categoryResolver;
     private readonly CategoryPipeline _categoryPipeline;
     public DataService(DataBaseContext dbContext, CategoryPipeline categoryPipeline)
     {

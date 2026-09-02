@@ -7,23 +7,28 @@ namespace Finstance.Services;
 
 public class CategoryPipeline
 {
-    private StringMatchResolver _stringMatchResolver { get; set; }
-
-    public CategoryPipeline(StringMatchResolver stringMatchResolver)
+    private readonly IEnumerable<ICategoryResolver> _resolvers;
+    
+    public CategoryPipeline(IEnumerable<ICategoryResolver> resolvers)
     {
-        _stringMatchResolver = stringMatchResolver;
+        _resolvers = resolvers;
     }
 
     
     public ExpenseCategory Process(string locationName)
     {
-        var resolve = _stringMatchResolver.Resolve(locationName);
+        var resolvers = _resolvers.OrderBy(x => x.Priority);
 
-        if(resolve == null)
+        foreach(var resolver in resolvers)
         {
-            return ExpenseCategory.Diger;
+            var res = resolver.Resolve(locationName);
+
+            if(res != null)
+            {
+                return res.Value;
+            }
         }
 
-        return resolve.Value;
+        return ExpenseCategory.Diger;
     }
 }

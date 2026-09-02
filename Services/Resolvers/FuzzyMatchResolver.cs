@@ -1,18 +1,23 @@
 using System.Text.Json;
 using Finstance.dbContext.Models;
-using Finstance.Services.Resolvers;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Finstance.FuzzyMatch;
 
 namespace Finstance.Services.Resolvers;
 
 
-public class StringMatchResolver : ICategoryResolver
+
+public class FuzzyMatchResolver : ICategoryResolver
 {
-    public int Priority {get;} = 0;
+    private readonly FuzzyScorer _fuzzyScorer;
+    public int Priority { get; } = 1;
+
     private readonly Dictionary<ExpenseCategory, List<string>> _categoryKeywords;
 
-    public StringMatchResolver(string jsonPath)
+
+    public FuzzyMatchResolver(string jsonPath)
     {
+        _fuzzyScorer = new();
+
         var json = File.ReadAllText(jsonPath);
         var raw = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(json)
             ?? throw new InvalidOperationException("categoryKeywords.json okunamadı.");
@@ -28,13 +33,11 @@ public class StringMatchResolver : ICategoryResolver
                     .ToList();
             }
         }
+
     }
 
     public ExpenseCategory? Resolve(string locationName)
     {
-        ExpenseCategory? resultCategory = null;
-        int longestKeywordLength = 0;
-
         if (string.IsNullOrWhiteSpace(locationName))
             return ExpenseCategory.Diger;
 
@@ -56,19 +59,11 @@ public class StringMatchResolver : ICategoryResolver
         {
             foreach (var keyword in keywords)
             {
-                if (normalized.Contains(keyword))
-                {
-                    if(keyword.Length > longestKeywordLength)
-                    {
-                        resultCategory = category;
-
-                        longestKeywordLength = keyword.Length;
-                    }
-                }
-                    
+                if (_fuzzyScorer.PartialRatio(keyword, normalized) > 80)
+                    return category;
             }
         }
 
-        return resultCategory;
+        return null;
     }
 }

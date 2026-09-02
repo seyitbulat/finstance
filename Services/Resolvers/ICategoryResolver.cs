@@ -9,5 +9,5 @@ public interface ICategoryResolver
 {
 
     ExpenseCategory? Resolve(string locationName);
-    int Priority  { get; set; }
+    int Priority  { get; }
 }

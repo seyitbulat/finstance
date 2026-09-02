@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Text.Unicode;
 using Finstance.dbContext;
+using Finstance.FuzzyMatch;
 using Finstance.Parsers;
 using Finstance.Services;
 using Finstance.Services.Resolvers;
@@ -43,11 +44,18 @@ builder.Services.AddScoped<IBankStatementParser, QnbParser>();
 builder.Services.AddScoped<StatementService>();
 
 
-builder.Services.AddScoped<StringMatchResolver>(sp =>
+
+builder.Services.AddSingleton<ICategoryResolver, StringMatchResolver>(sp =>
 {
     var env = sp.GetRequiredService<IWebHostEnvironment>();
     var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
     return new StringMatchResolver(jsonPath);
+});
+builder.Services.AddSingleton<ICategoryResolver, FuzzyMatchResolver>(sp =>
+{
+    var env = sp.GetRequiredService<IWebHostEnvironment>();
+    var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
+    return new FuzzyMatchResolver(jsonPath);
 });
 
 builder.Services.AddScoped<CategoryPipeline>();
@@ -84,6 +92,14 @@ app.MapGet("getMonthlyReport", (DateOnly date, DataService dataService) =>
     var response = dataService.GetMonthlyReport(date);
 
     return TypedResults.Ok(response);
+});
+
+
+app.MapGet("test", () =>
+{
+    var fuzzyScorer = new FuzzyScorer();
+
+    fuzzyScorer.Distance("KAT", "KIT");
 });
 
 app.Run();
