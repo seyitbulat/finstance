@@ -45,20 +45,10 @@ builder.Services.AddScoped<StatementService>();
 
 
 
-builder.Services.AddSingleton<ICategoryResolver, StringMatchResolver>(sp =>
-{
-    var env = sp.GetRequiredService<IWebHostEnvironment>();
-    var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
-    return new StringMatchResolver(jsonPath);
-});
-builder.Services.AddSingleton<ICategoryResolver, FuzzyMatchResolver>(sp =>
-{
-    var env = sp.GetRequiredService<IWebHostEnvironment>();
-    var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
-    return new FuzzyMatchResolver(jsonPath);
-});
+builder.Services.AddScoped<ILocationResolver, StringMatchResolver>();
+builder.Services.AddScoped<ILocationResolver, FuzzyMatchResolver>();
 
-builder.Services.AddScoped<CategoryPipeline>();
+builder.Services.AddScoped<LocationPipeline>();
 builder.Services.AddScoped<DataService>();
 
 var app = builder.Build();
@@ -95,11 +85,18 @@ app.MapGet("getMonthlyReport", (DateOnly date, DataService dataService) =>
 });
 
 
-app.MapGet("test", () =>
+app.MapGet("test", (DataService dataService) =>
 {
-    var fuzzyScorer = new FuzzyScorer();
+  dataService.SeedData();
+});
 
-    fuzzyScorer.Distance("KAT", "KIT");
+
+app.MapGet("getPatternLocations", (IFormFile file, StatementService statementService) =>
+{
+     using var stream = file.OpenReadStream();
+    using var doc = PdfDocument.Open(stream, new ParsingOptions { ClipPaths = true });
+
+    var (bankType, cutOffDate) = statementService.ExtractMetadata(doc);
 });
 
 app.Run();

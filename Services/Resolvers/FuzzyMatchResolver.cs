@@ -1,69 +1,32 @@
 using System.Text.Json;
+using Finstance.dbContext;
 using Finstance.dbContext.Models;
 using Finstance.FuzzyMatch;
+using Finstance.Services.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Finstance.Services.Resolvers;
 
 
 
-public class FuzzyMatchResolver : ICategoryResolver
+public class FuzzyMatchResolver : ILocationResolver
 {
-    private readonly FuzzyScorer _fuzzyScorer;
     public int Priority { get; } = 1;
 
-    private readonly Dictionary<ExpenseCategory, List<string>> _categoryKeywords;
+    private readonly DataBaseContext _dbContext;
+    private const double Treshold = 0.6;
 
-
-    public FuzzyMatchResolver(string jsonPath)
+    public FuzzyMatchResolver(DataBaseContext dbContext)
     {
-        _fuzzyScorer = new();
-
-        var json = File.ReadAllText(jsonPath);
-        var raw = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(json)
-            ?? throw new InvalidOperationException("categoryKeywords.json okunamadı.");
-
-        _categoryKeywords = new Dictionary<ExpenseCategory, List<string>>();
-
-        foreach (var (categoryName, keywords) in raw)
-        {
-            if (Enum.TryParse<ExpenseCategory>(categoryName, ignoreCase: true, out var category))
-            {
-                _categoryKeywords[category] = keywords
-                    .Select(k => k.ToUpperInvariant())
-                    .ToList();
-            }
-        }
-
+       _dbContext = dbContext;
     }
 
-    public ExpenseCategory? Resolve(string locationName)
+    public async Task<ExpenseLocationModel?> ResolveAsync(string locationName)
     {
-        if (string.IsNullOrWhiteSpace(locationName))
-            return ExpenseCategory.Diger;
+        var normalized = NormalizerHelper.NormalizeTurkish(locationName);
 
-        var normalized = string.Concat(locationName.ToUpperInvariant().Select(x =>
- {
-     switch (x)
-     {
-         case 'Ö': x = 'O'; break;
-         case 'İ': x = 'I'; break;
-         case 'Ü': x = 'U'; break;
-         case 'Ş': x = 'S'; break;
-         case 'Ç': x = 'C'; break;
-         case 'Ğ': x = 'G'; break;
-     }
-     return x;
- }));
+        var result = await _dbContext.Locations.Where(l => EF.Functions.TrigramsSimilarity(normalized, l.NormalizedName) > Treshold).OrderByDescending(l => EF.Functions.TrigramsSimilarity(normalized, l.NormalizedName)).FirstOrDefaultAsync();
 
-        foreach (var (category, keywords) in _categoryKeywords)
-        {
-            foreach (var keyword in keywords)
-            {
-                if (_fuzzyScorer.PartialRatio(keyword, normalized) > 80)
-                    return category;
-            }
-        }
-
-        return null;
+        return result;
     }
 }

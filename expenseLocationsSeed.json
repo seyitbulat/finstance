@@ -1,0 +1,5066 @@
+[
+  {
+    "Name": "MİGROS",
+    "NormalizedName": "MIGROS",
+    "Category": "Market",
+    "Id": 1
+  },
+  {
+    "Name": "CARREFOUR",
+    "NormalizedName": "CARREFOUR",
+    "Category": "Market",
+    "Id": 2
+  },
+  {
+    "Name": "CARREFOURSA",
+    "NormalizedName": "CARREFOURSA",
+    "Category": "Market",
+    "Id": 3
+  },
+  {
+    "Name": "BİM",
+    "NormalizedName": "BIM",
+    "Category": "Market",
+    "Id": 4
+  },
+  {
+    "Name": "A101",
+    "NormalizedName": "A101",
+    "Category": "Market",
+    "Id": 5
+  },
+  {
+    "Name": "ŞOK MARKET",
+    "NormalizedName": "SOK MARKET",
+    "Category": "Market",
+    "Id": 6
+  },
+  {
+    "Name": "METRO GROSMARKET",
+    "NormalizedName": "METRO GROSMARKET",
+    "Category": "Market",
+    "Id": 7
+  },
+  {
+    "Name": "FİLE MARKET",
+    "NormalizedName": "FILE MARKET",
+    "Category": "Market",
+    "Id": 8
+  },
+  {
+    "Name": "TARIM KREDİ",
+    "NormalizedName": "TARIM KREDI",
+    "Category": "Market",
+    "Id": 9
+  },
+  {
+    "Name": "HAKMAR",
+    "NormalizedName": "HAKMAR",
+    "Category": "Market",
+    "Id": 10
+  },
+  {
+    "Name": "BİZİM TOPTAN",
+    "NormalizedName": "BIZIM TOPTAN",
+    "Category": "Market",
+    "Id": 11
+  },
+  {
+    "Name": "MACROCENTER",
+    "NormalizedName": "MACROCENTER",
+    "Category": "Market",
+    "Id": 12
+  },
+  {
+    "Name": "ONUR MARKET",
+    "NormalizedName": "ONUR MARKET",
+    "Category": "Market",
+    "Id": 13
+  },
+  {
+    "Name": "ÇAĞRI MARKET",
+    "NormalizedName": "CAGRI MARKET",
+    "Category": "Market",
+    "Id": 14
+  },
+  {
+    "Name": "HAPPY CENTER",
+    "NormalizedName": "HAPPY CENTER",
+    "Category": "Market",
+    "Id": 15
+  },
+  {
+    "Name": "KİM MARKET",
+    "NormalizedName": "KIM MARKET",
+    "Category": "Market",
+    "Id": 16
+  },
+  {
+    "Name": "BİÇEN",
+    "NormalizedName": "BICEN",
+    "Category": "Market",
+    "Id": 17
+  },
+  {
+    "Name": "PEHLİVANOĞLU",
+    "NormalizedName": "PEHLIVANOGLU",
+    "Category": "Market",
+    "Id": 18
+  },
+  {
+    "Name": "MOPAŞ",
+    "NormalizedName": "MOPAS",
+    "Category": "Market",
+    "Id": 19
+  },
+  {
+    "Name": "YUNUS MARKET",
+    "NormalizedName": "YUNUS MARKET",
+    "Category": "Market",
+    "Id": 20
+  },
+  {
+    "Name": "SARIYER MARKET",
+    "NormalizedName": "SARIYER MARKET",
+    "Category": "Market",
+    "Id": 21
+  },
+  {
+    "Name": "SHOW MARKET",
+    "NormalizedName": "SHOW MARKET",
+    "Category": "Market",
+    "Id": 22
+  },
+  {
+    "Name": "ALTUNBİLEKLER",
+    "NormalizedName": "ALTUNBILEKLER",
+    "Category": "Market",
+    "Id": 23
+  },
+  {
+    "Name": "ESENLİK",
+    "NormalizedName": "ESENLIK",
+    "Category": "Market",
+    "Id": 24
+  },
+  {
+    "Name": "GROSERİ",
+    "NormalizedName": "GROSERI",
+    "Category": "Market",
+    "Id": 25
+  },
+  {
+    "Name": "BAŞDAŞ",
+    "NormalizedName": "BASDAS",
+    "Category": "Market",
+    "Id": 26
+  },
+  {
+    "Name": "ÖZHAN",
+    "NormalizedName": "OZHAN",
+    "Category": "Market",
+    "Id": 27
+  },
+  {
+    "Name": "SEYHANLAR",
+    "NormalizedName": "SEYHANLAR",
+    "Category": "Market",
+    "Id": 28
+  },
+  {
+    "Name": "GETİR",
+    "NormalizedName": "GETIR",
+    "Category": "Market",
+    "Id": 29
+  },
+  {
+    "Name": "İSTEGELSİN",
+    "NormalizedName": "ISTEGELSIN",
+    "Category": "Market",
+    "Id": 30
+  },
+  {
+    "Name": "BANABİ",
+    "NormalizedName": "BANABI",
+    "Category": "Market",
+    "Id": 31
+  },
+  {
+    "Name": "TRENDYOL HIZLI MARKET",
+    "NormalizedName": "TRENDYOL HIZLI MARKET",
+    "Category": "Market",
+    "Id": 32
+  },
+  {
+    "Name": "YEMEKSEPETİ MARKET",
+    "NormalizedName": "YEMEKSEPETI MARKET",
+    "Category": "Market",
+    "Id": 33
+  },
+  {
+    "Name": "GRATİS",
+    "NormalizedName": "GRATIS",
+    "Category": "Market",
+    "Id": 34
+  },
+  {
+    "Name": "WATSONS",
+    "NormalizedName": "WATSONS",
+    "Category": "Market",
+    "Id": 35
+  },
+  {
+    "Name": "ROSSMANN",
+    "NormalizedName": "ROSSMANN",
+    "Category": "Market",
+    "Id": 36
+  },
+  {
+    "Name": "COSMETICA",
+    "NormalizedName": "COSMETICA",
+    "Category": "Market",
+    "Id": 37
+  },
+  {
+    "Name": "SEPHORA",
+    "NormalizedName": "SEPHORA",
+    "Category": "Market",
+    "Id": 38
+  },
+  {
+    "Name": "EVE KOZMETİK",
+    "NormalizedName": "EVE KOZMETIK",
+    "Category": "Market",
+    "Id": 39
+  },
+  {
+    "Name": "FLORMAR",
+    "NormalizedName": "FLORMAR",
+    "Category": "Market",
+    "Id": 40
+  },
+  {
+    "Name": "KIKO",
+    "NormalizedName": "KIKO",
+    "Category": "Market",
+    "Id": 41
+  },
+  {
+    "Name": "GOLDEN ROSE",
+    "NormalizedName": "GOLDEN ROSE",
+    "Category": "Market",
+    "Id": 42
+  },
+  {
+    "Name": "SÜPERMARKET",
+    "NormalizedName": "SUPERMARKET",
+    "Category": "Market",
+    "Id": 43
+  },
+  {
+    "Name": "HİPERMARKET",
+    "NormalizedName": "HIPERMARKET",
+    "Category": "Market",
+    "Id": 44
+  },
+  {
+    "Name": "MARKET",
+    "NormalizedName": "MARKET",
+    "Category": "Market",
+    "Id": 45
+  },
+  {
+    "Name": "ŞARKÜTERİ",
+    "NormalizedName": "SARKUTERI",
+    "Category": "Market",
+    "Id": 46
+  },
+  {
+    "Name": "BAKKAL",
+    "NormalizedName": "BAKKAL",
+    "Category": "Market",
+    "Id": 47
+  },
+  {
+    "Name": "MANAV",
+    "NormalizedName": "MANAV",
+    "Category": "Market",
+    "Id": 48
+  },
+  {
+    "Name": "KASAP",
+    "NormalizedName": "KASAP",
+    "Category": "Market",
+    "Id": 49
+  },
+  {
+    "Name": "KURUYEMİŞ",
+    "NormalizedName": "KURUYEMIS",
+    "Category": "Market",
+    "Id": 50
+  },
+  {
+    "Name": "ORGANİK PAZAR",
+    "NormalizedName": "ORGANIK PAZAR",
+    "Category": "Market",
+    "Id": 51
+  },
+  {
+    "Name": "TOPTAN GIDA",
+    "NormalizedName": "TOPTAN GIDA",
+    "Category": "Market",
+    "Id": 52
+  },
+  {
+    "Name": "TEKEL",
+    "NormalizedName": "TEKEL",
+    "Category": "Market",
+    "Id": 53
+  },
+  {
+    "Name": "CHARCUTERIE",
+    "NormalizedName": "CHARCUTERIE",
+    "Category": "Market",
+    "Id": 54
+  },
+  {
+    "Name": "GOURMET",
+    "NormalizedName": "GOURMET",
+    "Category": "Market",
+    "Id": 55
+  },
+  {
+    "Name": "GURME",
+    "NormalizedName": "GURME",
+    "Category": "Market",
+    "Id": 56
+  },
+  {
+    "Name": "GIDA",
+    "NormalizedName": "GIDA",
+    "Category": "Market",
+    "Id": 57
+  },
+  {
+    "Name": "GIDA PAZARI",
+    "NormalizedName": "GIDA PAZARI",
+    "Category": "Market",
+    "Id": 58
+  },
+  {
+    "Name": "KASABI",
+    "NormalizedName": "KASABI",
+    "Category": "Market",
+    "Id": 59
+  },
+  {
+    "Name": "KURUYEMİŞÇİ",
+    "NormalizedName": "KURUYEMISCI",
+    "Category": "Market",
+    "Id": 60
+  },
+  {
+    "Name": "BAKKALİYE",
+    "NormalizedName": "BAKKALIYE",
+    "Category": "Market",
+    "Id": 61
+  },
+  {
+    "Name": "GROSMARKET",
+    "NormalizedName": "GROSMARKET",
+    "Category": "Market",
+    "Id": 62
+  },
+  {
+    "Name": "TEKEL BAYİ",
+    "NormalizedName": "TEKEL BAYI",
+    "Category": "Market",
+    "Id": 63
+  },
+  {
+    "Name": "SÜT ÜRÜNLERİ",
+    "NormalizedName": "SUT URUNLERI",
+    "Category": "Market",
+    "Id": 64
+  },
+  {
+    "Name": "BAHARAT",
+    "NormalizedName": "BAHARAT",
+    "Category": "Market",
+    "Id": 65
+  },
+  {
+    "Name": "BAHARATÇI",
+    "NormalizedName": "BAHARATCI",
+    "Category": "Market",
+    "Id": 66
+  },
+  {
+    "Name": "AKTARDİYE",
+    "NormalizedName": "AKTARDIYE",
+    "Category": "Market",
+    "Id": 67
+  },
+  {
+    "Name": "AKTAR",
+    "NormalizedName": "AKTAR",
+    "Category": "Market",
+    "Id": 68
+  },
+  {
+    "Name": "ZEYTİNCİ",
+    "NormalizedName": "ZEYTINCI",
+    "Category": "Market",
+    "Id": 69
+  },
+  {
+    "Name": "YUMURTA",
+    "NormalizedName": "YUMURTA",
+    "Category": "Market",
+    "Id": 70
+  },
+  {
+    "Name": "YUMURTACI",
+    "NormalizedName": "YUMURTACI",
+    "Category": "Market",
+    "Id": 71
+  },
+  {
+    "Name": "PEYNİRCİ",
+    "NormalizedName": "PEYNIRCI",
+    "Category": "Market",
+    "Id": 72
+  },
+  {
+    "Name": "BALIK PAZARI",
+    "NormalizedName": "BALIK PAZARI",
+    "Category": "Market",
+    "Id": 73
+  },
+  {
+    "Name": "HAL PAZARI",
+    "NormalizedName": "HAL PAZARI",
+    "Category": "Market",
+    "Id": 74
+  },
+  {
+    "Name": "KÖY PAZARI",
+    "NormalizedName": "KOY PAZARI",
+    "Category": "Market",
+    "Id": 75
+  },
+  {
+    "Name": "KÖY ÜRÜNLERİ",
+    "NormalizedName": "KOY URUNLERI",
+    "Category": "Market",
+    "Id": 76
+  },
+  {
+    "Name": "YÖRESEL ÜRÜNLER",
+    "NormalizedName": "YORESEL URUNLER",
+    "Category": "Market",
+    "Id": 77
+  },
+  {
+    "Name": "DOĞAL ÜRÜNLER",
+    "NormalizedName": "DOGAL URUNLER",
+    "Category": "Market",
+    "Id": 78
+  },
+  {
+    "Name": "YEMEKSEPETİ",
+    "NormalizedName": "YEMEKSEPETI",
+    "Category": "Restoran",
+    "Id": 79
+  },
+  {
+    "Name": "GETİR YEMEK",
+    "NormalizedName": "GETIR YEMEK",
+    "Category": "Restoran",
+    "Id": 80
+  },
+  {
+    "Name": "TRENDYOL YEMEK",
+    "NormalizedName": "TRENDYOL YEMEK",
+    "Category": "Restoran",
+    "Id": 81
+  },
+  {
+    "Name": "FUUDY",
+    "NormalizedName": "FUUDY",
+    "Category": "Restoran",
+    "Id": 82
+  },
+  {
+    "Name": "TIKLA GELSİN",
+    "NormalizedName": "TIKLA GELSIN",
+    "Category": "Restoran",
+    "Id": 83
+  },
+  {
+    "Name": "BURGER KING",
+    "NormalizedName": "BURGER KING",
+    "Category": "Restoran",
+    "Id": 84
+  },
+  {
+    "Name": "MCDONALD'S",
+    "NormalizedName": "MCDONALD'S",
+    "Category": "Restoran",
+    "Id": 85
+  },
+  {
+    "Name": "KFC",
+    "NormalizedName": "KFC",
+    "Category": "Restoran",
+    "Id": 86
+  },
+  {
+    "Name": "POPEYES",
+    "NormalizedName": "POPEYES",
+    "Category": "Restoran",
+    "Id": 87
+  },
+  {
+    "Name": "SUBWAY",
+    "NormalizedName": "SUBWAY",
+    "Category": "Restoran",
+    "Id": 88
+  },
+  {
+    "Name": "DOMİNOS",
+    "NormalizedName": "DOMINOS",
+    "Category": "Restoran",
+    "Id": 89
+  },
+  {
+    "Name": "PIZZA HUT",
+    "NormalizedName": "PIZZA HUT",
+    "Category": "Restoran",
+    "Id": 90
+  },
+  {
+    "Name": "LITTLE CAESARS",
+    "NormalizedName": "LITTLE CAESARS",
+    "Category": "Restoran",
+    "Id": 91
+  },
+  {
+    "Name": "PASAPORT PIZZA",
+    "NormalizedName": "PASAPORT PIZZA",
+    "Category": "Restoran",
+    "Id": 92
+  },
+  {
+    "Name": "TERRA PIZZA",
+    "NormalizedName": "TERRA PIZZA",
+    "Category": "Restoran",
+    "Id": 93
+  },
+  {
+    "Name": "PAPA JOHNS",
+    "NormalizedName": "PAPA JOHNS",
+    "Category": "Restoran",
+    "Id": 94
+  },
+  {
+    "Name": "ARBY'S",
+    "NormalizedName": "ARBY'S",
+    "Category": "Restoran",
+    "Id": 95
+  },
+  {
+    "Name": "CARL'S JR",
+    "NormalizedName": "CARL'S JR",
+    "Category": "Restoran",
+    "Id": 96
+  },
+  {
+    "Name": "SHAKE SHACK",
+    "NormalizedName": "SHAKE SHACK",
+    "Category": "Restoran",
+    "Id": 97
+  },
+  {
+    "Name": "HD İSKENDER",
+    "NormalizedName": "HD ISKENDER",
+    "Category": "Restoran",
+    "Id": 98
+  },
+  {
+    "Name": "PİDEM",
+    "NormalizedName": "PIDEM",
+    "Category": "Restoran",
+    "Id": 99
+  },
+  {
+    "Name": "TAVUK DÜNYASI",
+    "NormalizedName": "TAVUK DUNYASI",
+    "Category": "Restoran",
+    "Id": 100
+  },
+  {
+    "Name": "KÖFTECİ YUSUF",
+    "NormalizedName": "KOFTECI YUSUF",
+    "Category": "Restoran",
+    "Id": 101
+  },
+  {
+    "Name": "BAYDÖNER",
+    "NormalizedName": "BAYDONER",
+    "Category": "Restoran",
+    "Id": 102
+  },
+  {
+    "Name": "USTA DÖNERCİ",
+    "NormalizedName": "USTA DONERCI",
+    "Category": "Restoran",
+    "Id": 103
+  },
+  {
+    "Name": "BEREKET DÖNER",
+    "NormalizedName": "BEREKET DONER",
+    "Category": "Restoran",
+    "Id": 104
+  },
+  {
+    "Name": "SBARRO",
+    "NormalizedName": "SBARRO",
+    "Category": "Restoran",
+    "Id": 105
+  },
+  {
+    "Name": "DÜRÜMLE",
+    "NormalizedName": "DURUMLE",
+    "Category": "Restoran",
+    "Id": 106
+  },
+  {
+    "Name": "KOMAGENE",
+    "NormalizedName": "KOMAGENE",
+    "Category": "Restoran",
+    "Id": 107
+  },
+  {
+    "Name": "OSES",
+    "NormalizedName": "OSES",
+    "Category": "Restoran",
+    "Id": 108
+  },
+  {
+    "Name": "O SES CIGKOFTE",
+    "NormalizedName": "O SES CIGKOFTE",
+    "Category": "Restoran",
+    "Id": 109
+  },
+  {
+    "Name": "BATTALBEY",
+    "NormalizedName": "BATTALBEY",
+    "Category": "Restoran",
+    "Id": 110
+  },
+  {
+    "Name": "ÇİĞKÖFTEM",
+    "NormalizedName": "CIGKOFTEM",
+    "Category": "Restoran",
+    "Id": 111
+  },
+  {
+    "Name": "STARBUCKS",
+    "NormalizedName": "STARBUCKS",
+    "Category": "Restoran",
+    "Id": 112
+  },
+  {
+    "Name": "KAHVE DÜNYASI",
+    "NormalizedName": "KAHVE DUNYASI",
+    "Category": "Restoran",
+    "Id": 113
+  },
+  {
+    "Name": "ESPRESSOLAB",
+    "NormalizedName": "ESPRESSOLAB",
+    "Category": "Restoran",
+    "Id": 114
+  },
+  {
+    "Name": "TCHIBO",
+    "NormalizedName": "TCHIBO",
+    "Category": "Restoran",
+    "Id": 115
+  },
+  {
+    "Name": "GLORIA JEAN",
+    "NormalizedName": "GLORIA JEAN",
+    "Category": "Restoran",
+    "Id": 116
+  },
+  {
+    "Name": "CARIBOU",
+    "NormalizedName": "CARIBOU",
+    "Category": "Restoran",
+    "Id": 117
+  },
+  {
+    "Name": "CAFE NERO",
+    "NormalizedName": "CAFE NERO",
+    "Category": "Restoran",
+    "Id": 118
+  },
+  {
+    "Name": "CAFFE NERO",
+    "NormalizedName": "CAFFE NERO",
+    "Category": "Restoran",
+    "Id": 119
+  },
+  {
+    "Name": "MOC COFFEE",
+    "NormalizedName": "MOC COFFEE",
+    "Category": "Restoran",
+    "Id": 120
+  },
+  {
+    "Name": "FEDERAL COFFEE",
+    "NormalizedName": "FEDERAL COFFEE",
+    "Category": "Restoran",
+    "Id": 121
+  },
+  {
+    "Name": "COFFEESHOP",
+    "NormalizedName": "COFFEESHOP",
+    "Category": "Restoran",
+    "Id": 122
+  },
+  {
+    "Name": "SİMİT SARAYI",
+    "NormalizedName": "SIMIT SARAYI",
+    "Category": "Restoran",
+    "Id": 123
+  },
+  {
+    "Name": "SİMİT DÜŞLERİ",
+    "NormalizedName": "SIMIT DUSLERI",
+    "Category": "Restoran",
+    "Id": 124
+  },
+  {
+    "Name": "MADO",
+    "NormalizedName": "MADO",
+    "Category": "Restoran",
+    "Id": 125
+  },
+  {
+    "Name": "KAFEPI",
+    "NormalizedName": "KAFEPI",
+    "Category": "Restoran",
+    "Id": 126
+  },
+  {
+    "Name": "BİG CHEFS",
+    "NormalizedName": "BIG CHEFS",
+    "Category": "Restoran",
+    "Id": 127
+  },
+  {
+    "Name": "MIDPOINT",
+    "NormalizedName": "MIDPOINT",
+    "Category": "Restoran",
+    "Id": 128
+  },
+  {
+    "Name": "COOKSHOP",
+    "NormalizedName": "COOKSHOP",
+    "Category": "Restoran",
+    "Id": 129
+  },
+  {
+    "Name": "THE HOUSE CAFE",
+    "NormalizedName": "THE HOUSE CAFE",
+    "Category": "Restoran",
+    "Id": 130
+  },
+  {
+    "Name": "HAPPY MOON'S",
+    "NormalizedName": "HAPPY MOON'S",
+    "Category": "Restoran",
+    "Id": 131
+  },
+  {
+    "Name": "HUQQA",
+    "NormalizedName": "HUQQA",
+    "Category": "Restoran",
+    "Id": 132
+  },
+  {
+    "Name": "NUSRET",
+    "NormalizedName": "NUSRET",
+    "Category": "Restoran",
+    "Id": 133
+  },
+  {
+    "Name": "GÜNAYDIN",
+    "NormalizedName": "GUNAYDIN",
+    "Category": "Restoran",
+    "Id": 134
+  },
+  {
+    "Name": "RESTORAN",
+    "NormalizedName": "RESTORAN",
+    "Category": "Restoran",
+    "Id": 135
+  },
+  {
+    "Name": "RESTAURANT",
+    "NormalizedName": "RESTAURANT",
+    "Category": "Restoran",
+    "Id": 136
+  },
+  {
+    "Name": "LOKANTA",
+    "NormalizedName": "LOKANTA",
+    "Category": "Restoran",
+    "Id": 137
+  },
+  {
+    "Name": "KEBAP",
+    "NormalizedName": "KEBAP",
+    "Category": "Restoran",
+    "Id": 138
+  },
+  {
+    "Name": "KEBAPÇI",
+    "NormalizedName": "KEBAPCI",
+    "Category": "Restoran",
+    "Id": 139
+  },
+  {
+    "Name": "DÖNER",
+    "NormalizedName": "DONER",
+    "Category": "Restoran",
+    "Id": 140
+  },
+  {
+    "Name": "DÖNERCİ",
+    "NormalizedName": "DONERCI",
+    "Category": "Restoran",
+    "Id": 141
+  },
+  {
+    "Name": "LAHMACUN",
+    "NormalizedName": "LAHMACUN",
+    "Category": "Restoran",
+    "Id": 142
+  },
+  {
+    "Name": "PİDE",
+    "NormalizedName": "PIDE",
+    "Category": "Restoran",
+    "Id": 143
+  },
+  {
+    "Name": "KOKOREÇ",
+    "NormalizedName": "KOKOREC",
+    "Category": "Restoran",
+    "Id": 144
+  },
+  {
+    "Name": "MİDYE",
+    "NormalizedName": "MIDYE",
+    "Category": "Restoran",
+    "Id": 145
+  },
+  {
+    "Name": "TANTUNİ",
+    "NormalizedName": "TANTUNI",
+    "Category": "Restoran",
+    "Id": 146
+  },
+  {
+    "Name": "KUMRU",
+    "NormalizedName": "KUMRU",
+    "Category": "Restoran",
+    "Id": 147
+  },
+  {
+    "Name": "KUMPİR",
+    "NormalizedName": "KUMPIR",
+    "Category": "Restoran",
+    "Id": 148
+  },
+  {
+    "Name": "CİĞER",
+    "NormalizedName": "CIGER",
+    "Category": "Restoran",
+    "Id": 149
+  },
+  {
+    "Name": "DÜRÜM",
+    "NormalizedName": "DURUM",
+    "Category": "Restoran",
+    "Id": 150
+  },
+  {
+    "Name": "CAFE",
+    "NormalizedName": "CAFE",
+    "Category": "Restoran",
+    "Id": 151
+  },
+  {
+    "Name": "KAFE",
+    "NormalizedName": "KAFE",
+    "Category": "Restoran",
+    "Id": 152
+  },
+  {
+    "Name": "COFFEE",
+    "NormalizedName": "COFFEE",
+    "Category": "Restoran",
+    "Id": 153
+  },
+  {
+    "Name": "COFFE",
+    "NormalizedName": "COFFE",
+    "Category": "Restoran",
+    "Id": 154
+  },
+  {
+    "Name": "KAHVE",
+    "NormalizedName": "KAHVE",
+    "Category": "Restoran",
+    "Id": 155
+  },
+  {
+    "Name": "KAHVECİ",
+    "NormalizedName": "KAHVECI",
+    "Category": "Restoran",
+    "Id": 156
+  },
+  {
+    "Name": "ROASTERY",
+    "NormalizedName": "ROASTERY",
+    "Category": "Restoran",
+    "Id": 157
+  },
+  {
+    "Name": "BAKERY",
+    "NormalizedName": "BAKERY",
+    "Category": "Restoran",
+    "Id": 158
+  },
+  {
+    "Name": "PATISSERIE",
+    "NormalizedName": "PATISSERIE",
+    "Category": "Restoran",
+    "Id": 159
+  },
+  {
+    "Name": "PASTA",
+    "NormalizedName": "PASTA",
+    "Category": "Restoran",
+    "Id": 160
+  },
+  {
+    "Name": "FIRIN",
+    "NormalizedName": "FIRIN",
+    "Category": "Restoran",
+    "Id": 161
+  },
+  {
+    "Name": "FIRINCI",
+    "NormalizedName": "FIRINCI",
+    "Category": "Restoran",
+    "Id": 162
+  },
+  {
+    "Name": "BİSTRO",
+    "NormalizedName": "BISTRO",
+    "Category": "Restoran",
+    "Id": 163
+  },
+  {
+    "Name": "BRASSERIE",
+    "NormalizedName": "BRASSERIE",
+    "Category": "Restoran",
+    "Id": 164
+  },
+  {
+    "Name": "PUB",
+    "NormalizedName": "PUB",
+    "Category": "Restoran",
+    "Id": 165
+  },
+  {
+    "Name": "MEYHANE",
+    "NormalizedName": "MEYHANE",
+    "Category": "Restoran",
+    "Id": 166
+  },
+  {
+    "Name": "OCAKBAŞI",
+    "NormalizedName": "OCAKBASI",
+    "Category": "Restoran",
+    "Id": 167
+  },
+  {
+    "Name": "STEAKHOUSE",
+    "NormalizedName": "STEAKHOUSE",
+    "Category": "Restoran",
+    "Id": 168
+  },
+  {
+    "Name": "YEMEK",
+    "NormalizedName": "YEMEK",
+    "Category": "Restoran",
+    "Id": 169
+  },
+  {
+    "Name": "TOST",
+    "NormalizedName": "TOST",
+    "Category": "Restoran",
+    "Id": 170
+  },
+  {
+    "Name": "TATLICI",
+    "NormalizedName": "TATLICI",
+    "Category": "Restoran",
+    "Id": 171
+  },
+  {
+    "Name": "BAKLAVA",
+    "NormalizedName": "BAKLAVA",
+    "Category": "Restoran",
+    "Id": 172
+  },
+  {
+    "Name": "DONDURMA",
+    "NormalizedName": "DONDURMA",
+    "Category": "Restoran",
+    "Id": 173
+  },
+  {
+    "Name": "KAHVALTI",
+    "NormalizedName": "KAHVALTI",
+    "Category": "Restoran",
+    "Id": 174
+  },
+  {
+    "Name": "MANTI",
+    "NormalizedName": "MANTI",
+    "Category": "Restoran",
+    "Id": 175
+  },
+  {
+    "Name": "ÇORBA",
+    "NormalizedName": "CORBA",
+    "Category": "Restoran",
+    "Id": 176
+  },
+  {
+    "Name": "BALIK",
+    "NormalizedName": "BALIK",
+    "Category": "Restoran",
+    "Id": 177
+  },
+  {
+    "Name": "BALIKÇI",
+    "NormalizedName": "BALIKCI",
+    "Category": "Restoran",
+    "Id": 178
+  },
+  {
+    "Name": "TAVUK",
+    "NormalizedName": "TAVUK",
+    "Category": "Restoran",
+    "Id": 179
+  },
+  {
+    "Name": "IZGARA",
+    "NormalizedName": "IZGARA",
+    "Category": "Restoran",
+    "Id": 180
+  },
+  {
+    "Name": "BURGER",
+    "NormalizedName": "BURGER",
+    "Category": "Restoran",
+    "Id": 181
+  },
+  {
+    "Name": "PİZZA",
+    "NormalizedName": "PIZZA",
+    "Category": "Restoran",
+    "Id": 182
+  },
+  {
+    "Name": "WAFFLE",
+    "NormalizedName": "WAFFLE",
+    "Category": "Restoran",
+    "Id": 183
+  },
+  {
+    "Name": "KAHVEHANESİ",
+    "NormalizedName": "KAHVEHANESI",
+    "Category": "Restoran",
+    "Id": 184
+  },
+  {
+    "Name": "ODUN FIRINI",
+    "NormalizedName": "ODUN FIRINI",
+    "Category": "Restoran",
+    "Id": 185
+  },
+  {
+    "Name": "TAŞ FIRIN",
+    "NormalizedName": "TAS FIRIN",
+    "Category": "Restoran",
+    "Id": 186
+  },
+  {
+    "Name": "UNLU MAMULLER",
+    "NormalizedName": "UNLU MAMULLER",
+    "Category": "Restoran",
+    "Id": 187
+  },
+  {
+    "Name": "RESTAURANTS",
+    "NormalizedName": "RESTAURANTS",
+    "Category": "Restoran",
+    "Id": 188
+  },
+  {
+    "Name": "YAPRAK DÖNER",
+    "NormalizedName": "YAPRAK DONER",
+    "Category": "Restoran",
+    "Id": 189
+  },
+  {
+    "Name": "KÖFTE",
+    "NormalizedName": "KOFTE",
+    "Category": "Restoran",
+    "Id": 190
+  },
+  {
+    "Name": "KÖFTECİ",
+    "NormalizedName": "KOFTECI",
+    "Category": "Restoran",
+    "Id": 191
+  },
+  {
+    "Name": "PİDECİ",
+    "NormalizedName": "PIDECI",
+    "Category": "Restoran",
+    "Id": 192
+  },
+  {
+    "Name": "LAHMACUNCU",
+    "NormalizedName": "LAHMACUNCU",
+    "Category": "Restoran",
+    "Id": 193
+  },
+  {
+    "Name": "MANGAL",
+    "NormalizedName": "MANGAL",
+    "Category": "Restoran",
+    "Id": 194
+  },
+  {
+    "Name": "IZGARACI",
+    "NormalizedName": "IZGARACI",
+    "Category": "Restoran",
+    "Id": 195
+  },
+  {
+    "Name": "KÖMÜRDE",
+    "NormalizedName": "KOMURDE",
+    "Category": "Restoran",
+    "Id": 196
+  },
+  {
+    "Name": "BÜFE",
+    "NormalizedName": "BUFE",
+    "Category": "Restoran",
+    "Id": 197
+  },
+  {
+    "Name": "TOSTÇU",
+    "NormalizedName": "TOSTCU",
+    "Category": "Restoran",
+    "Id": 198
+  },
+  {
+    "Name": "SANDVİÇ",
+    "NormalizedName": "SANDVIC",
+    "Category": "Restoran",
+    "Id": 199
+  },
+  {
+    "Name": "PASTANE",
+    "NormalizedName": "PASTANE",
+    "Category": "Restoran",
+    "Id": 200
+  },
+  {
+    "Name": "BÖREK",
+    "NormalizedName": "BOREK",
+    "Category": "Restoran",
+    "Id": 201
+  },
+  {
+    "Name": "BÖREKÇİ",
+    "NormalizedName": "BOREKCI",
+    "Category": "Restoran",
+    "Id": 202
+  },
+  {
+    "Name": "TATLI",
+    "NormalizedName": "TATLI",
+    "Category": "Restoran",
+    "Id": 203
+  },
+  {
+    "Name": "BAKLAVACI",
+    "NormalizedName": "BAKLAVACI",
+    "Category": "Restoran",
+    "Id": 204
+  },
+  {
+    "Name": "KÜNEFE",
+    "NormalizedName": "KUNEFE",
+    "Category": "Restoran",
+    "Id": 205
+  },
+  {
+    "Name": "KÜNEFECİ",
+    "NormalizedName": "KUNEFECI",
+    "Category": "Restoran",
+    "Id": 206
+  },
+  {
+    "Name": "DONDURMACI",
+    "NormalizedName": "DONDURMACI",
+    "Category": "Restoran",
+    "Id": 207
+  },
+  {
+    "Name": "KREP",
+    "NormalizedName": "KREP",
+    "Category": "Restoran",
+    "Id": 208
+  },
+  {
+    "Name": "LOKMA",
+    "NormalizedName": "LOKMA",
+    "Category": "Restoran",
+    "Id": 209
+  },
+  {
+    "Name": "LOKMACI",
+    "NormalizedName": "LOKMACI",
+    "Category": "Restoran",
+    "Id": 210
+  },
+  {
+    "Name": "PROFİTEROL",
+    "NormalizedName": "PROFITEROL",
+    "Category": "Restoran",
+    "Id": 211
+  },
+  {
+    "Name": "PROFITILOR",
+    "NormalizedName": "PROFITILOR",
+    "Category": "Restoran",
+    "Id": 212
+  },
+  {
+    "Name": "ÇORBACI",
+    "NormalizedName": "CORBACI",
+    "Category": "Restoran",
+    "Id": 213
+  },
+  {
+    "Name": "İŞKEMBE",
+    "NormalizedName": "ISKEMBE",
+    "Category": "Restoran",
+    "Id": 214
+  },
+  {
+    "Name": "İŞKEMBECİ",
+    "NormalizedName": "ISKEMBECI",
+    "Category": "Restoran",
+    "Id": 215
+  },
+  {
+    "Name": "PİZZERİA",
+    "NormalizedName": "PIZZERIA",
+    "Category": "Restoran",
+    "Id": 216
+  },
+  {
+    "Name": "HAMBURGER",
+    "NormalizedName": "HAMBURGER",
+    "Category": "Restoran",
+    "Id": 217
+  },
+  {
+    "Name": "BURGER HOUSE",
+    "NormalizedName": "BURGER HOUSE",
+    "Category": "Restoran",
+    "Id": 218
+  },
+  {
+    "Name": "ÇİĞ KÖFTE",
+    "NormalizedName": "CIG KOFTE",
+    "Category": "Restoran",
+    "Id": 219
+  },
+  {
+    "Name": "ÇİĞKÖFTECİ",
+    "NormalizedName": "CIGKOFTECI",
+    "Category": "Restoran",
+    "Id": 220
+  },
+  {
+    "Name": "TANTUNİCİ",
+    "NormalizedName": "TANTUNICI",
+    "Category": "Restoran",
+    "Id": 221
+  },
+  {
+    "Name": "KOKOREÇÇİ",
+    "NormalizedName": "KOKORECCI",
+    "Category": "Restoran",
+    "Id": 222
+  },
+  {
+    "Name": "MİDYECİ",
+    "NormalizedName": "MIDYECI",
+    "Category": "Restoran",
+    "Id": 223
+  },
+  {
+    "Name": "CİĞERCİ",
+    "NormalizedName": "CIGERCI",
+    "Category": "Restoran",
+    "Id": 224
+  },
+  {
+    "Name": "KUMRUCU",
+    "NormalizedName": "KUMRUCU",
+    "Category": "Restoran",
+    "Id": 225
+  },
+  {
+    "Name": "SOKAK LEZZETLERİ",
+    "NormalizedName": "SOKAK LEZZETLERI",
+    "Category": "Restoran",
+    "Id": 226
+  },
+  {
+    "Name": "GASTROPUB",
+    "NormalizedName": "GASTROPUB",
+    "Category": "Restoran",
+    "Id": 227
+  },
+  {
+    "Name": "LOUNGE",
+    "NormalizedName": "LOUNGE",
+    "Category": "Restoran",
+    "Id": 228
+  },
+  {
+    "Name": "BAR",
+    "NormalizedName": "BAR",
+    "Category": "Restoran",
+    "Id": 229
+  },
+  {
+    "Name": "BALIK RESTORAN",
+    "NormalizedName": "BALIK RESTORAN",
+    "Category": "Restoran",
+    "Id": 230
+  },
+  {
+    "Name": "DENİZ ÜRÜNLERİ",
+    "NormalizedName": "DENIZ URUNLERI",
+    "Category": "Restoran",
+    "Id": 231
+  },
+  {
+    "Name": "MANTICI",
+    "NormalizedName": "MANTICI",
+    "Category": "Restoran",
+    "Id": 232
+  },
+  {
+    "Name": "GÖZLEME",
+    "NormalizedName": "GOZLEME",
+    "Category": "Restoran",
+    "Id": 233
+  },
+  {
+    "Name": "GÖZLEMECİ",
+    "NormalizedName": "GOZLEMECI",
+    "Category": "Restoran",
+    "Id": 234
+  },
+  {
+    "Name": "YEMEKÇİLİK",
+    "NormalizedName": "YEMEKCILIK",
+    "Category": "Restoran",
+    "Id": 235
+  },
+  {
+    "Name": "CATERING",
+    "NormalizedName": "CATERING",
+    "Category": "Restoran",
+    "Id": 236
+  },
+  {
+    "Name": "MUTFAK",
+    "NormalizedName": "MUTFAK",
+    "Category": "Restoran",
+    "Id": 237
+  },
+  {
+    "Name": "MUTFAĞI",
+    "NormalizedName": "MUTFAGI",
+    "Category": "Restoran",
+    "Id": 238
+  },
+  {
+    "Name": "MUTFAK SANATLARI",
+    "NormalizedName": "MUTFAK SANATLARI",
+    "Category": "Restoran",
+    "Id": 239
+  },
+  {
+    "Name": "EV YEMEKLERİ",
+    "NormalizedName": "EV YEMEKLERI",
+    "Category": "Restoran",
+    "Id": 240
+  },
+  {
+    "Name": "TABLDOT",
+    "NormalizedName": "TABLDOT",
+    "Category": "Restoran",
+    "Id": 241
+  },
+  {
+    "Name": "AS EVİ",
+    "NormalizedName": "AS EVI",
+    "Category": "Restoran",
+    "Id": 242
+  },
+  {
+    "Name": "OPET",
+    "NormalizedName": "OPET",
+    "Category": "Ulasim",
+    "Id": 243
+  },
+  {
+    "Name": "SHELL",
+    "NormalizedName": "SHELL",
+    "Category": "Ulasim",
+    "Id": 244
+  },
+  {
+    "Name": "BP",
+    "NormalizedName": "BP",
+    "Category": "Ulasim",
+    "Id": 245
+  },
+  {
+    "Name": "PETROL OFİSİ",
+    "NormalizedName": "PETROL OFISI",
+    "Category": "Ulasim",
+    "Id": 246
+  },
+  {
+    "Name": "TOTAL",
+    "NormalizedName": "TOTAL",
+    "Category": "Ulasim",
+    "Id": 247
+  },
+  {
+    "Name": "TOTALENERGIES",
+    "NormalizedName": "TOTALENERGIES",
+    "Category": "Ulasim",
+    "Id": 248
+  },
+  {
+    "Name": "TP PETROL",
+    "NormalizedName": "TP PETROL",
+    "Category": "Ulasim",
+    "Id": 249
+  },
+  {
+    "Name": "AYGAZ",
+    "NormalizedName": "AYGAZ",
+    "Category": "Ulasim",
+    "Id": 250
+  },
+  {
+    "Name": "MOGAZ",
+    "NormalizedName": "MOGAZ",
+    "Category": "Ulasim",
+    "Id": 251
+  },
+  {
+    "Name": "LUKOIL",
+    "NormalizedName": "LUKOIL",
+    "Category": "Ulasim",
+    "Id": 252
+  },
+  {
+    "Name": "ALPET",
+    "NormalizedName": "ALPET",
+    "Category": "Ulasim",
+    "Id": 253
+  },
+  {
+    "Name": "KADOIL",
+    "NormalizedName": "KADOIL",
+    "Category": "Ulasim",
+    "Id": 254
+  },
+  {
+    "Name": "SUNPET",
+    "NormalizedName": "SUNPET",
+    "Category": "Ulasim",
+    "Id": 255
+  },
+  {
+    "Name": "GO PETROL",
+    "NormalizedName": "GO PETROL",
+    "Category": "Ulasim",
+    "Id": 256
+  },
+  {
+    "Name": "PETROL",
+    "NormalizedName": "PETROL",
+    "Category": "Ulasim",
+    "Id": 257
+  },
+  {
+    "Name": "AKARYAKIT",
+    "NormalizedName": "AKARYAKIT",
+    "Category": "Ulasim",
+    "Id": 258
+  },
+  {
+    "Name": "BENZİN",
+    "NormalizedName": "BENZIN",
+    "Category": "Ulasim",
+    "Id": 259
+  },
+  {
+    "Name": "BENZİNLİK",
+    "NormalizedName": "BENZINLIK",
+    "Category": "Ulasim",
+    "Id": 260
+  },
+  {
+    "Name": "OTOGAZ",
+    "NormalizedName": "OTOGAZ",
+    "Category": "Ulasim",
+    "Id": 261
+  },
+  {
+    "Name": "ZES",
+    "NormalizedName": "ZES",
+    "Category": "Ulasim",
+    "Id": 262
+  },
+  {
+    "Name": "VOLTRUN",
+    "NormalizedName": "VOLTRUN",
+    "Category": "Ulasim",
+    "Id": 263
+  },
+  {
+    "Name": "TRUGO",
+    "NormalizedName": "TRUGO",
+    "Category": "Ulasim",
+    "Id": 264
+  },
+  {
+    "Name": "EŞARJ",
+    "NormalizedName": "ESARJ",
+    "Category": "Ulasim",
+    "Id": 265
+  },
+  {
+    "Name": "SHARZ",
+    "NormalizedName": "SHARZ",
+    "Category": "Ulasim",
+    "Id": 266
+  },
+  {
+    "Name": "ASTOR SARJ",
+    "NormalizedName": "ASTOR SARJ",
+    "Category": "Ulasim",
+    "Id": 267
+  },
+  {
+    "Name": "BEEFULL",
+    "NormalizedName": "BEEFULL",
+    "Category": "Ulasim",
+    "Id": 268
+  },
+  {
+    "Name": "İETT",
+    "NormalizedName": "IETT",
+    "Category": "Ulasim",
+    "Id": 269
+  },
+  {
+    "Name": "İSTANBULKART",
+    "NormalizedName": "ISTANBULKART",
+    "Category": "Ulasim",
+    "Id": 270
+  },
+  {
+    "Name": "BELBİM",
+    "NormalizedName": "BELBIM",
+    "Category": "Ulasim",
+    "Id": 271
+  },
+  {
+    "Name": "METRO İSTANBUL",
+    "NormalizedName": "METRO ISTANBUL",
+    "Category": "Ulasim",
+    "Id": 272
+  },
+  {
+    "Name": "İZMİRKART",
+    "NormalizedName": "IZMIRKART",
+    "Category": "Ulasim",
+    "Id": 273
+  },
+  {
+    "Name": "ANKARAKART",
+    "NormalizedName": "ANKARAKART",
+    "Category": "Ulasim",
+    "Id": 274
+  },
+  {
+    "Name": "BURSAKART",
+    "NormalizedName": "BURSAKART",
+    "Category": "Ulasim",
+    "Id": 275
+  },
+  {
+    "Name": "ANTALYAKART",
+    "NormalizedName": "ANTALYAKART",
+    "Category": "Ulasim",
+    "Id": 276
+  },
+  {
+    "Name": "KENTKART",
+    "NormalizedName": "KENTKART",
+    "Category": "Ulasim",
+    "Id": 277
+  },
+  {
+    "Name": "TCDD",
+    "NormalizedName": "TCDD",
+    "Category": "Ulasim",
+    "Id": 278
+  },
+  {
+    "Name": "MARMARAY",
+    "NormalizedName": "MARMARAY",
+    "Category": "Ulasim",
+    "Id": 279
+  },
+  {
+    "Name": "BAŞKENTRAY",
+    "NormalizedName": "BASKENTRAY",
+    "Category": "Ulasim",
+    "Id": 280
+  },
+  {
+    "Name": "İZBAN",
+    "NormalizedName": "IZBAN",
+    "Category": "Ulasim",
+    "Id": 281
+  },
+  {
+    "Name": "İDO",
+    "NormalizedName": "IDO",
+    "Category": "Ulasim",
+    "Id": 282
+  },
+  {
+    "Name": "BUDO",
+    "NormalizedName": "BUDO",
+    "Category": "Ulasim",
+    "Id": 283
+  },
+  {
+    "Name": "ŞEHİR HATLARI",
+    "NormalizedName": "SEHIR HATLARI",
+    "Category": "Ulasim",
+    "Id": 284
+  },
+  {
+    "Name": "TURYOL",
+    "NormalizedName": "TURYOL",
+    "Category": "Ulasim",
+    "Id": 285
+  },
+  {
+    "Name": "DENTUR",
+    "NormalizedName": "DENTUR",
+    "Category": "Ulasim",
+    "Id": 286
+  },
+  {
+    "Name": "VAPUR",
+    "NormalizedName": "VAPUR",
+    "Category": "Ulasim",
+    "Id": 287
+  },
+  {
+    "Name": "FERİBOT",
+    "NormalizedName": "FERIBOT",
+    "Category": "Ulasim",
+    "Id": 288
+  },
+  {
+    "Name": "TRAMVAY",
+    "NormalizedName": "TRAMVAY",
+    "Category": "Ulasim",
+    "Id": 289
+  },
+  {
+    "Name": "TELEFERİK",
+    "NormalizedName": "TELEFERIK",
+    "Category": "Ulasim",
+    "Id": 290
+  },
+  {
+    "Name": "BİTAKSİ",
+    "NormalizedName": "BITAKSI",
+    "Category": "Ulasim",
+    "Id": 291
+  },
+  {
+    "Name": "UBER",
+    "NormalizedName": "UBER",
+    "Category": "Ulasim",
+    "Id": 292
+  },
+  {
+    "Name": "MARTI TAG",
+    "NormalizedName": "MARTI TAG",
+    "Category": "Ulasim",
+    "Id": 293
+  },
+  {
+    "Name": "MARTI",
+    "NormalizedName": "MARTI",
+    "Category": "Ulasim",
+    "Id": 294
+  },
+  {
+    "Name": "BİNBİN",
+    "NormalizedName": "BINBIN",
+    "Category": "Ulasim",
+    "Id": 295
+  },
+  {
+    "Name": "HOP SCOOTER",
+    "NormalizedName": "HOP SCOOTER",
+    "Category": "Ulasim",
+    "Id": 296
+  },
+  {
+    "Name": "TİKTAK",
+    "NormalizedName": "TIKTAK",
+    "Category": "Ulasim",
+    "Id": 297
+  },
+  {
+    "Name": "MOOV",
+    "NormalizedName": "MOOV",
+    "Category": "Ulasim",
+    "Id": 298
+  },
+  {
+    "Name": "GETİR ARAÇ",
+    "NormalizedName": "GETIR ARAC",
+    "Category": "Ulasim",
+    "Id": 299
+  },
+  {
+    "Name": "ZIPCAR",
+    "NormalizedName": "ZIPCAR",
+    "Category": "Ulasim",
+    "Id": 300
+  },
+  {
+    "Name": "AVIS",
+    "NormalizedName": "AVIS",
+    "Category": "Ulasim",
+    "Id": 301
+  },
+  {
+    "Name": "BUDGET",
+    "NormalizedName": "BUDGET",
+    "Category": "Ulasim",
+    "Id": 302
+  },
+  {
+    "Name": "ENTERPRISE",
+    "NormalizedName": "ENTERPRISE",
+    "Category": "Ulasim",
+    "Id": 303
+  },
+  {
+    "Name": "SIXT",
+    "NormalizedName": "SIXT",
+    "Category": "Ulasim",
+    "Id": 304
+  },
+  {
+    "Name": "GRENT",
+    "NormalizedName": "GRENT",
+    "Category": "Ulasim",
+    "Id": 305
+  },
+  {
+    "Name": "HERTZ",
+    "NormalizedName": "HERTZ",
+    "Category": "Ulasim",
+    "Id": 306
+  },
+  {
+    "Name": "EUROPCAR",
+    "NormalizedName": "EUROPCAR",
+    "Category": "Ulasim",
+    "Id": 307
+  },
+  {
+    "Name": "RENT A CAR",
+    "NormalizedName": "RENT A CAR",
+    "Category": "Ulasim",
+    "Id": 308
+  },
+  {
+    "Name": "OTO KİRALAMA",
+    "NormalizedName": "OTO KIRALAMA",
+    "Category": "Ulasim",
+    "Id": 309
+  },
+  {
+    "Name": "TAKSİ",
+    "NormalizedName": "TAKSI",
+    "Category": "Ulasim",
+    "Id": 310
+  },
+  {
+    "Name": "TAXI",
+    "NormalizedName": "TAXI",
+    "Category": "Ulasim",
+    "Id": 311
+  },
+  {
+    "Name": "HGS",
+    "NormalizedName": "HGS",
+    "Category": "Ulasim",
+    "Id": 312
+  },
+  {
+    "Name": "OGS",
+    "NormalizedName": "OGS",
+    "Category": "Ulasim",
+    "Id": 313
+  },
+  {
+    "Name": "KGM",
+    "NormalizedName": "KGM",
+    "Category": "Ulasim",
+    "Id": 314
+  },
+  {
+    "Name": "ICA",
+    "NormalizedName": "ICA",
+    "Category": "Ulasim",
+    "Id": 315
+  },
+  {
+    "Name": "KUZEY MARMARA",
+    "NormalizedName": "KUZEY MARMARA",
+    "Category": "Ulasim",
+    "Id": 316
+  },
+  {
+    "Name": "AVRASYA TÜNELİ",
+    "NormalizedName": "AVRASYA TUNELI",
+    "Category": "Ulasim",
+    "Id": 317
+  },
+  {
+    "Name": "OTOYOL",
+    "NormalizedName": "OTOYOL",
+    "Category": "Ulasim",
+    "Id": 318
+  },
+  {
+    "Name": "KÖPRÜ GEÇİŞ",
+    "NormalizedName": "KOPRU GECIS",
+    "Category": "Ulasim",
+    "Id": 319
+  },
+  {
+    "Name": "İSPARK",
+    "NormalizedName": "ISPARK",
+    "Category": "Ulasim",
+    "Id": 320
+  },
+  {
+    "Name": "OTOPARK",
+    "NormalizedName": "OTOPARK",
+    "Category": "Ulasim",
+    "Id": 321
+  },
+  {
+    "Name": "AUTOPARK",
+    "NormalizedName": "AUTOPARK",
+    "Category": "Ulasim",
+    "Id": 322
+  },
+  {
+    "Name": "PARK ET",
+    "NormalizedName": "PARK ET",
+    "Category": "Ulasim",
+    "Id": 323
+  },
+  {
+    "Name": "THY",
+    "NormalizedName": "THY",
+    "Category": "Ulasim",
+    "Id": 324
+  },
+  {
+    "Name": "TÜRK HAVA YOLLARI",
+    "NormalizedName": "TURK HAVA YOLLARI",
+    "Category": "Ulasim",
+    "Id": 325
+  },
+  {
+    "Name": "PEGASUS",
+    "NormalizedName": "PEGASUS",
+    "Category": "Ulasim",
+    "Id": 326
+  },
+  {
+    "Name": "FLYPGS",
+    "NormalizedName": "FLYPGS",
+    "Category": "Ulasim",
+    "Id": 327
+  },
+  {
+    "Name": "AJET",
+    "NormalizedName": "AJET",
+    "Category": "Ulasim",
+    "Id": 328
+  },
+  {
+    "Name": "ANADOLUJET",
+    "NormalizedName": "ANADOLUJET",
+    "Category": "Ulasim",
+    "Id": 329
+  },
+  {
+    "Name": "SUNEXPRESS",
+    "NormalizedName": "SUNEXPRESS",
+    "Category": "Ulasim",
+    "Id": 330
+  },
+  {
+    "Name": "ENUYGUN",
+    "NormalizedName": "ENUYGUN",
+    "Category": "Ulasim",
+    "Id": 331
+  },
+  {
+    "Name": "OBİLET",
+    "NormalizedName": "OBILET",
+    "Category": "Ulasim",
+    "Id": 332
+  },
+  {
+    "Name": "BILET.COM",
+    "NormalizedName": "BILET.COM",
+    "Category": "Ulasim",
+    "Id": 333
+  },
+  {
+    "Name": "METRO TURIZM",
+    "NormalizedName": "METRO TURIZM",
+    "Category": "Ulasim",
+    "Id": 334
+  },
+  {
+    "Name": "KAMİL KOÇ",
+    "NormalizedName": "KAMIL KOC",
+    "Category": "Ulasim",
+    "Id": 335
+  },
+  {
+    "Name": "KÂMİL KOÇ",
+    "NormalizedName": "KÂMIL KOC",
+    "Category": "Ulasim",
+    "Id": 336
+  },
+  {
+    "Name": "PAMUKKALE TURIZM",
+    "NormalizedName": "PAMUKKALE TURIZM",
+    "Category": "Ulasim",
+    "Id": 337
+  },
+  {
+    "Name": "VARAN",
+    "NormalizedName": "VARAN",
+    "Category": "Ulasim",
+    "Id": 338
+  },
+  {
+    "Name": "NİLÜFER TURİZM",
+    "NormalizedName": "NILUFER TURIZM",
+    "Category": "Ulasim",
+    "Id": 339
+  },
+  {
+    "Name": "ALİ OSMAN ULUSOY",
+    "NormalizedName": "ALI OSMAN ULUSOY",
+    "Category": "Ulasim",
+    "Id": 340
+  },
+  {
+    "Name": "SÜHA TURİZM",
+    "NormalizedName": "SUHA TURIZM",
+    "Category": "Ulasim",
+    "Id": 341
+  },
+  {
+    "Name": "OTOBÜS",
+    "NormalizedName": "OTOBUS",
+    "Category": "Ulasim",
+    "Id": 342
+  },
+  {
+    "Name": "OTOGAR",
+    "NormalizedName": "OTOGAR",
+    "Category": "Ulasim",
+    "Id": 343
+  },
+  {
+    "Name": "AIRPORT",
+    "NormalizedName": "AIRPORT",
+    "Category": "Ulasim",
+    "Id": 344
+  },
+  {
+    "Name": "HAVAŞ",
+    "NormalizedName": "HAVAS",
+    "Category": "Ulasim",
+    "Id": 345
+  },
+  {
+    "Name": "HAVABÜS",
+    "NormalizedName": "HAVABUS",
+    "Category": "Ulasim",
+    "Id": 346
+  },
+  {
+    "Name": "LPG",
+    "NormalizedName": "LPG",
+    "Category": "Ulasim",
+    "Id": 347
+  },
+  {
+    "Name": "ŞARJ İSTASYONU",
+    "NormalizedName": "SARJ ISTASYONU",
+    "Category": "Ulasim",
+    "Id": 348
+  },
+  {
+    "Name": "ŞARJ",
+    "NormalizedName": "SARJ",
+    "Category": "Ulasim",
+    "Id": 349
+  },
+  {
+    "Name": "ELEKTRİKLİ ŞARJ",
+    "NormalizedName": "ELEKTRIKLI SARJ",
+    "Category": "Ulasim",
+    "Id": 350
+  },
+  {
+    "Name": "CAR PARK",
+    "NormalizedName": "CAR PARK",
+    "Category": "Ulasim",
+    "Id": 351
+  },
+  {
+    "Name": "VALE",
+    "NormalizedName": "VALE",
+    "Category": "Ulasim",
+    "Id": 352
+  },
+  {
+    "Name": "PARK ALANI",
+    "NormalizedName": "PARK ALANI",
+    "Category": "Ulasim",
+    "Id": 353
+  },
+  {
+    "Name": "TAKSİCİ",
+    "NormalizedName": "TAKSICI",
+    "Category": "Ulasim",
+    "Id": 354
+  },
+  {
+    "Name": "DOLMUŞ",
+    "NormalizedName": "DOLMUS",
+    "Category": "Ulasim",
+    "Id": 355
+  },
+  {
+    "Name": "MİNİBÜS",
+    "NormalizedName": "MINIBUS",
+    "Category": "Ulasim",
+    "Id": 356
+  },
+  {
+    "Name": "SERVİS",
+    "NormalizedName": "SERVIS",
+    "Category": "Ulasim",
+    "Id": 357
+  },
+  {
+    "Name": "TAŞIMACILIK",
+    "NormalizedName": "TASIMACILIK",
+    "Category": "Ulasim",
+    "Id": 358
+  },
+  {
+    "Name": "ULAŞIM",
+    "NormalizedName": "ULASIM",
+    "Category": "Ulasim",
+    "Id": 359
+  },
+  {
+    "Name": "SEYAHAT",
+    "NormalizedName": "SEYAHAT",
+    "Category": "Ulasim",
+    "Id": 360
+  },
+  {
+    "Name": "BİLET",
+    "NormalizedName": "BILET",
+    "Category": "Ulasim",
+    "Id": 361
+  },
+  {
+    "Name": "TURİZM",
+    "NormalizedName": "TURIZM",
+    "Category": "Ulasim",
+    "Id": 362
+  },
+  {
+    "Name": "ACENTE",
+    "NormalizedName": "ACENTE",
+    "Category": "Ulasim",
+    "Id": 363
+  },
+  {
+    "Name": "ACENTASI",
+    "NormalizedName": "ACENTASI",
+    "Category": "Ulasim",
+    "Id": 364
+  },
+  {
+    "Name": "HAVALİMAN",
+    "NormalizedName": "HAVALIMAN",
+    "Category": "Ulasim",
+    "Id": 365
+  },
+  {
+    "Name": "TERMİNAL",
+    "NormalizedName": "TERMINAL",
+    "Category": "Ulasim",
+    "Id": 366
+  },
+  {
+    "Name": "HAVALİMANI OTOPARK",
+    "NormalizedName": "HAVALIMANI OTOPARK",
+    "Category": "Ulasim",
+    "Id": 367
+  },
+  {
+    "Name": "ARAÇ KİRALAMA",
+    "NormalizedName": "ARAC KIRALAMA",
+    "Category": "Ulasim",
+    "Id": 368
+  },
+  {
+    "Name": "CAR RENTAL",
+    "NormalizedName": "CAR RENTAL",
+    "Category": "Ulasim",
+    "Id": 369
+  },
+  {
+    "Name": "OTO YIKAMA",
+    "NormalizedName": "OTO YIKAMA",
+    "Category": "Ulasim",
+    "Id": 370
+  },
+  {
+    "Name": "CAR WASH",
+    "NormalizedName": "CAR WASH",
+    "Category": "Ulasim",
+    "Id": 371
+  },
+  {
+    "Name": "OTO KUAFÖR",
+    "NormalizedName": "OTO KUAFOR",
+    "Category": "Ulasim",
+    "Id": 372
+  },
+  {
+    "Name": "SELF SERVIS YIKAMA",
+    "NormalizedName": "SELF SERVIS YIKAMA",
+    "Category": "Ulasim",
+    "Id": 373
+  },
+  {
+    "Name": "LASTİK",
+    "NormalizedName": "LASTIK",
+    "Category": "Ulasim",
+    "Id": 374
+  },
+  {
+    "Name": "LASTİKÇİ",
+    "NormalizedName": "LASTIKCI",
+    "Category": "Ulasim",
+    "Id": 375
+  },
+  {
+    "Name": "OTO LASTİK",
+    "NormalizedName": "OTO LASTIK",
+    "Category": "Ulasim",
+    "Id": 376
+  },
+  {
+    "Name": "ROT BALANS",
+    "NormalizedName": "ROT BALANS",
+    "Category": "Ulasim",
+    "Id": 377
+  },
+  {
+    "Name": "JANT",
+    "NormalizedName": "JANT",
+    "Category": "Ulasim",
+    "Id": 378
+  },
+  {
+    "Name": "OTO SERVİS",
+    "NormalizedName": "OTO SERVIS",
+    "Category": "Ulasim",
+    "Id": 379
+  },
+  {
+    "Name": "OTO TAMİR",
+    "NormalizedName": "OTO TAMIR",
+    "Category": "Ulasim",
+    "Id": 380
+  },
+  {
+    "Name": "OTO BAKIM",
+    "NormalizedName": "OTO BAKIM",
+    "Category": "Ulasim",
+    "Id": 381
+  },
+  {
+    "Name": "YEDEK PARÇA",
+    "NormalizedName": "YEDEK PARCA",
+    "Category": "Ulasim",
+    "Id": 382
+  },
+  {
+    "Name": "KAPORTA",
+    "NormalizedName": "KAPORTA",
+    "Category": "Ulasim",
+    "Id": 383
+  },
+  {
+    "Name": "EGZOZ",
+    "NormalizedName": "EGZOZ",
+    "Category": "Ulasim",
+    "Id": 384
+  },
+  {
+    "Name": "GEÇİŞ ÜCRETİ",
+    "NormalizedName": "GECIS UCRETI",
+    "Category": "Ulasim",
+    "Id": 385
+  },
+  {
+    "Name": "KGM GECIS",
+    "NormalizedName": "KGM GECIS",
+    "Category": "Ulasim",
+    "Id": 386
+  },
+  {
+    "Name": "DENİZ OTOBÜSÜ",
+    "NormalizedName": "DENIZ OTOBUSU",
+    "Category": "Ulasim",
+    "Id": 387
+  },
+  {
+    "Name": "MOTOR İSKELE",
+    "NormalizedName": "MOTOR ISKELE",
+    "Category": "Ulasim",
+    "Id": 388
+  },
+  {
+    "Name": "ISKELE",
+    "NormalizedName": "ISKELE",
+    "Category": "Ulasim",
+    "Id": 389
+  },
+  {
+    "Name": "METRO",
+    "NormalizedName": "METRO",
+    "Category": "Ulasim",
+    "Id": 390
+  },
+  {
+    "Name": "TREN",
+    "NormalizedName": "TREN",
+    "Category": "Ulasim",
+    "Id": 391
+  },
+  {
+    "Name": "YHT",
+    "NormalizedName": "YHT",
+    "Category": "Ulasim",
+    "Id": 392
+  },
+  {
+    "Name": "ZARA",
+    "NormalizedName": "ZARA",
+    "Category": "Giyim",
+    "Id": 393
+  },
+  {
+    "Name": "TRENDYOL MILLA",
+    "NormalizedName": "TRENDYOL MILLA",
+    "Category": "Giyim",
+    "Id": 394
+  },
+  {
+    "Name": "H&M",
+    "NormalizedName": "H&M",
+    "Category": "Giyim",
+    "Id": 395
+  },
+  {
+    "Name": "MASSIMO DUTTI",
+    "NormalizedName": "MASSIMO DUTTI",
+    "Category": "Giyim",
+    "Id": 396
+  },
+  {
+    "Name": "BERSHKA",
+    "NormalizedName": "BERSHKA",
+    "Category": "Giyim",
+    "Id": 397
+  },
+  {
+    "Name": "PULL&BEAR",
+    "NormalizedName": "PULL&BEAR",
+    "Category": "Giyim",
+    "Id": 398
+  },
+  {
+    "Name": "PULL AND BEAR",
+    "NormalizedName": "PULL AND BEAR",
+    "Category": "Giyim",
+    "Id": 399
+  },
+  {
+    "Name": "STRADIVARIUS",
+    "NormalizedName": "STRADIVARIUS",
+    "Category": "Giyim",
+    "Id": 400
+  },
+  {
+    "Name": "OYSHO",
+    "NormalizedName": "OYSHO",
+    "Category": "Giyim",
+    "Id": 401
+  },
+  {
+    "Name": "MANGO",
+    "NormalizedName": "MANGO",
+    "Category": "Giyim",
+    "Id": 402
+  },
+  {
+    "Name": "LC WAIKIKI",
+    "NormalizedName": "LC WAIKIKI",
+    "Category": "Giyim",
+    "Id": 403
+  },
+  {
+    "Name": "LCW",
+    "NormalizedName": "LCW",
+    "Category": "Giyim",
+    "Id": 404
+  },
+  {
+    "Name": "KOTON",
+    "NormalizedName": "KOTON",
+    "Category": "Giyim",
+    "Id": 405
+  },
+  {
+    "Name": "DEFACTO",
+    "NormalizedName": "DEFACTO",
+    "Category": "Giyim",
+    "Id": 406
+  },
+  {
+    "Name": "MAVİ",
+    "NormalizedName": "MAVI",
+    "Category": "Giyim",
+    "Id": 407
+  },
+  {
+    "Name": "BOYNER",
+    "NormalizedName": "BOYNER",
+    "Category": "Giyim",
+    "Id": 408
+  },
+  {
+    "Name": "BEYMEN",
+    "NormalizedName": "BEYMEN",
+    "Category": "Giyim",
+    "Id": 409
+  },
+  {
+    "Name": "BEYMEN CLUB",
+    "NormalizedName": "BEYMEN CLUB",
+    "Category": "Giyim",
+    "Id": 410
+  },
+  {
+    "Name": "VAKKO",
+    "NormalizedName": "VAKKO",
+    "Category": "Giyim",
+    "Id": 411
+  },
+  {
+    "Name": "VAKKORAMA",
+    "NormalizedName": "VAKKORAMA",
+    "Category": "Giyim",
+    "Id": 412
+  },
+  {
+    "Name": "İPEKYOL",
+    "NormalizedName": "IPEKYOL",
+    "Category": "Giyim",
+    "Id": 413
+  },
+  {
+    "Name": "TWIST",
+    "NormalizedName": "TWIST",
+    "Category": "Giyim",
+    "Id": 414
+  },
+  {
+    "Name": "MACHKA",
+    "NormalizedName": "MACHKA",
+    "Category": "Giyim",
+    "Id": 415
+  },
+  {
+    "Name": "NETWORK",
+    "NormalizedName": "NETWORK",
+    "Category": "Giyim",
+    "Id": 416
+  },
+  {
+    "Name": "FABRIKA",
+    "NormalizedName": "FABRIKA",
+    "Category": "Giyim",
+    "Id": 417
+  },
+  {
+    "Name": "YARGICI",
+    "NormalizedName": "YARGICI",
+    "Category": "Giyim",
+    "Id": 418
+  },
+  {
+    "Name": "SARAR",
+    "NormalizedName": "SARAR",
+    "Category": "Giyim",
+    "Id": 419
+  },
+  {
+    "Name": "KIP",
+    "NormalizedName": "KIP",
+    "Category": "Giyim",
+    "Id": 420
+  },
+  {
+    "Name": "DAMAT",
+    "NormalizedName": "DAMAT",
+    "Category": "Giyim",
+    "Id": 421
+  },
+  {
+    "Name": "TWEEN",
+    "NormalizedName": "TWEEN",
+    "Category": "Giyim",
+    "Id": 422
+  },
+  {
+    "Name": "D'S DAMAT",
+    "NormalizedName": "D'S DAMAT",
+    "Category": "Giyim",
+    "Id": 423
+  },
+  {
+    "Name": "ALTINYILDIZ",
+    "NormalizedName": "ALTINYILDIZ",
+    "Category": "Giyim",
+    "Id": 424
+  },
+  {
+    "Name": "COLIN'S",
+    "NormalizedName": "COLIN'S",
+    "Category": "Giyim",
+    "Id": 425
+  },
+  {
+    "Name": "LOFT",
+    "NormalizedName": "LOFT",
+    "Category": "Giyim",
+    "Id": 426
+  },
+  {
+    "Name": "LTB",
+    "NormalizedName": "LTB",
+    "Category": "Giyim",
+    "Id": 427
+  },
+  {
+    "Name": "MUDO",
+    "NormalizedName": "MUDO",
+    "Category": "Giyim",
+    "Id": 428
+  },
+  {
+    "Name": "MUDO CITY",
+    "NormalizedName": "MUDO CITY",
+    "Category": "Giyim",
+    "Id": 429
+  },
+  {
+    "Name": "NAUTICA",
+    "NormalizedName": "NAUTICA",
+    "Category": "Giyim",
+    "Id": 430
+  },
+  {
+    "Name": "GANT",
+    "NormalizedName": "GANT",
+    "Category": "Giyim",
+    "Id": 431
+  },
+  {
+    "Name": "LACOSTE",
+    "NormalizedName": "LACOSTE",
+    "Category": "Giyim",
+    "Id": 432
+  },
+  {
+    "Name": "TOMMY HILFIGER",
+    "NormalizedName": "TOMMY HILFIGER",
+    "Category": "Giyim",
+    "Id": 433
+  },
+  {
+    "Name": "CALVIN KLEIN",
+    "NormalizedName": "CALVIN KLEIN",
+    "Category": "Giyim",
+    "Id": 434
+  },
+  {
+    "Name": "LEVI'S",
+    "NormalizedName": "LEVI'S",
+    "Category": "Giyim",
+    "Id": 435
+  },
+  {
+    "Name": "DIESEL",
+    "NormalizedName": "DIESEL",
+    "Category": "Giyim",
+    "Id": 436
+  },
+  {
+    "Name": "GUESS",
+    "NormalizedName": "GUESS",
+    "Category": "Giyim",
+    "Id": 437
+  },
+  {
+    "Name": "GAP",
+    "NormalizedName": "GAP",
+    "Category": "Giyim",
+    "Id": 438
+  },
+  {
+    "Name": "SUPERDRY",
+    "NormalizedName": "SUPERDRY",
+    "Category": "Giyim",
+    "Id": 439
+  },
+  {
+    "Name": "PENTİ",
+    "NormalizedName": "PENTI",
+    "Category": "Giyim",
+    "Id": 440
+  },
+  {
+    "Name": "SUWEN",
+    "NormalizedName": "SUWEN",
+    "Category": "Giyim",
+    "Id": 441
+  },
+  {
+    "Name": "CALZEDONIA",
+    "NormalizedName": "CALZEDONIA",
+    "Category": "Giyim",
+    "Id": 442
+  },
+  {
+    "Name": "INTIMISSIMI",
+    "NormalizedName": "INTIMISSIMI",
+    "Category": "Giyim",
+    "Id": 443
+  },
+  {
+    "Name": "VICTORIA SECRET",
+    "NormalizedName": "VICTORIA SECRET",
+    "Category": "Giyim",
+    "Id": 444
+  },
+  {
+    "Name": "VICTORIA'S SECRET",
+    "NormalizedName": "VICTORIA'S SECRET",
+    "Category": "Giyim",
+    "Id": 445
+  },
+  {
+    "Name": "DAĞI",
+    "NormalizedName": "DAGI",
+    "Category": "Giyim",
+    "Id": 446
+  },
+  {
+    "Name": "KOM",
+    "NormalizedName": "KOM",
+    "Category": "Giyim",
+    "Id": 447
+  },
+  {
+    "Name": "ADIDAS",
+    "NormalizedName": "ADIDAS",
+    "Category": "Giyim",
+    "Id": 448
+  },
+  {
+    "Name": "NIKE",
+    "NormalizedName": "NIKE",
+    "Category": "Giyim",
+    "Id": 449
+  },
+  {
+    "Name": "PUMA",
+    "NormalizedName": "PUMA",
+    "Category": "Giyim",
+    "Id": 450
+  },
+  {
+    "Name": "SKECHERS",
+    "NormalizedName": "SKECHERS",
+    "Category": "Giyim",
+    "Id": 451
+  },
+  {
+    "Name": "UNDER ARMOUR",
+    "NormalizedName": "UNDER ARMOUR",
+    "Category": "Giyim",
+    "Id": 452
+  },
+  {
+    "Name": "DECATHLON",
+    "NormalizedName": "DECATHLON",
+    "Category": "Giyim",
+    "Id": 453
+  },
+  {
+    "Name": "NEW BALANCE",
+    "NormalizedName": "NEW BALANCE",
+    "Category": "Giyim",
+    "Id": 454
+  },
+  {
+    "Name": "REEBOK",
+    "NormalizedName": "REEBOK",
+    "Category": "Giyim",
+    "Id": 455
+  },
+  {
+    "Name": "ASICS",
+    "NormalizedName": "ASICS",
+    "Category": "Giyim",
+    "Id": 456
+  },
+  {
+    "Name": "VANS",
+    "NormalizedName": "VANS",
+    "Category": "Giyim",
+    "Id": 457
+  },
+  {
+    "Name": "CONVERSE",
+    "NormalizedName": "CONVERSE",
+    "Category": "Giyim",
+    "Id": 458
+  },
+  {
+    "Name": "THE NORTH FACE",
+    "NormalizedName": "THE NORTH FACE",
+    "Category": "Giyim",
+    "Id": 459
+  },
+  {
+    "Name": "COLUMBIA",
+    "NormalizedName": "COLUMBIA",
+    "Category": "Giyim",
+    "Id": 460
+  },
+  {
+    "Name": "SALOMON",
+    "NormalizedName": "SALOMON",
+    "Category": "Giyim",
+    "Id": 461
+  },
+  {
+    "Name": "TIMBERLAND",
+    "NormalizedName": "TIMBERLAND",
+    "Category": "Giyim",
+    "Id": 462
+  },
+  {
+    "Name": "HUMMEL",
+    "NormalizedName": "HUMMEL",
+    "Category": "Giyim",
+    "Id": 463
+  },
+  {
+    "Name": "KAPPA",
+    "NormalizedName": "KAPPA",
+    "Category": "Giyim",
+    "Id": 464
+  },
+  {
+    "Name": "LESCON",
+    "NormalizedName": "LESCON",
+    "Category": "Giyim",
+    "Id": 465
+  },
+  {
+    "Name": "SPORTIVE",
+    "NormalizedName": "SPORTIVE",
+    "Category": "Giyim",
+    "Id": 466
+  },
+  {
+    "Name": "SNEAKS UP",
+    "NormalizedName": "SNEAKS UP",
+    "Category": "Giyim",
+    "Id": 467
+  },
+  {
+    "Name": "SUPERSTEP",
+    "NormalizedName": "SUPERSTEP",
+    "Category": "Giyim",
+    "Id": 468
+  },
+  {
+    "Name": "IN STREET",
+    "NormalizedName": "IN STREET",
+    "Category": "Giyim",
+    "Id": 469
+  },
+  {
+    "Name": "INTERSPORT",
+    "NormalizedName": "INTERSPORT",
+    "Category": "Giyim",
+    "Id": 470
+  },
+  {
+    "Name": "FLO",
+    "NormalizedName": "FLO",
+    "Category": "Giyim",
+    "Id": 471
+  },
+  {
+    "Name": "DEICHMANN",
+    "NormalizedName": "DEICHMANN",
+    "Category": "Giyim",
+    "Id": 472
+  },
+  {
+    "Name": "AYKOP",
+    "NormalizedName": "AYKOP",
+    "Category": "Giyim",
+    "Id": 473
+  },
+  {
+    "Name": "ELLE SHOES",
+    "NormalizedName": "ELLE SHOES",
+    "Category": "Giyim",
+    "Id": 474
+  },
+  {
+    "Name": "KEMAL TANCA",
+    "NormalizedName": "KEMAL TANCA",
+    "Category": "Giyim",
+    "Id": 475
+  },
+  {
+    "Name": "DERIMOD",
+    "NormalizedName": "DERIMOD",
+    "Category": "Giyim",
+    "Id": 476
+  },
+  {
+    "Name": "DESA",
+    "NormalizedName": "DESA",
+    "Category": "Giyim",
+    "Id": 477
+  },
+  {
+    "Name": "TERGAN",
+    "NormalizedName": "TERGAN",
+    "Category": "Giyim",
+    "Id": 478
+  },
+  {
+    "Name": "GREYDER",
+    "NormalizedName": "GREYDER",
+    "Category": "Giyim",
+    "Id": 479
+  },
+  {
+    "Name": "SAMSONITE",
+    "NormalizedName": "SAMSONITE",
+    "Category": "Giyim",
+    "Id": 480
+  },
+  {
+    "Name": "DİVARESE",
+    "NormalizedName": "DIVARESE",
+    "Category": "Giyim",
+    "Id": 481
+  },
+  {
+    "Name": "HOTİÇ",
+    "NormalizedName": "HOTIC",
+    "Category": "Giyim",
+    "Id": 482
+  },
+  {
+    "Name": "İNCİ",
+    "NormalizedName": "INCI",
+    "Category": "Giyim",
+    "Id": 483
+  },
+  {
+    "Name": "AYAKKABI",
+    "NormalizedName": "AYAKKABI",
+    "Category": "Giyim",
+    "Id": 484
+  },
+  {
+    "Name": "AYAKKABICI",
+    "NormalizedName": "AYAKKABICI",
+    "Category": "Giyim",
+    "Id": 485
+  },
+  {
+    "Name": "GİYİM",
+    "NormalizedName": "GIYIM",
+    "Category": "Giyim",
+    "Id": 486
+  },
+  {
+    "Name": "TEKSTİL",
+    "NormalizedName": "TEKSTIL",
+    "Category": "Giyim",
+    "Id": 487
+  },
+  {
+    "Name": "TERZİ",
+    "NormalizedName": "TERZI",
+    "Category": "Giyim",
+    "Id": 488
+  },
+  {
+    "Name": "KUMAŞ",
+    "NormalizedName": "KUMAS",
+    "Category": "Giyim",
+    "Id": 489
+  },
+  {
+    "Name": "BUTİK",
+    "NormalizedName": "BUTIK",
+    "Category": "Giyim",
+    "Id": 490
+  },
+  {
+    "Name": "MODA",
+    "NormalizedName": "MODA",
+    "Category": "Giyim",
+    "Id": 491
+  },
+  {
+    "Name": "MAĞAZA",
+    "NormalizedName": "MAGAZA",
+    "Category": "Giyim",
+    "Id": 492
+  },
+  {
+    "Name": "TEKSTİL SANAYİ",
+    "NormalizedName": "TEKSTIL SANAYI",
+    "Category": "Giyim",
+    "Id": 493
+  },
+  {
+    "Name": "BUTİĞİ",
+    "NormalizedName": "BUTIGI",
+    "Category": "Giyim",
+    "Id": 494
+  },
+  {
+    "Name": "KUNDURA",
+    "NormalizedName": "KUNDURA",
+    "Category": "Giyim",
+    "Id": 495
+  },
+  {
+    "Name": "KUNDURACI",
+    "NormalizedName": "KUNDURACI",
+    "Category": "Giyim",
+    "Id": 496
+  },
+  {
+    "Name": "AYAKKABICILIK",
+    "NormalizedName": "AYAKKABICILIK",
+    "Category": "Giyim",
+    "Id": 497
+  },
+  {
+    "Name": "AYAKKABI DÜNYASI",
+    "NormalizedName": "AYAKKABI DUNYASI",
+    "Category": "Giyim",
+    "Id": 498
+  },
+  {
+    "Name": "ERKEK GİYİM",
+    "NormalizedName": "ERKEK GIYIM",
+    "Category": "Giyim",
+    "Id": 499
+  },
+  {
+    "Name": "KADIN GİYİM",
+    "NormalizedName": "KADIN GIYIM",
+    "Category": "Giyim",
+    "Id": 500
+  },
+  {
+    "Name": "ÇOCUK GİYİM",
+    "NormalizedName": "COCUK GIYIM",
+    "Category": "Giyim",
+    "Id": 501
+  },
+  {
+    "Name": "DİKİMEVİ",
+    "NormalizedName": "DIKIMEVI",
+    "Category": "Giyim",
+    "Id": 502
+  },
+  {
+    "Name": "DERİ",
+    "NormalizedName": "DERI",
+    "Category": "Giyim",
+    "Id": 503
+  },
+  {
+    "Name": "DERİCİ",
+    "NormalizedName": "DERICI",
+    "Category": "Giyim",
+    "Id": 504
+  },
+  {
+    "Name": "DERİ KONFEKSİYON",
+    "NormalizedName": "DERI KONFEKSIYON",
+    "Category": "Giyim",
+    "Id": 505
+  },
+  {
+    "Name": "KÜRKLÜ",
+    "NormalizedName": "KURKLU",
+    "Category": "Giyim",
+    "Id": 506
+  },
+  {
+    "Name": "TRİKO",
+    "NormalizedName": "TRIKO",
+    "Category": "Giyim",
+    "Id": 507
+  },
+  {
+    "Name": "TRİKOTAJ",
+    "NormalizedName": "TRIKOTAJ",
+    "Category": "Giyim",
+    "Id": 508
+  },
+  {
+    "Name": "KONFEKSİYON",
+    "NormalizedName": "KONFEKSIYON",
+    "Category": "Giyim",
+    "Id": 509
+  },
+  {
+    "Name": "ÇANTA",
+    "NormalizedName": "CANTA",
+    "Category": "Giyim",
+    "Id": 510
+  },
+  {
+    "Name": "ÇANTACI",
+    "NormalizedName": "CANTACI",
+    "Category": "Giyim",
+    "Id": 511
+  },
+  {
+    "Name": "SARACİYE",
+    "NormalizedName": "SARACIYE",
+    "Category": "Giyim",
+    "Id": 512
+  },
+  {
+    "Name": "VALİZ",
+    "NormalizedName": "VALIZ",
+    "Category": "Giyim",
+    "Id": 513
+  },
+  {
+    "Name": "İÇ GİYİM",
+    "NormalizedName": "IC GIYIM",
+    "Category": "Giyim",
+    "Id": 514
+  },
+  {
+    "Name": "ÇAMAŞIR",
+    "NormalizedName": "CAMASIR",
+    "Category": "Giyim",
+    "Id": 515
+  },
+  {
+    "Name": "İÇ ÇAMAŞIRI",
+    "NormalizedName": "IC CAMASIRI",
+    "Category": "Giyim",
+    "Id": 516
+  },
+  {
+    "Name": "KORSE",
+    "NormalizedName": "KORSE",
+    "Category": "Giyim",
+    "Id": 517
+  },
+  {
+    "Name": "ÇORAP",
+    "NormalizedName": "CORAP",
+    "Category": "Giyim",
+    "Id": 518
+  },
+  {
+    "Name": "MANİFATURA",
+    "NormalizedName": "MANIFATURA",
+    "Category": "Giyim",
+    "Id": 519
+  },
+  {
+    "Name": "KUMAŞÇI",
+    "NormalizedName": "KUMASCI",
+    "Category": "Giyim",
+    "Id": 520
+  },
+  {
+    "Name": "DÖŞEMELİK",
+    "NormalizedName": "DOSEMELIK",
+    "Category": "Giyim",
+    "Id": 521
+  },
+  {
+    "Name": "MEFRUŞAT",
+    "NormalizedName": "MEFRUSAT",
+    "Category": "Giyim",
+    "Id": 522
+  },
+  {
+    "Name": "PERDE",
+    "NormalizedName": "PERDE",
+    "Category": "Giyim",
+    "Id": 523
+  },
+  {
+    "Name": "PERDECİ",
+    "NormalizedName": "PERDECI",
+    "Category": "Giyim",
+    "Id": 524
+  },
+  {
+    "Name": "GELİNLİK",
+    "NormalizedName": "GELINLIK",
+    "Category": "Giyim",
+    "Id": 525
+  },
+  {
+    "Name": "DAMATLIK",
+    "NormalizedName": "DAMATLIK",
+    "Category": "Giyim",
+    "Id": 526
+  },
+  {
+    "Name": "ABİYE",
+    "NormalizedName": "ABIYE",
+    "Category": "Giyim",
+    "Id": 527
+  },
+  {
+    "Name": "BİJUTERİ",
+    "NormalizedName": "BIJUTERI",
+    "Category": "Giyim",
+    "Id": 528
+  },
+  {
+    "Name": "TAKI",
+    "NormalizedName": "TAKI",
+    "Category": "Giyim",
+    "Id": 529
+  },
+  {
+    "Name": "AKSESUAR",
+    "NormalizedName": "AKSESUAR",
+    "Category": "Giyim",
+    "Id": 530
+  },
+  {
+    "Name": "SPOR GİYİM",
+    "NormalizedName": "SPOR GIYIM",
+    "Category": "Giyim",
+    "Id": 531
+  },
+  {
+    "Name": "OUTLET",
+    "NormalizedName": "OUTLET",
+    "Category": "Giyim",
+    "Id": 532
+  },
+  {
+    "Name": "GİYİM MAĞAZASI",
+    "NormalizedName": "GIYIM MAGAZASI",
+    "Category": "Giyim",
+    "Id": 533
+  },
+  {
+    "Name": "NETFLIX",
+    "NormalizedName": "NETFLIX",
+    "Category": "Eglence",
+    "Id": 534
+  },
+  {
+    "Name": "SPOTIFY",
+    "NormalizedName": "SPOTIFY",
+    "Category": "Eglence",
+    "Id": 535
+  },
+  {
+    "Name": "YOUTUBE",
+    "NormalizedName": "YOUTUBE",
+    "Category": "Eglence",
+    "Id": 536
+  },
+  {
+    "Name": "APPLE.COM",
+    "NormalizedName": "APPLE.COM",
+    "Category": "Eglence",
+    "Id": 537
+  },
+  {
+    "Name": "ITUNES",
+    "NormalizedName": "ITUNES",
+    "Category": "Eglence",
+    "Id": 538
+  },
+  {
+    "Name": "APP STORE",
+    "NormalizedName": "APP STORE",
+    "Category": "Eglence",
+    "Id": 539
+  },
+  {
+    "Name": "GOOGLE PLAY",
+    "NormalizedName": "GOOGLE PLAY",
+    "Category": "Eglence",
+    "Id": 540
+  },
+  {
+    "Name": "GOOGLE STORAGE",
+    "NormalizedName": "GOOGLE STORAGE",
+    "Category": "Eglence",
+    "Id": 541
+  },
+  {
+    "Name": "GOOGLE SERVICES",
+    "NormalizedName": "GOOGLE SERVICES",
+    "Category": "Eglence",
+    "Id": 542
+  },
+  {
+    "Name": "DISNEY",
+    "NormalizedName": "DISNEY",
+    "Category": "Eglence",
+    "Id": 543
+  },
+  {
+    "Name": "AMAZON PRIME",
+    "NormalizedName": "AMAZON PRIME",
+    "Category": "Eglence",
+    "Id": 544
+  },
+  {
+    "Name": "PRIME VIDEO",
+    "NormalizedName": "PRIME VIDEO",
+    "Category": "Eglence",
+    "Id": 545
+  },
+  {
+    "Name": "EXXEN",
+    "NormalizedName": "EXXEN",
+    "Category": "Eglence",
+    "Id": 546
+  },
+  {
+    "Name": "GAIN",
+    "NormalizedName": "GAIN",
+    "Category": "Eglence",
+    "Id": 547
+  },
+  {
+    "Name": "BLUTV",
+    "NormalizedName": "BLUTV",
+    "Category": "Eglence",
+    "Id": 548
+  },
+  {
+    "Name": "BEIN CONNECT",
+    "NormalizedName": "BEIN CONNECT",
+    "Category": "Eglence",
+    "Id": 549
+  },
+  {
+    "Name": "TOD TV",
+    "NormalizedName": "TOD TV",
+    "Category": "Eglence",
+    "Id": 550
+  },
+  {
+    "Name": "S SPORT",
+    "NormalizedName": "S SPORT",
+    "Category": "Eglence",
+    "Id": 551
+  },
+  {
+    "Name": "MUBI",
+    "NormalizedName": "MUBI",
+    "Category": "Eglence",
+    "Id": 552
+  },
+  {
+    "Name": "DEEZER",
+    "NormalizedName": "DEEZER",
+    "Category": "Eglence",
+    "Id": 553
+  },
+  {
+    "Name": "TIDAL",
+    "NormalizedName": "TIDAL",
+    "Category": "Eglence",
+    "Id": 554
+  },
+  {
+    "Name": "STORYTEL",
+    "NormalizedName": "STORYTEL",
+    "Category": "Eglence",
+    "Id": 555
+  },
+  {
+    "Name": "AUDIBLE",
+    "NormalizedName": "AUDIBLE",
+    "Category": "Eglence",
+    "Id": 556
+  },
+  {
+    "Name": "STEAM",
+    "NormalizedName": "STEAM",
+    "Category": "Eglence",
+    "Id": 557
+  },
+  {
+    "Name": "VALVE",
+    "NormalizedName": "VALVE",
+    "Category": "Eglence",
+    "Id": 558
+  },
+  {
+    "Name": "PLAYSTATION",
+    "NormalizedName": "PLAYSTATION",
+    "Category": "Eglence",
+    "Id": 559
+  },
+  {
+    "Name": "PSN",
+    "NormalizedName": "PSN",
+    "Category": "Eglence",
+    "Id": 560
+  },
+  {
+    "Name": "SONY INTERACTIVE",
+    "NormalizedName": "SONY INTERACTIVE",
+    "Category": "Eglence",
+    "Id": 561
+  },
+  {
+    "Name": "XBOX",
+    "NormalizedName": "XBOX",
+    "Category": "Eglence",
+    "Id": 562
+  },
+  {
+    "Name": "MICROSOFT STORE",
+    "NormalizedName": "MICROSOFT STORE",
+    "Category": "Eglence",
+    "Id": 563
+  },
+  {
+    "Name": "NINTENDO",
+    "NormalizedName": "NINTENDO",
+    "Category": "Eglence",
+    "Id": 564
+  },
+  {
+    "Name": "EPIC GAMES",
+    "NormalizedName": "EPIC GAMES",
+    "Category": "Eglence",
+    "Id": 565
+  },
+  {
+    "Name": "RIOT GAMES",
+    "NormalizedName": "RIOT GAMES",
+    "Category": "Eglence",
+    "Id": 566
+  },
+  {
+    "Name": "EA GAMES",
+    "NormalizedName": "EA GAMES",
+    "Category": "Eglence",
+    "Id": 567
+  },
+  {
+    "Name": "UBISOFT",
+    "NormalizedName": "UBISOFT",
+    "Category": "Eglence",
+    "Id": 568
+  },
+  {
+    "Name": "BLIZZARD",
+    "NormalizedName": "BLIZZARD",
+    "Category": "Eglence",
+    "Id": 569
+  },
+  {
+    "Name": "BATTLE.NET",
+    "NormalizedName": "BATTLE.NET",
+    "Category": "Eglence",
+    "Id": 570
+  },
+  {
+    "Name": "ROBLOX",
+    "NormalizedName": "ROBLOX",
+    "Category": "Eglence",
+    "Id": 571
+  },
+  {
+    "Name": "TWITCH",
+    "NormalizedName": "TWITCH",
+    "Category": "Eglence",
+    "Id": 572
+  },
+  {
+    "Name": "DISCORD",
+    "NormalizedName": "DISCORD",
+    "Category": "Eglence",
+    "Id": 573
+  },
+  {
+    "Name": "PATREON",
+    "NormalizedName": "PATREON",
+    "Category": "Eglence",
+    "Id": 574
+  },
+  {
+    "Name": "BİLETİX",
+    "NormalizedName": "BILETIX",
+    "Category": "Eglence",
+    "Id": 575
+  },
+  {
+    "Name": "PASSO",
+    "NormalizedName": "PASSO",
+    "Category": "Eglence",
+    "Id": 576
+  },
+  {
+    "Name": "BİLETİNİAL",
+    "NormalizedName": "BILETINIAL",
+    "Category": "Eglence",
+    "Id": 577
+  },
+  {
+    "Name": "BUBİLET",
+    "NormalizedName": "BUBILET",
+    "Category": "Eglence",
+    "Id": 578
+  },
+  {
+    "Name": "PARIBU CINEVERSE",
+    "NormalizedName": "PARIBU CINEVERSE",
+    "Category": "Eglence",
+    "Id": 579
+  },
+  {
+    "Name": "CINEMAXIMUM",
+    "NormalizedName": "CINEMAXIMUM",
+    "Category": "Eglence",
+    "Id": 580
+  },
+  {
+    "Name": "CINEMAPINK",
+    "NormalizedName": "CINEMAPINK",
+    "Category": "Eglence",
+    "Id": 581
+  },
+  {
+    "Name": "PRESTIGE CINEMA",
+    "NormalizedName": "PRESTIGE CINEMA",
+    "Category": "Eglence",
+    "Id": 582
+  },
+  {
+    "Name": "SİNEMA",
+    "NormalizedName": "SINEMA",
+    "Category": "Eglence",
+    "Id": 583
+  },
+  {
+    "Name": "TİYATRO",
+    "NormalizedName": "TIYATRO",
+    "Category": "Eglence",
+    "Id": 584
+  },
+  {
+    "Name": "KONSER",
+    "NormalizedName": "KONSER",
+    "Category": "Eglence",
+    "Id": 585
+  },
+  {
+    "Name": "FESTİVAL",
+    "NormalizedName": "FESTIVAL",
+    "Category": "Eglence",
+    "Id": 586
+  },
+  {
+    "Name": "ETKİNLİK",
+    "NormalizedName": "ETKINLIK",
+    "Category": "Eglence",
+    "Id": 587
+  },
+  {
+    "Name": "MÜZE",
+    "NormalizedName": "MUZE",
+    "Category": "Eglence",
+    "Id": 588
+  },
+  {
+    "Name": "AKVARYUM",
+    "NormalizedName": "AKVARYUM",
+    "Category": "Eglence",
+    "Id": 589
+  },
+  {
+    "Name": "LUNAPARK",
+    "NormalizedName": "LUNAPARK",
+    "Category": "Eglence",
+    "Id": 590
+  },
+  {
+    "Name": "VIAPORT MARINA",
+    "NormalizedName": "VIAPORT MARINA",
+    "Category": "Eglence",
+    "Id": 591
+  },
+  {
+    "Name": "VIALAND",
+    "NormalizedName": "VIALAND",
+    "Category": "Eglence",
+    "Id": 592
+  },
+  {
+    "Name": "THE LAND OF LEGENDS",
+    "NormalizedName": "THE LAND OF LEGENDS",
+    "Category": "Eglence",
+    "Id": 593
+  },
+  {
+    "Name": "BOWLING",
+    "NormalizedName": "BOWLING",
+    "Category": "Eglence",
+    "Id": 594
+  },
+  {
+    "Name": "ESCAPE ROOM",
+    "NormalizedName": "ESCAPE ROOM",
+    "Category": "Eglence",
+    "Id": 595
+  },
+  {
+    "Name": "BİLARDO",
+    "NormalizedName": "BILARDO",
+    "Category": "Eglence",
+    "Id": 596
+  },
+  {
+    "Name": "OYUN PARKI",
+    "NormalizedName": "OYUN PARKI",
+    "Category": "Eglence",
+    "Id": 597
+  },
+  {
+    "Name": "EĞLENCE",
+    "NormalizedName": "EGLENCE",
+    "Category": "Eglence",
+    "Id": 598
+  },
+  {
+    "Name": "OYUN",
+    "NormalizedName": "OYUN",
+    "Category": "Eglence",
+    "Id": 599
+  },
+  {
+    "Name": "D&R",
+    "NormalizedName": "D&R",
+    "Category": "Eglence",
+    "Id": 600
+  },
+  {
+    "Name": "DNR",
+    "NormalizedName": "DNR",
+    "Category": "Eglence",
+    "Id": 601
+  },
+  {
+    "Name": "İDEFİX",
+    "NormalizedName": "IDEFIX",
+    "Category": "Eglence",
+    "Id": 602
+  },
+  {
+    "Name": "KİTAPYURDU",
+    "NormalizedName": "KITAPYURDU",
+    "Category": "Eglence",
+    "Id": 603
+  },
+  {
+    "Name": "BKM KİTAP",
+    "NormalizedName": "BKM KITAP",
+    "Category": "Eglence",
+    "Id": 604
+  },
+  {
+    "Name": "REMZİ KİTABEVİ",
+    "NormalizedName": "REMZI KITABEVI",
+    "Category": "Eglence",
+    "Id": 605
+  },
+  {
+    "Name": "PENGUEN KITABEVI",
+    "NormalizedName": "PENGUEN KITABEVI",
+    "Category": "Eglence",
+    "Id": 606
+  },
+  {
+    "Name": "KİTAP",
+    "NormalizedName": "KITAP",
+    "Category": "Eglence",
+    "Id": 607
+  },
+  {
+    "Name": "KIRTASİYE",
+    "NormalizedName": "KIRTASIYE",
+    "Category": "Eglence",
+    "Id": 608
+  },
+  {
+    "Name": "HOBİ",
+    "NormalizedName": "HOBI",
+    "Category": "Eglence",
+    "Id": 609
+  },
+  {
+    "Name": "TOYZZ SHOP",
+    "NormalizedName": "TOYZZ SHOP",
+    "Category": "Eglence",
+    "Id": 610
+  },
+  {
+    "Name": "ARMAĞAN OYUNCAK",
+    "NormalizedName": "ARMAGAN OYUNCAK",
+    "Category": "Eglence",
+    "Id": 611
+  },
+  {
+    "Name": "LEGO",
+    "NormalizedName": "LEGO",
+    "Category": "Eglence",
+    "Id": 612
+  },
+  {
+    "Name": "CİNE",
+    "NormalizedName": "CINE",
+    "Category": "Eglence",
+    "Id": 613
+  },
+  {
+    "Name": "CINEMA",
+    "NormalizedName": "CINEMA",
+    "Category": "Eglence",
+    "Id": 614
+  },
+  {
+    "Name": "SAHNE",
+    "NormalizedName": "SAHNE",
+    "Category": "Eglence",
+    "Id": 615
+  },
+  {
+    "Name": "ORGANİZASYON",
+    "NormalizedName": "ORGANIZASYON",
+    "Category": "Eglence",
+    "Id": 616
+  },
+  {
+    "Name": "SERGİ",
+    "NormalizedName": "SERGI",
+    "Category": "Eglence",
+    "Id": 617
+  },
+  {
+    "Name": "SANAT GALERİSİ",
+    "NormalizedName": "SANAT GALERISI",
+    "Category": "Eglence",
+    "Id": 618
+  },
+  {
+    "Name": "TEMA PARK",
+    "NormalizedName": "TEMA PARK",
+    "Category": "Eglence",
+    "Id": 619
+  },
+  {
+    "Name": "AQUAPARK",
+    "NormalizedName": "AQUAPARK",
+    "Category": "Eglence",
+    "Id": 620
+  },
+  {
+    "Name": "MACERA PARKI",
+    "NormalizedName": "MACERA PARKI",
+    "Category": "Eglence",
+    "Id": 621
+  },
+  {
+    "Name": "HAYVANAT BAHÇESİ",
+    "NormalizedName": "HAYVANAT BAHCESI",
+    "Category": "Eglence",
+    "Id": 622
+  },
+  {
+    "Name": "OYUN ALANI",
+    "NormalizedName": "OYUN ALANI",
+    "Category": "Eglence",
+    "Id": 623
+  },
+  {
+    "Name": "KARTING",
+    "NormalizedName": "KARTING",
+    "Category": "Eglence",
+    "Id": 624
+  },
+  {
+    "Name": "GO KART",
+    "NormalizedName": "GO KART",
+    "Category": "Eglence",
+    "Id": 625
+  },
+  {
+    "Name": "KAÇIŞ OYUNU",
+    "NormalizedName": "KACIS OYUNU",
+    "Category": "Eglence",
+    "Id": 626
+  },
+  {
+    "Name": "KİTAPÇI",
+    "NormalizedName": "KITAPCI",
+    "Category": "Eglence",
+    "Id": 627
+  },
+  {
+    "Name": "KİTABEVİ",
+    "NormalizedName": "KITABEVI",
+    "Category": "Eglence",
+    "Id": 628
+  },
+  {
+    "Name": "KÜTÜPHANE",
+    "NormalizedName": "KUTUPHANE",
+    "Category": "Eglence",
+    "Id": 629
+  },
+  {
+    "Name": "KIRTASİYECİ",
+    "NormalizedName": "KIRTASIYECI",
+    "Category": "Eglence",
+    "Id": 630
+  },
+  {
+    "Name": "FOTOKOPİ",
+    "NormalizedName": "FOTOKOPI",
+    "Category": "Eglence",
+    "Id": 631
+  },
+  {
+    "Name": "OZALİT",
+    "NormalizedName": "OZALIT",
+    "Category": "Eglence",
+    "Id": 632
+  },
+  {
+    "Name": "BASKI MERKEZİ",
+    "NormalizedName": "BASKI MERKEZI",
+    "Category": "Eglence",
+    "Id": 633
+  },
+  {
+    "Name": "OYUNCAK",
+    "NormalizedName": "OYUNCAK",
+    "Category": "Eglence",
+    "Id": 634
+  },
+  {
+    "Name": "OYUNCAKÇI",
+    "NormalizedName": "OYUNCAKCI",
+    "Category": "Eglence",
+    "Id": 635
+  },
+  {
+    "Name": "HOBİ MARKET",
+    "NormalizedName": "HOBI MARKET",
+    "Category": "Eglence",
+    "Id": 636
+  },
+  {
+    "Name": "MAKET",
+    "NormalizedName": "MAKET",
+    "Category": "Eglence",
+    "Id": 637
+  },
+  {
+    "Name": "SPOR SALONU",
+    "NormalizedName": "SPOR SALONU",
+    "Category": "Eglence",
+    "Id": 638
+  },
+  {
+    "Name": "FITNESS",
+    "NormalizedName": "FITNESS",
+    "Category": "Eglence",
+    "Id": 639
+  },
+  {
+    "Name": "GYM",
+    "NormalizedName": "GYM",
+    "Category": "Eglence",
+    "Id": 640
+  },
+  {
+    "Name": "PİLATES",
+    "NormalizedName": "PILATES",
+    "Category": "Eglence",
+    "Id": 641
+  },
+  {
+    "Name": "YOGA",
+    "NormalizedName": "YOGA",
+    "Category": "Eglence",
+    "Id": 642
+  },
+  {
+    "Name": "STÜDYO",
+    "NormalizedName": "STUDYO",
+    "Category": "Eglence",
+    "Id": 643
+  },
+  {
+    "Name": "CROSSFIT",
+    "NormalizedName": "CROSSFIT",
+    "Category": "Eglence",
+    "Id": 644
+  },
+  {
+    "Name": "DİJİTAL OYUN",
+    "NormalizedName": "DIJITAL OYUN",
+    "Category": "Eglence",
+    "Id": 645
+  },
+  {
+    "Name": "STREAMING",
+    "NormalizedName": "STREAMING",
+    "Category": "Eglence",
+    "Id": 646
+  },
+  {
+    "Name": "DİJİTAL SERVİS",
+    "NormalizedName": "DIJITAL SERVIS",
+    "Category": "Eglence",
+    "Id": 647
+  },
+  {
+    "Name": "DİJİTAL İÇERİK",
+    "NormalizedName": "DIJITAL ICERIK",
+    "Category": "Eglence",
+    "Id": 648
+  },
+  {
+    "Name": "ECZANE",
+    "NormalizedName": "ECZANE",
+    "Category": "Saglik",
+    "Id": 649
+  },
+  {
+    "Name": "PHARMACY",
+    "NormalizedName": "PHARMACY",
+    "Category": "Saglik",
+    "Id": 650
+  },
+  {
+    "Name": "APOTHEKE",
+    "NormalizedName": "APOTHEKE",
+    "Category": "Saglik",
+    "Id": 651
+  },
+  {
+    "Name": "İLAÇ",
+    "NormalizedName": "ILAC",
+    "Category": "Saglik",
+    "Id": 652
+  },
+  {
+    "Name": "MEDİKAL",
+    "NormalizedName": "MEDIKAL",
+    "Category": "Saglik",
+    "Id": 653
+  },
+  {
+    "Name": "MEDICAL",
+    "NormalizedName": "MEDICAL",
+    "Category": "Saglik",
+    "Id": 654
+  },
+  {
+    "Name": "ORTOPEDİ",
+    "NormalizedName": "ORTOPEDI",
+    "Category": "Saglik",
+    "Id": 655
+  },
+  {
+    "Name": "SAĞLIK ÜRÜNLERİ",
+    "NormalizedName": "SAGLIK URUNLERI",
+    "Category": "Saglik",
+    "Id": 656
+  },
+  {
+    "Name": "HASTANE",
+    "NormalizedName": "HASTANE",
+    "Category": "Saglik",
+    "Id": 657
+  },
+  {
+    "Name": "KLİNİK",
+    "NormalizedName": "KLINIK",
+    "Category": "Saglik",
+    "Id": 658
+  },
+  {
+    "Name": "POLİKLİNİK",
+    "NormalizedName": "POLIKLINIK",
+    "Category": "Saglik",
+    "Id": 659
+  },
+  {
+    "Name": "HOSPITAL",
+    "NormalizedName": "HOSPITAL",
+    "Category": "Saglik",
+    "Id": 660
+  },
+  {
+    "Name": "TIP MERKEZİ",
+    "NormalizedName": "TIP MERKEZI",
+    "Category": "Saglik",
+    "Id": 661
+  },
+  {
+    "Name": "SAGLIK OCAK",
+    "NormalizedName": "SAGLIK OCAK",
+    "Category": "Saglik",
+    "Id": 662
+  },
+  {
+    "Name": "SAĞLIK OCAĞI",
+    "NormalizedName": "SAGLIK OCAGI",
+    "Category": "Saglik",
+    "Id": 663
+  },
+  {
+    "Name": "ACIBADEM",
+    "NormalizedName": "ACIBADEM",
+    "Category": "Saglik",
+    "Id": 664
+  },
+  {
+    "Name": "MEMORIAL",
+    "NormalizedName": "MEMORIAL",
+    "Category": "Saglik",
+    "Id": 665
+  },
+  {
+    "Name": "MEDICAL PARK",
+    "NormalizedName": "MEDICAL PARK",
+    "Category": "Saglik",
+    "Id": 666
+  },
+  {
+    "Name": "MEDIPOL",
+    "NormalizedName": "MEDIPOL",
+    "Category": "Saglik",
+    "Id": 667
+  },
+  {
+    "Name": "FLORENCE NIGHTINGALE",
+    "NormalizedName": "FLORENCE NIGHTINGALE",
+    "Category": "Saglik",
+    "Id": 668
+  },
+  {
+    "Name": "LIV HOSPITAL",
+    "NormalizedName": "LIV HOSPITAL",
+    "Category": "Saglik",
+    "Id": 669
+  },
+  {
+    "Name": "GÜVEN HASTANESİ",
+    "NormalizedName": "GUVEN HASTANESI",
+    "Category": "Saglik",
+    "Id": 670
+  },
+  {
+    "Name": "ANADOLU SAĞLIK",
+    "NormalizedName": "ANADOLU SAGLIK",
+    "Category": "Saglik",
+    "Id": 671
+  },
+  {
+    "Name": "DOKTOR",
+    "NormalizedName": "DOKTOR",
+    "Category": "Saglik",
+    "Id": 672
+  },
+  {
+    "Name": "MUAYENEHANE",
+    "NormalizedName": "MUAYENEHANE",
+    "Category": "Saglik",
+    "Id": 673
+  },
+  {
+    "Name": "DİŞ HASTANESİ",
+    "NormalizedName": "DIS HASTANESI",
+    "Category": "Saglik",
+    "Id": 674
+  },
+  {
+    "Name": "DİŞ KLİNİĞİ",
+    "NormalizedName": "DIS KLINIGI",
+    "Category": "Saglik",
+    "Id": 675
+  },
+  {
+    "Name": "DENTAL",
+    "NormalizedName": "DENTAL",
+    "Category": "Saglik",
+    "Id": 676
+  },
+  {
+    "Name": "DENT",
+    "NormalizedName": "DENT",
+    "Category": "Saglik",
+    "Id": 677
+  },
+  {
+    "Name": "DİŞ HEKİMİ",
+    "NormalizedName": "DIS HEKIMI",
+    "Category": "Saglik",
+    "Id": 678
+  },
+  {
+    "Name": "DİŞ TEDAVİ",
+    "NormalizedName": "DIS TEDAVI",
+    "Category": "Saglik",
+    "Id": 679
+  },
+  {
+    "Name": "AĞIZ VE DİŞ",
+    "NormalizedName": "AGIZ VE DIS",
+    "Category": "Saglik",
+    "Id": 680
+  },
+  {
+    "Name": "OPTİK",
+    "NormalizedName": "OPTIK",
+    "Category": "Saglik",
+    "Id": 681
+  },
+  {
+    "Name": "ATASUN",
+    "NormalizedName": "ATASUN",
+    "Category": "Saglik",
+    "Id": 682
+  },
+  {
+    "Name": "GÖZLÜK",
+    "NormalizedName": "GOZLUK",
+    "Category": "Saglik",
+    "Id": 683
+  },
+  {
+    "Name": "LENS",
+    "NormalizedName": "LENS",
+    "Category": "Saglik",
+    "Id": 684
+  },
+  {
+    "Name": "OPTO",
+    "NormalizedName": "OPTO",
+    "Category": "Saglik",
+    "Id": 685
+  },
+  {
+    "Name": "DÜNYAGÖZ",
+    "NormalizedName": "DUNYAGOZ",
+    "Category": "Saglik",
+    "Id": 686
+  },
+  {
+    "Name": "KUDRET GÖZ",
+    "NormalizedName": "KUDRET GOZ",
+    "Category": "Saglik",
+    "Id": 687
+  },
+  {
+    "Name": "VETERİNER",
+    "NormalizedName": "VETERINER",
+    "Category": "Saglik",
+    "Id": 688
+  },
+  {
+    "Name": "VET KLİNİK",
+    "NormalizedName": "VET KLINIK",
+    "Category": "Saglik",
+    "Id": 689
+  },
+  {
+    "Name": "HAYVAN HASTANESİ",
+    "NormalizedName": "HAYVAN HASTANESI",
+    "Category": "Saglik",
+    "Id": 690
+  },
+  {
+    "Name": "PET CLINIC",
+    "NormalizedName": "PET CLINIC",
+    "Category": "Saglik",
+    "Id": 691
+  },
+  {
+    "Name": "PET KLİNİK",
+    "NormalizedName": "PET KLINIK",
+    "Category": "Saglik",
+    "Id": 692
+  },
+  {
+    "Name": "PET HOSPITAL",
+    "NormalizedName": "PET HOSPITAL",
+    "Category": "Saglik",
+    "Id": 693
+  },
+  {
+    "Name": "LABORATUVAR",
+    "NormalizedName": "LABORATUVAR",
+    "Category": "Saglik",
+    "Id": 694
+  },
+  {
+    "Name": "LAB",
+    "NormalizedName": "LAB",
+    "Category": "Saglik",
+    "Id": 695
+  },
+  {
+    "Name": "RADYOLOJİ",
+    "NormalizedName": "RADYOLOJI",
+    "Category": "Saglik",
+    "Id": 696
+  },
+  {
+    "Name": "DİYALİZ",
+    "NormalizedName": "DIYALIZ",
+    "Category": "Saglik",
+    "Id": 697
+  },
+  {
+    "Name": "GÖRÜNTÜLEME",
+    "NormalizedName": "GORUNTULEME",
+    "Category": "Saglik",
+    "Id": 698
+  },
+  {
+    "Name": "FİZİK TEDAVİ",
+    "NormalizedName": "FIZIK TEDAVI",
+    "Category": "Saglik",
+    "Id": 699
+  },
+  {
+    "Name": "FİZYOTERAPİ",
+    "NormalizedName": "FIZYOTERAPI",
+    "Category": "Saglik",
+    "Id": 700
+  },
+  {
+    "Name": "REHABİLİTASYON",
+    "NormalizedName": "REHABILITASYON",
+    "Category": "Saglik",
+    "Id": 701
+  },
+  {
+    "Name": "PSİKOLOG",
+    "NormalizedName": "PSIKOLOG",
+    "Category": "Saglik",
+    "Id": 702
+  },
+  {
+    "Name": "PSİKİYATRİ",
+    "NormalizedName": "PSIKIYATRI",
+    "Category": "Saglik",
+    "Id": 703
+  },
+  {
+    "Name": "DİYETİSYEN",
+    "NormalizedName": "DIYETISYEN",
+    "Category": "Saglik",
+    "Id": 704
+  },
+  {
+    "Name": "BESLENME",
+    "NormalizedName": "BESLENME",
+    "Category": "Saglik",
+    "Id": 705
+  },
+  {
+    "Name": "SAĞLIK",
+    "NormalizedName": "SAGLIK",
+    "Category": "Saglik",
+    "Id": 706
+  },
+  {
+    "Name": "TIBBİ CİHAZ",
+    "NormalizedName": "TIBBI CIHAZ",
+    "Category": "Saglik",
+    "Id": 707
+  },
+  {
+    "Name": "GÖZLÜKÇÜ",
+    "NormalizedName": "GOZLUKCU",
+    "Category": "Saglik",
+    "Id": 708
+  },
+  {
+    "Name": "DİŞ",
+    "NormalizedName": "DIS",
+    "Category": "Saglik",
+    "Id": 709
+  },
+  {
+    "Name": "DİŞÇİ",
+    "NormalizedName": "DISCI",
+    "Category": "Saglik",
+    "Id": 710
+  },
+  {
+    "Name": "DİŞ POLİKLİNİĞİ",
+    "NormalizedName": "DIS POLIKLINIGI",
+    "Category": "Saglik",
+    "Id": 711
+  },
+  {
+    "Name": "KLİNİĞİ",
+    "NormalizedName": "KLINIGI",
+    "Category": "Saglik",
+    "Id": 712
+  },
+  {
+    "Name": "POLİKLİNİĞİ",
+    "NormalizedName": "POLIKLINIGI",
+    "Category": "Saglik",
+    "Id": 713
+  },
+  {
+    "Name": "AİLE SAĞLIĞI",
+    "NormalizedName": "AILE SAGLIGI",
+    "Category": "Saglik",
+    "Id": 714
+  },
+  {
+    "Name": "ASM",
+    "NormalizedName": "ASM",
+    "Category": "Saglik",
+    "Id": 715
+  },
+  {
+    "Name": "TABİP",
+    "NormalizedName": "TABIP",
+    "Category": "Saglik",
+    "Id": 716
+  },
+  {
+    "Name": "UZMAN DOKTOR",
+    "NormalizedName": "UZMAN DOKTOR",
+    "Category": "Saglik",
+    "Id": 717
+  },
+  {
+    "Name": "VETERİNERLİK",
+    "NormalizedName": "VETERINERLIK",
+    "Category": "Saglik",
+    "Id": 718
+  },
+  {
+    "Name": "EMAR",
+    "NormalizedName": "EMAR",
+    "Category": "Saglik",
+    "Id": 719
+  },
+  {
+    "Name": "MR MERKEZİ",
+    "NormalizedName": "MR MERKEZI",
+    "Category": "Saglik",
+    "Id": 720
+  },
+  {
+    "Name": "RÖNTGEN",
+    "NormalizedName": "RONTGEN",
+    "Category": "Saglik",
+    "Id": 721
+  },
+  {
+    "Name": "DİYALİZ MERKEZİ",
+    "NormalizedName": "DIYALIZ MERKEZI",
+    "Category": "Saglik",
+    "Id": 722
+  },
+  {
+    "Name": "FİZYOTERAPİST",
+    "NormalizedName": "FIZYOTERAPIST",
+    "Category": "Saglik",
+    "Id": 723
+  },
+  {
+    "Name": "BESLENME VE DİYET",
+    "NormalizedName": "BESLENME VE DIYET",
+    "Category": "Saglik",
+    "Id": 724
+  },
+  {
+    "Name": "PSİKOTERAPİ",
+    "NormalizedName": "PSIKOTERAPI",
+    "Category": "Saglik",
+    "Id": 725
+  },
+  {
+    "Name": "İŞİTME CİHAZLARI",
+    "NormalizedName": "ISITME CIHAZLARI",
+    "Category": "Saglik",
+    "Id": 726
+  },
+  {
+    "Name": "SAĞLIK KABİNİ",
+    "NormalizedName": "SAGLIK KABINI",
+    "Category": "Saglik",
+    "Id": 727
+  },
+  {
+    "Name": "TURKCELL",
+    "NormalizedName": "TURKCELL",
+    "Category": "Fatura",
+    "Id": 728
+  },
+  {
+    "Name": "VODAFONE",
+    "NormalizedName": "VODAFONE",
+    "Category": "Fatura",
+    "Id": 729
+  },
+  {
+    "Name": "TÜRK TELEKOM",
+    "NormalizedName": "TURK TELEKOM",
+    "Category": "Fatura",
+    "Id": 730
+  },
+  {
+    "Name": "TTNET",
+    "NormalizedName": "TTNET",
+    "Category": "Fatura",
+    "Id": 731
+  },
+  {
+    "Name": "TÜRKNET",
+    "NormalizedName": "TURKNET",
+    "Category": "Fatura",
+    "Id": 732
+  },
+  {
+    "Name": "SÜPERONLİNE",
+    "NormalizedName": "SUPERONLINE",
+    "Category": "Fatura",
+    "Id": 733
+  },
+  {
+    "Name": "MILLENICOM",
+    "NormalizedName": "MILLENICOM",
+    "Category": "Fatura",
+    "Id": 734
+  },
+  {
+    "Name": "NETSMART",
+    "NormalizedName": "NETSMART",
+    "Category": "Fatura",
+    "Id": 735
+  },
+  {
+    "Name": "GIBIRNET",
+    "NormalizedName": "GIBIRNET",
+    "Category": "Fatura",
+    "Id": 736
+  },
+  {
+    "Name": "COKNET",
+    "NormalizedName": "COKNET",
+    "Category": "Fatura",
+    "Id": 737
+  },
+  {
+    "Name": "D-SMART",
+    "NormalizedName": "D SMART",
+    "Category": "Fatura",
+    "Id": 738
+  },
+  {
+    "Name": "DİGİTURK",
+    "NormalizedName": "DIGITURK",
+    "Category": "Fatura",
+    "Id": 739
+  },
+  {
+    "Name": "TİVİBU",
+    "NormalizedName": "TIVIBU",
+    "Category": "Fatura",
+    "Id": 740
+  },
+  {
+    "Name": "KABLONET",
+    "NormalizedName": "KABLONET",
+    "Category": "Fatura",
+    "Id": 741
+  },
+  {
+    "Name": "TÜRKSAT",
+    "NormalizedName": "TURKSAT",
+    "Category": "Fatura",
+    "Id": 742
+  },
+  {
+    "Name": "TELEKOMÜNİKASYON",
+    "NormalizedName": "TELEKOMUNIKASYON",
+    "Category": "Fatura",
+    "Id": 743
+  },
+  {
+    "Name": "İNTERNET",
+    "NormalizedName": "INTERNET",
+    "Category": "Fatura",
+    "Id": 744
+  },
+  {
+    "Name": "ENERJİSA",
+    "NormalizedName": "ENERJISA",
+    "Category": "Fatura",
+    "Id": 745
+  },
+  {
+    "Name": "BEDAŞ",
+    "NormalizedName": "BEDAS",
+    "Category": "Fatura",
+    "Id": 746
+  },
+  {
+    "Name": "AYEDAŞ",
+    "NormalizedName": "AYEDAS",
+    "Category": "Fatura",
+    "Id": 747
+  },
+  {
+    "Name": "CK BOĞAZİÇİ",
+    "NormalizedName": "CK BOGAZICI",
+    "Category": "Fatura",
+    "Id": 748
+  },
+  {
+    "Name": "GEDİZ ELEKTRİK",
+    "NormalizedName": "GEDIZ ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 749
+  },
+  {
+    "Name": "TOROSLAR ELEKTRIK",
+    "NormalizedName": "TOROSLAR ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 750
+  },
+  {
+    "Name": "BAŞKENT ELEKTRİK",
+    "NormalizedName": "BASKENT ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 751
+  },
+  {
+    "Name": "ULUDAĞ ELEKTRİK",
+    "NormalizedName": "ULUDAG ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 752
+  },
+  {
+    "Name": "AYDEM",
+    "NormalizedName": "AYDEM",
+    "Category": "Fatura",
+    "Id": 753
+  },
+  {
+    "Name": "ÇORUH ELEKTRİK",
+    "NormalizedName": "CORUH ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 754
+  },
+  {
+    "Name": "ARAS ELEKTRİK",
+    "NormalizedName": "ARAS ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 755
+  },
+  {
+    "Name": "FIRAT ELEKTRIK",
+    "NormalizedName": "FIRAT ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 756
+  },
+  {
+    "Name": "ELEKTRİK",
+    "NormalizedName": "ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 757
+  },
+  {
+    "Name": "ENERJİ",
+    "NormalizedName": "ENERJI",
+    "Category": "Fatura",
+    "Id": 758
+  },
+  {
+    "Name": "İGDAŞ",
+    "NormalizedName": "IGDAS",
+    "Category": "Fatura",
+    "Id": 759
+  },
+  {
+    "Name": "BAŞKENTGAZ",
+    "NormalizedName": "BASKENTGAZ",
+    "Category": "Fatura",
+    "Id": 760
+  },
+  {
+    "Name": "İZMİRGAZ",
+    "NormalizedName": "IZMIRGAZ",
+    "Category": "Fatura",
+    "Id": 761
+  },
+  {
+    "Name": "BURSAGAZ",
+    "NormalizedName": "BURSAGAZ",
+    "Category": "Fatura",
+    "Id": 762
+  },
+  {
+    "Name": "ENERYA",
+    "NormalizedName": "ENERYA",
+    "Category": "Fatura",
+    "Id": 763
+  },
+  {
+    "Name": "AKSA DOĞALGAZ",
+    "NormalizedName": "AKSA DOGALGAZ",
+    "Category": "Fatura",
+    "Id": 764
+  },
+  {
+    "Name": "PALMET",
+    "NormalizedName": "PALMET",
+    "Category": "Fatura",
+    "Id": 765
+  },
+  {
+    "Name": "DOĞALGAZ",
+    "NormalizedName": "DOGALGAZ",
+    "Category": "Fatura",
+    "Id": 766
+  },
+  {
+    "Name": "GAZ DAĞITIM",
+    "NormalizedName": "GAZ DAGITIM",
+    "Category": "Fatura",
+    "Id": 767
+  },
+  {
+    "Name": "İSKİ",
+    "NormalizedName": "ISKI",
+    "Category": "Fatura",
+    "Id": 768
+  },
+  {
+    "Name": "ASKİ",
+    "NormalizedName": "ASKI",
+    "Category": "Fatura",
+    "Id": 769
+  },
+  {
+    "Name": "İZSU",
+    "NormalizedName": "IZSU",
+    "Category": "Fatura",
+    "Id": 770
+  },
+  {
+    "Name": "BUSKİ",
+    "NormalizedName": "BUSKI",
+    "Category": "Fatura",
+    "Id": 771
+  },
+  {
+    "Name": "DESKİ",
+    "NormalizedName": "DESKI",
+    "Category": "Fatura",
+    "Id": 772
+  },
+  {
+    "Name": "MASKİ",
+    "NormalizedName": "MASKI",
+    "Category": "Fatura",
+    "Id": 773
+  },
+  {
+    "Name": "GASKİ",
+    "NormalizedName": "GASKI",
+    "Category": "Fatura",
+    "Id": 774
+  },
+  {
+    "Name": "KOSKİ",
+    "NormalizedName": "KOSKI",
+    "Category": "Fatura",
+    "Id": 775
+  },
+  {
+    "Name": "TESKİ",
+    "NormalizedName": "TESKI",
+    "Category": "Fatura",
+    "Id": 776
+  },
+  {
+    "Name": "MESKİ",
+    "NormalizedName": "MESKI",
+    "Category": "Fatura",
+    "Id": 777
+  },
+  {
+    "Name": "SASKİ",
+    "NormalizedName": "SASKI",
+    "Category": "Fatura",
+    "Id": 778
+  },
+  {
+    "Name": "DSİ",
+    "NormalizedName": "DSI",
+    "Category": "Fatura",
+    "Id": 779
+  },
+  {
+    "Name": "SU FATURASI",
+    "NormalizedName": "SU FATURASI",
+    "Category": "Fatura",
+    "Id": 780
+  },
+  {
+    "Name": "SU VE KANALİZASYON",
+    "NormalizedName": "SU VE KANALIZASYON",
+    "Category": "Fatura",
+    "Id": 781
+  },
+  {
+    "Name": "ALLIANZ",
+    "NormalizedName": "ALLIANZ",
+    "Category": "Fatura",
+    "Id": 782
+  },
+  {
+    "Name": "AKSİGORTA",
+    "NormalizedName": "AKSIGORTA",
+    "Category": "Fatura",
+    "Id": 783
+  },
+  {
+    "Name": "ANADOLU SIGORTA",
+    "NormalizedName": "ANADOLU SIGORTA",
+    "Category": "Fatura",
+    "Id": 784
+  },
+  {
+    "Name": "AXA SIGORTA",
+    "NormalizedName": "AXA SIGORTA",
+    "Category": "Fatura",
+    "Id": 785
+  },
+  {
+    "Name": "SOMPO",
+    "NormalizedName": "SOMPO",
+    "Category": "Fatura",
+    "Id": 786
+  },
+  {
+    "Name": "MAPFRE",
+    "NormalizedName": "MAPFRE",
+    "Category": "Fatura",
+    "Id": 787
+  },
+  {
+    "Name": "TÜRKİYE SİGORTA",
+    "NormalizedName": "TURKIYE SIGORTA",
+    "Category": "Fatura",
+    "Id": 788
+  },
+  {
+    "Name": "HDI SIGORTA",
+    "NormalizedName": "HDI SIGORTA",
+    "Category": "Fatura",
+    "Id": 789
+  },
+  {
+    "Name": "GROUPAMA",
+    "NormalizedName": "GROUPAMA",
+    "Category": "Fatura",
+    "Id": 790
+  },
+  {
+    "Name": "GENERALI",
+    "NormalizedName": "GENERALI",
+    "Category": "Fatura",
+    "Id": 791
+  },
+  {
+    "Name": "NEVA SIGORTA",
+    "NormalizedName": "NEVA SIGORTA",
+    "Category": "Fatura",
+    "Id": 792
+  },
+  {
+    "Name": "DOĞA SİGORTA",
+    "NormalizedName": "DOGA SIGORTA",
+    "Category": "Fatura",
+    "Id": 793
+  },
+  {
+    "Name": "EUREKO SIGORTA",
+    "NormalizedName": "EUREKO SIGORTA",
+    "Category": "Fatura",
+    "Id": 794
+  },
+  {
+    "Name": "ZURICH SIGORTA",
+    "NormalizedName": "ZURICH SIGORTA",
+    "Category": "Fatura",
+    "Id": 795
+  },
+  {
+    "Name": "QUİCK SİGORTA",
+    "NormalizedName": "QUICK SIGORTA",
+    "Category": "Fatura",
+    "Id": 796
+  },
+  {
+    "Name": "KORU SIGORTA",
+    "NormalizedName": "KORU SIGORTA",
+    "Category": "Fatura",
+    "Id": 797
+  },
+  {
+    "Name": "UNICO SIGORTA",
+    "NormalizedName": "UNICO SIGORTA",
+    "Category": "Fatura",
+    "Id": 798
+  },
+  {
+    "Name": "HEPİYİ SİGORTA",
+    "NormalizedName": "HEPIYI SIGORTA",
+    "Category": "Fatura",
+    "Id": 799
+  },
+  {
+    "Name": "BES",
+    "NormalizedName": "BES",
+    "Category": "Fatura",
+    "Id": 800
+  },
+  {
+    "Name": "BİREYSEL EMEKLİLİK",
+    "NormalizedName": "BIREYSEL EMEKLILIK",
+    "Category": "Fatura",
+    "Id": 801
+  },
+  {
+    "Name": "AVIVASA",
+    "NormalizedName": "AVIVASA",
+    "Category": "Fatura",
+    "Id": 802
+  },
+  {
+    "Name": "AGESA",
+    "NormalizedName": "AGESA",
+    "Category": "Fatura",
+    "Id": 803
+  },
+  {
+    "Name": "POLİÇE",
+    "NormalizedName": "POLICE",
+    "Category": "Fatura",
+    "Id": 804
+  },
+  {
+    "Name": "SİGORTA",
+    "NormalizedName": "SIGORTA",
+    "Category": "Fatura",
+    "Id": 805
+  },
+  {
+    "Name": "KASKO",
+    "NormalizedName": "KASKO",
+    "Category": "Fatura",
+    "Id": 806
+  },
+  {
+    "Name": "TRAFİK SİGORTASI",
+    "NormalizedName": "TRAFIK SIGORTASI",
+    "Category": "Fatura",
+    "Id": 807
+  },
+  {
+    "Name": "DASK",
+    "NormalizedName": "DASK",
+    "Category": "Fatura",
+    "Id": 808
+  },
+  {
+    "Name": "GELİR İDARESİ",
+    "NormalizedName": "GELIR IDARESI",
+    "Category": "Fatura",
+    "Id": 809
+  },
+  {
+    "Name": "GİB",
+    "NormalizedName": "GIB",
+    "Category": "Fatura",
+    "Id": 810
+  },
+  {
+    "Name": "İNTERNET VERGİ DAİRESİ",
+    "NormalizedName": "INTERNET VERGI DAIRESI",
+    "Category": "Fatura",
+    "Id": 811
+  },
+  {
+    "Name": "VERGİ DAİRESİ",
+    "NormalizedName": "VERGI DAIRESI",
+    "Category": "Fatura",
+    "Id": 812
+  },
+  {
+    "Name": "MTV",
+    "NormalizedName": "MTV",
+    "Category": "Fatura",
+    "Id": 813
+  },
+  {
+    "Name": "BELEDİYE",
+    "NormalizedName": "BELEDIYE",
+    "Category": "Fatura",
+    "Id": 814
+  },
+  {
+    "Name": "HARÇ",
+    "NormalizedName": "HARC",
+    "Category": "Fatura",
+    "Id": 815
+  },
+  {
+    "Name": "TRAFİK CEZASI",
+    "NormalizedName": "TRAFIK CEZASI",
+    "Category": "Fatura",
+    "Id": 816
+  },
+  {
+    "Name": "CEZA ÖDEME",
+    "NormalizedName": "CEZA ODEME",
+    "Category": "Fatura",
+    "Id": 817
+  },
+  {
+    "Name": "AİDAT",
+    "NormalizedName": "AIDAT",
+    "Category": "Fatura",
+    "Id": 818
+  },
+  {
+    "Name": "SİTE YÖNETİMİ",
+    "NormalizedName": "SITE YONETIMI",
+    "Category": "Fatura",
+    "Id": 819
+  },
+  {
+    "Name": "APARTMAN YÖNETİMİ",
+    "NormalizedName": "APARTMAN YONETIMI",
+    "Category": "Fatura",
+    "Id": 820
+  },
+  {
+    "Name": "NOTER",
+    "NormalizedName": "NOTER",
+    "Category": "Fatura",
+    "Id": 821
+  },
+  {
+    "Name": "PASAPORT HARCI",
+    "NormalizedName": "PASAPORT HARCI",
+    "Category": "Fatura",
+    "Id": 822
+  },
+  {
+    "Name": "E-DEVLET",
+    "NormalizedName": "E DEVLET",
+    "Category": "Fatura",
+    "Id": 823
+  },
+  {
+    "Name": "FATURA",
+    "NormalizedName": "FATURA",
+    "Category": "Fatura",
+    "Id": 824
+  },
+  {
+    "Name": "PERAKENDE ELEKTRİK",
+    "NormalizedName": "PERAKENDE ELEKTRIK",
+    "Category": "Fatura",
+    "Id": 825
+  },
+  {
+    "Name": "SU İDARESİ",
+    "NormalizedName": "SU IDARESI",
+    "Category": "Fatura",
+    "Id": 826
+  },
+  {
+    "Name": "TELEKOM",
+    "NormalizedName": "TELEKOM",
+    "Category": "Fatura",
+    "Id": 827
+  },
+  {
+    "Name": "İLETİŞİM",
+    "NormalizedName": "ILETISIM",
+    "Category": "Fatura",
+    "Id": 828
+  },
+  {
+    "Name": "HABERLEŞME",
+    "NormalizedName": "HABERLESME",
+    "Category": "Fatura",
+    "Id": 829
+  },
+  {
+    "Name": "FATURA ÖDEME",
+    "NormalizedName": "FATURA ODEME",
+    "Category": "Fatura",
+    "Id": 830
+  },
+  {
+    "Name": "FATURA VEYA KURUMLAR",
+    "NormalizedName": "FATURA VEYA KURUMLAR",
+    "Category": "Fatura",
+    "Id": 831
+  },
+  {
+    "Name": "ABONELİK",
+    "NormalizedName": "ABONELIK",
+    "Category": "Fatura",
+    "Id": 832
+  },
+  {
+    "Name": "ABONE",
+    "NormalizedName": "ABONE",
+    "Category": "Fatura",
+    "Id": 833
+  },
+  {
+    "Name": "SİGORTACILIK",
+    "NormalizedName": "SIGORTACILIK",
+    "Category": "Fatura",
+    "Id": 834
+  },
+  {
+    "Name": "SİGORTA ACENTESİ",
+    "NormalizedName": "SIGORTA ACENTESI",
+    "Category": "Fatura",
+    "Id": 835
+  },
+  {
+    "Name": "HAYAT EMEKLİLİK",
+    "NormalizedName": "HAYAT EMEKLILIK",
+    "Category": "Fatura",
+    "Id": 836
+  },
+  {
+    "Name": "VERGİ",
+    "NormalizedName": "VERGI",
+    "Category": "Fatura",
+    "Id": 837
+  },
+  {
+    "Name": "MOTORLU TAŞITLAR VERGİSİ",
+    "NormalizedName": "MOTORLU TASITLAR VERGISI",
+    "Category": "Fatura",
+    "Id": 838
+  },
+  {
+    "Name": "HARÇ ÖDEMESİ",
+    "NormalizedName": "HARC ODEMESI",
+    "Category": "Fatura",
+    "Id": 839
+  },
+  {
+    "Name": "EHLİYET HARCI",
+    "NormalizedName": "EHLIYET HARCI",
+    "Category": "Fatura",
+    "Id": 840
+  },
+  {
+    "Name": "İDARİ PARA CEZASI",
+    "NormalizedName": "IDARI PARA CEZASI",
+    "Category": "Fatura",
+    "Id": 841
+  },
+  {
+    "Name": "BİNA YÖNETİMİ",
+    "NormalizedName": "BINA YONETIMI",
+    "Category": "Fatura",
+    "Id": 842
+  },
+  {
+    "Name": "KAMU",
+    "NormalizedName": "KAMU",
+    "Category": "Fatura",
+    "Id": 843
+  },
+  {
+    "Name": "KAMU ÖDEMESİ",
+    "NormalizedName": "KAMU ODEMESI",
+    "Category": "Fatura",
+    "Id": 844
+  }
+]

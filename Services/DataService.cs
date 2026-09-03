@@ -2,6 +2,7 @@ using Finstance.dbContext;
 using Finstance.dbContext.Models;
 using Finstance.DTOs;
 using Finstance.Models;
+using Finstance.Services.Helpers;
 using Finstance.Services.Resolvers;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,11 +12,11 @@ namespace Finstance.Services;
 public class DataService
 {
     private readonly DataBaseContext _dbContext;
-    private readonly CategoryPipeline _categoryPipeline;
-    public DataService(DataBaseContext dbContext, CategoryPipeline categoryPipeline)
+    private readonly LocationPipeline _locationPipeline;
+    public DataService(DataBaseContext dbContext, LocationPipeline locationPipeline)
     {
         _dbContext = dbContext;
-        _categoryPipeline = categoryPipeline;
+        _locationPipeline = locationPipeline;
     }
 
     public async Task<bool> IsStatementExistsAsync(DateOnly cutOffDate)
@@ -26,53 +27,68 @@ public class DataService
 
     public async Task SaveAsync(StatementResult data)
     {
-        var uniqueLocationNames = data.Expenses
-            .Select(e => e.Location)
-            .Distinct()
-            .ToList();
+        await using var transaction = await _dbContext.Database.BeginTransactionAsync();
 
-        var existingLocations = await _dbContext.Locations
-            .Where(l => uniqueLocationNames.Contains(l.Name))
-            .ToDictionaryAsync(l => l.Name, l => l.Id);
-
-        foreach (var name in uniqueLocationNames)
+        try
         {
-            if (!existingLocations.ContainsKey(name))
+            var bankStatement = new BankStatementModel
             {
-                var newLocation = new ExpenseLocationModel
-                {
-                    Name = name,
-                    Category = _categoryPipeline.Process(name)
-                };
-                _dbContext.Locations.Add(newLocation);
-                await _dbContext.SaveChangesAsync();
-                existingLocations[name] = newLocation.Id;
-            }
-        }
-
-        var bankStatement = new BankStatementModel
-        {
-            UserId = 1,
-            CutOffDate = data.CutOffDate
-        };
-        _dbContext.BankStatements.Add(bankStatement);
-        await _dbContext.SaveChangesAsync();
-
-        foreach (var expense in data.Expenses)
-        {
-            var dbExpense = new dbContext.Models.ExpenseModel
-            {
-                Date = expense.Date,
-                Amount = expense.Amount,
-                LocationId = existingLocations[expense.Location],
                 UserId = 1,
-                BankStatementId = bankStatement.Id,
-                IsInstalment = expense.IsInstalment
+                CutOffDate = data.CutOffDate
             };
-            _dbContext.Expenses.Add(dbExpense);
-        }
+            _dbContext.BankStatements.Add(bankStatement);
+            await _dbContext.SaveChangesAsync();
 
-        await _dbContext.SaveChangesAsync();
+            foreach (var expense in data.Expenses)
+            {
+                var location = await _locationPipeline.ProcessAsync(expense.Location);
+
+                if (location == null)
+                {
+                    location = new()
+                    {
+                        Name = expense.Location,
+                        NormalizedName = NormalizerHelper.NormalizeTurkish(expense.Location),
+                        Category = ExpenseCategory.Diger
+                    };
+
+                    var newLoc = await _dbContext.Locations.AddAsync(location);
+                    await _dbContext.SaveChangesAsync();
+
+                    var dbExpense = new dbContext.Models.ExpenseModel
+                    {
+                        Date = expense.Date,
+                        Amount = expense.Amount,
+                        LocationId = newLoc.Entity.Id,
+                        UserId = 1,
+                        BankStatementId = bankStatement.Id,
+                        IsInstalment = expense.IsInstalment
+                    };
+                    _dbContext.Expenses.Add(dbExpense);
+                }
+                else
+                {
+                    var dbExpense = new dbContext.Models.ExpenseModel
+                    {
+                        Date = expense.Date,
+                        Amount = expense.Amount,
+                        LocationId = location.Id,
+                        UserId = 1,
+                        BankStatementId = bankStatement.Id,
+                        IsInstalment = expense.IsInstalment
+                    };
+                    _dbContext.Expenses.Add(dbExpense);
+                }
+            }
+
+            await _dbContext.SaveChangesAsync();
+            await transaction.CommitAsync();
+        }
+        catch
+        {
+            await transaction.RollbackAsync();
+            throw;
+        }
     }
 
     public ReportDto GetMonthlyReport(DateOnly requestDate)
@@ -100,4 +116,20 @@ public class DataService
 
         return response;
     }
+
+
+   public void SeedData()
+{
+    var locations = ExpenseLocationSeedData.Locations;
+
+    if (!_dbContext.Locations.Any())
+    {
+        _dbContext.AddRange(locations);
+        _dbContext.SaveChanges();
+
+        _dbContext.Database.ExecuteSqlRaw(
+            @"SELECT setval(pg_get_serial_sequence('""Locations""', 'Id'), (SELECT MAX(""Id"") FROM ""Locations""));"
+        );
+    }
+}
 }

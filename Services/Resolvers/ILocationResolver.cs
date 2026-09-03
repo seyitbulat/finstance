@@ -5,9 +5,9 @@ namespace Finstance.Services.Resolvers;
 
 
 
-public interface ICategoryResolver
+public interface ILocationResolver
 {
 
-    ExpenseCategory? Resolve(string locationName);
+    Task<ExpenseLocationModel?> ResolveAsync(string locationName);
     int Priority  { get; }
 }

@@ -1,74 +1,33 @@
 using System.Text.Json;
+using Finstance.dbContext;
 using Finstance.dbContext.Models;
+using Finstance.Services.Helpers;
 using Finstance.Services.Resolvers;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Finstance.Services.Resolvers;
 
 
-public class StringMatchResolver : ICategoryResolver
+public class StringMatchResolver : ILocationResolver
 {
-    public int Priority {get;} = 0;
-    private readonly Dictionary<ExpenseCategory, List<string>> _categoryKeywords;
+    private readonly DataBaseContext _dbContext;
+    public int Priority { get; } = 0;
 
-    public StringMatchResolver(string jsonPath)
+    public StringMatchResolver(DataBaseContext dbContext)
     {
-        var json = File.ReadAllText(jsonPath);
-        var raw = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(json)
-            ?? throw new InvalidOperationException("categoryKeywords.json okunamadı.");
-
-        _categoryKeywords = new Dictionary<ExpenseCategory, List<string>>();
-
-        foreach (var (categoryName, keywords) in raw)
-        {
-            if (Enum.TryParse<ExpenseCategory>(categoryName, ignoreCase: true, out var category))
-            {
-                _categoryKeywords[category] = keywords
-                    .Select(k => k.ToUpperInvariant())
-                    .ToList();
-            }
-        }
+        _dbContext = dbContext;
     }
 
-    public ExpenseCategory? Resolve(string locationName)
+    public async Task<ExpenseLocationModel?> ResolveAsync(string locationName)
     {
-        ExpenseCategory? resultCategory = null;
-        int longestKeywordLength = 0;
-
         if (string.IsNullOrWhiteSpace(locationName))
-            return ExpenseCategory.Diger;
+            return null;
+        var normalized = NormalizerHelper.NormalizeTurkish(locationName);
 
-        var normalized = string.Concat(locationName.ToUpperInvariant().Select(x =>
- {
-     switch (x)
-     {
-         case 'Ö': x = 'O'; break;
-         case 'İ': x = 'I'; break;
-         case 'Ü': x = 'U'; break;
-         case 'Ş': x = 'S'; break;
-         case 'Ç': x = 'C'; break;
-         case 'Ğ': x = 'G'; break;
-     }
-     return x;
- }));
+        var result = await _dbContext.Locations.Where(l => normalized.Contains(l.NormalizedName)).OrderByDescending(l => l.NormalizedName.Length).FirstOrDefaultAsync();
 
-        foreach (var (category, keywords) in _categoryKeywords)
-        {
-            foreach (var keyword in keywords)
-            {
-                if (normalized.Contains(keyword))
-                {
-                    if(keyword.Length > longestKeywordLength)
-                    {
-                        resultCategory = category;
-
-                        longestKeywordLength = keyword.Length;
-                    }
-                }
-                    
-            }
-        }
-
-        return resultCategory;
+        return result;
     }
 }
