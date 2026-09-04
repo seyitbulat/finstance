@@ -118,6 +118,7 @@ public class YapiKrediParser : IBankStatementParser
                                 DateOnly.TryParseExact(tarih, dateFormats, new CultureInfo("tr-TR"), DateTimeStyles.None, out date);
 
                                 string location = "NULL";
+
                                 if (firstCell.Length > tarih.Length)
                                 {
                                     location = firstCell.Substring(tarih.Length);
@@ -128,32 +129,48 @@ public class YapiKrediParser : IBankStatementParser
                                 }
 
 
+
                                 int index = dateIndex + 2;
                                 decimal amount = 0;
-                                string amountString = "NULL";
-
-
-                                while (!decimal.TryParse(cells[index], cultureInfo, out amount))
+                                bool amountFound = false;
+                                bool isPayment = false;
+                                var amountString = "";
+                                var isInstalment = false;
+                                var amountIndex = 0;
+                                while (index < cells.Count)
                                 {
-                                    if (index + 1 < cells.Count)
+                                    string cell = cells[index].Trim();
+                                    if (cell.Contains('+'))
                                     {
-                                        index++;
-
+                                        isPayment = true;
+                                        break; 
                                     }
-                                    else
+                                    if (decimal.TryParse(cell, cultureInfo, out amount))
                                     {
-                                        break;
+                                        amountFound = true;
+                                        amountIndex = index;
+                                        break; 
+                                    }
+                                    index++;
+                                }
+                                if (isPayment || !amountFound || amount <= 0)
+                                {
+                                    continue;
+                                }
+                                amountString = amount.ToString();
+
+                                if((amountIndex + 1) <= cells.Count)
+                                {
+                                    if(cells[amountIndex + 1].Contains("/"))
+                                    {
+                                        isInstalment = true;
                                     }
                                 }
 
-                                amountString = amount.ToString();
 
 
 
-
-
-
-                                expenses.Add(new ExpenseModel(date, location, amount));
+                                expenses.Add(new ExpenseModel(date, location.TrimStart().TrimEnd(), amount, isInstalment));
 
                             }
                         }

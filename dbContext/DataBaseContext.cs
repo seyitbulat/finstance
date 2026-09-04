@@ -18,6 +18,9 @@ public class DataBaseContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+
+        modelBuilder.HasPostgresExtension("pg_trgm");
+
         modelBuilder.Entity<UserModel>(entity =>
         {
            entity.HasKey(e => e.Id);
@@ -31,6 +34,8 @@ public class DataBaseContext : DbContext
             entity.HasKey(e => e.Id);
 
             entity.Property(e => e.Name);
+
+            entity.Property(e => e.NormalizedName);
 
             entity.Property(e => e.Category);
         });
