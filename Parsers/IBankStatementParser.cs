@@ -15,6 +15,7 @@ public interface IBankStatementParser
     CultureInfo GetCulture();
 
     List<ExpenseModel> ParseExpenses(PdfDocument doc);
+    List<ExpenseModel> ParseExpensesNonTabular(PdfDocument doc);
 
 
     string GetBankType();

@@ -44,11 +44,25 @@ builder.Services.AddScoped<IBankStatementParser, QnbParser>();
 builder.Services.AddScoped<StatementService>();
 
 
+builder.Services.AddSingleton<ICategoryResolver, StringMatchCategoryResolver>(sp =>
+{
+    var env = sp.GetRequiredService<IWebHostEnvironment>();
+    var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
+    return new StringMatchCategoryResolver(jsonPath);
+});
+builder.Services.AddSingleton<ICategoryResolver, FuzzyMatchCategoryResolver>(sp =>
+{
+    var env = sp.GetRequiredService<IWebHostEnvironment>();
+    var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
+    return new FuzzyMatchCategoryResolver(jsonPath);
+});
+
 
 builder.Services.AddScoped<ILocationResolver, StringMatchResolver>();
 builder.Services.AddScoped<ILocationResolver, FuzzyMatchResolver>();
 
 builder.Services.AddScoped<LocationPipeline>();
+builder.Services.AddScoped<CategoryPipeline>();
 builder.Services.AddScoped<DataService>();
 
 var app = builder.Build();
@@ -90,14 +104,20 @@ app.MapGet("test", (DataService dataService) =>
   dataService.SeedData();
 });
 
-
-app.MapGet("getPatternLocations", (IFormFile file, StatementService statementService) =>
+app.MapPost("getPatternLocations", async (IFormFile file, StatementService statementService, DataService dataService) =>
 {
-     using var stream = file.OpenReadStream();
+    using var stream = file.OpenReadStream();
     using var doc = PdfDocument.Open(stream, new ParsingOptions { ClipPaths = true });
-
+    var parser = new YapiKrediParser();
     var (bankType, cutOffDate) = statementService.ExtractMetadata(doc);
-});
+    
+    var expenses = parser.ParseExpensesNonTabular(doc);
+
+
+    return TypedResults.Ok(expenses);
+}).DisableAntiforgery();
+
+
 
 app.Run();
 

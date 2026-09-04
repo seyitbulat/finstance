@@ -13,10 +13,12 @@ public class DataService
 {
     private readonly DataBaseContext _dbContext;
     private readonly LocationPipeline _locationPipeline;
-    public DataService(DataBaseContext dbContext, LocationPipeline locationPipeline)
+    private readonly CategoryPipeline _categoryPipeline;
+    public DataService(DataBaseContext dbContext, LocationPipeline locationPipeline, CategoryPipeline categoryPipeline)
     {
         _dbContext = dbContext;
         _locationPipeline = locationPipeline;
+        _categoryPipeline = categoryPipeline;
     }
 
     public async Task<bool> IsStatementExistsAsync(DateOnly cutOffDate)
@@ -51,6 +53,16 @@ public class DataService
                         NormalizedName = NormalizerHelper.NormalizeTurkish(expense.Location),
                         Category = ExpenseCategory.Diger
                     };
+
+
+                    var category = await _categoryPipeline.ProcessAsync(expense.Location);
+
+                    if(category == null)
+                    {
+                        category = ExpenseCategory.Diger;
+                    }
+
+                    location.Category = category.Value;
 
                     var newLoc = await _dbContext.Locations.AddAsync(location);
                     await _dbContext.SaveChangesAsync();

@@ -18,6 +18,12 @@ public class QnbParser : IBankStatementParser
 
     private string bankType = "Qnb";
 
+
+     private static readonly Regex DateRegex = new(@"(?i)\b(\d{1,2})[\s/.-]+(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık|\d{1,2})[\s/.-]+(\d{4})\b", RegexOptions.Compiled);
+    private static readonly Regex InstalmentRegex =
+ new(@"(?<current>\d{1,2})\s*/\s*(?<total>\d{1,2})\s*$", RegexOptions.Compiled);
+    private static readonly Regex AmountRegex =
+                new(@"([+-])?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\b", RegexOptions.Compiled);
     private string[] dateFormats =
     {
         "d MMMM yyyy",
@@ -148,10 +154,10 @@ public class QnbParser : IBankStatementParser
 
                                 amountString = amount.ToString();
 
-                                
-                                if((amountIndex + 1) <= cells.Count)
+
+                                if ((amountIndex + 1) <= cells.Count)
                                 {
-                                    if(cells[amountIndex + 1].Contains("/"))
+                                    if (cells[amountIndex + 1].Contains("/"))
                                     {
                                         isInstalment = true;
                                     }
@@ -180,4 +186,102 @@ public class QnbParser : IBankStatementParser
     {
         return bankType;
     }
+
+    public List<ExpenseModel> ParseExpensesNonTabular(PdfDocument doc)
+    {
+        var expenses = new List<ExpenseModel>();
+        foreach (var page in doc.GetPages())
+        {
+            var lines = GroupIntoLines(page.GetWords().ToList());
+
+            foreach (var line in lines)
+            {
+                var lineText = string.Join(" ", line.OrderBy(x => x.BoundingBox.Left).Select(x => x.Text));
+                var dateMatch = DateRegex.Match(lineText);
+                var amountMatch = AmountRegex.Match(lineText);
+
+                if (!dateMatch.Success || !amountMatch.Success)
+                    continue;
+
+                var amountText = amountMatch.Value;
+                var isCredit = amountText.TrimStart().StartsWith("-");
+
+                if (isCredit)
+                    continue;
+
+                DateOnly date;
+                DateOnly.TryParse(dateMatch.Value, out date);
+
+                Decimal? amount = TryParseAmount(amountMatch.Value);;
+                
+                if(amount == null)
+                    amount = 0;
+                    
+                bool isInstalment = false;
+
+                if (InstalmentRegex.Match(lineText).Success)
+                    isInstalment = true;
+
+
+
+
+                var name = lineText.Replace(dateMatch.Value, "").Replace(amountText, "").Trim();
+
+                expenses.Add(new ExpenseModel(date, name, amount.Value, isInstalment));
+
+
+            }
+
+        }
+
+        return expenses;
+    }
+
+        private List<List<Word>> GroupIntoLines(List<Word> words)
+    {
+        var sorted = words.OrderByDescending(x => x.BoundingBox.Bottom).ToList();
+
+        var lines = new List<List<Word>>();
+
+        foreach (var word in sorted)
+        {
+            var line = lines.FirstOrDefault(l =>
+                Math.Abs(l.First().BoundingBox.Bottom - word.BoundingBox.Bottom) <= 3.0);
+
+            if (line != null)
+                line.Add(word);
+            else
+                lines.Add(new List<Word> { word });
+        }
+
+        return lines;
+    }
+
+     private decimal? TryParseAmount(string raw)
+        {
+            raw = raw.Trim();
+ 
+            var lastComma = raw.LastIndexOf(',');
+            var lastDot = raw.LastIndexOf('.');
+ 
+            string normalized;
+ 
+            if (lastComma > lastDot)
+            {
+                // "1.234,56" -> "1234.56"
+                normalized = raw.Replace(".", "").Replace(",", ".");
+            }
+            else if (lastDot > lastComma)
+            {
+                // "1,234.56" -> "1234.56"
+                normalized = raw.Replace(",", "");
+            }
+            else
+            {
+                normalized = raw.Replace(",", ".");
+            }
+ 
+            return decimal.TryParse(normalized, NumberStyles.Any,
+                CultureInfo.InvariantCulture, out var result) ? result : null;
+        }
 }

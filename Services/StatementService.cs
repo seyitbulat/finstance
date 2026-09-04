@@ -30,7 +30,7 @@ public class StatementService
 
         var cutOffDate = parser.ExtractCutOffDate(doc);
 
-        var expenses = parser.ParseExpenses(doc);
+        var expenses = parser.ParseExpensesNonTabular(doc);
 
         var bankType = parser.GetBankType();
         return new StatementResult(bankType, cutOffDate, expenses);
