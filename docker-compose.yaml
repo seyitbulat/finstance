@@ -1,0 +1,63 @@
+services:
+  db:
+    image: postgres:18
+    container_name: finstance-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 96D5xSEpJyD88N7q5
+      POSTGRES_DB: finstancedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - finstance_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d finstancedb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: finstance-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: finstance-api
+    ports:
+      - "5257:5257"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: finstancedb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 96D5xSEpJyD88N7q5
+    depends_on:
+      db:
+        condition: service_healthy
+
+  ui:
+    build:
+      context: ./ui/finstance
+      dockerfile: Dockerfile
+    container_name: finstance-ui
+    ports:
+      - "3000:3000"
+    environment:
+      FINSTANCE_API_URL: http://api:5257
+      NEXT_PUBLIC_DEFAULT_MONTH: ""
+    depends_on:
+      - api
+
+volumes:
+  finstance_data:

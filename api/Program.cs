@@ -1,21 +1,10 @@
-using System.Globalization;
-using System.Text;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-using System.Text.Unicode;
 using Finstance.dbContext;
-using Finstance.FuzzyMatch;
 using Finstance.Parsers;
 using Finstance.Services;
 using Finstance.Services.Resolvers;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
-using Tabula;
-using Tabula.Detectors;
-using Tabula.Extractors;
 using UglyToad.PdfPig;
-using UglyToad.PdfPig.Content;
 
 DotNetEnv.Env.Load();
 
@@ -37,12 +26,9 @@ builder.Services.AddDbContext<DataBaseContext>(options =>
     options.UseNpgsql(connectionStringBuilder.ConnectionString);
 });
 
-
-
 builder.Services.AddScoped<IBankStatementParser, YapiKrediParser>();
 builder.Services.AddScoped<IBankStatementParser, QnbParser>();
 builder.Services.AddScoped<StatementService>();
-
 
 builder.Services.AddSingleton<ICategoryResolver, StringMatchCategoryResolver>(sp =>
 {
@@ -56,7 +42,6 @@ builder.Services.AddSingleton<ICategoryResolver, FuzzyMatchCategoryResolver>(sp 
     var jsonPath = Path.Combine(env.ContentRootPath, "categoryKeywords.json");
     return new FuzzyMatchCategoryResolver(jsonPath);
 });
-
 
 builder.Services.AddScoped<ILocationResolver, StringMatchResolver>();
 builder.Services.AddScoped<ILocationResolver, FuzzyMatchResolver>();
@@ -80,53 +65,90 @@ var app = builder.Build();
 app.UseCors();
 app.UseHttpsRedirection();
 
-
-app.MapPost("upload", async (IFormFile file, StatementService statementService, DataService dataService) =>
+// Global exception handler
+app.UseExceptionHandler(errorApp =>
 {
+    errorApp.Run(async context =>
+    {
+        context.Response.StatusCode = 500;
+        context.Response.ContentType = "application/json";
+
+        var error = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>();
+        if (error != null)
+        {
+            var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+            logger.LogError(error.Error, "İşlenmeyen hata oluştu: {Message}", error.Error.Message);
+
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = app.Environment.IsDevelopment()
+                    ? error.Error.Message
+                    : "Sunucuda bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+            });
+        }
+    });
+});
+
+async Task<int> GetOrCreateUserAsync(string username, DataBaseContext db)
+{
+    if (string.IsNullOrWhiteSpace(username))
+        username = "guest";
+        
+    var user = await db.Users.FirstOrDefaultAsync(u => u.Username == username);
+    if (user == null)
+    {
+        user = new Finstance.dbContext.Models.UserModel { Username = username, Password = "" };
+        db.Users.Add(user);
+        await db.SaveChangesAsync();
+    }
+    return user.Id;
+}
+
+app.MapPost("upload", async (HttpContext context, IFormFile file, StatementService statementService, DataService dataService, DataBaseContext db) =>
+{
+    var username = context.Request.Headers["X-User-Name"].FirstOrDefault() ?? "guest";
+    var userId = await GetOrCreateUserAsync(username, db);
+
+    if (file.Length == 0)
+        return Results.BadRequest("Dosya boş.");
+
+    if (file.Length > 20 * 1024 * 1024) // 20 MB limit
+        return Results.BadRequest("Dosya boyutu 20 MB'ı aşamaz.");
+
+    if (!file.ContentType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase)
+        && !file.FileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
+        return Results.BadRequest("Sadece PDF dosyaları kabul edilmektedir.");
+
     using var stream = file.OpenReadStream();
     using var doc = PdfDocument.Open(stream, new ParsingOptions { ClipPaths = true });
 
     var (bankType, cutOffDate) = statementService.ExtractMetadata(doc);
 
-    if (await dataService.IsStatementExistsAsync(cutOffDate))
+    if (await dataService.IsStatementExistsAsync(cutOffDate, userId))
         return Results.Conflict("Bu ekstre zaten işlenmiş.");
 
     var result = statementService.Process(doc);
 
-    await dataService.SaveAsync(result);
-
+    await dataService.SaveAsync(result, userId);
 
     return TypedResults.Ok(result);
 }).DisableAntiforgery();
 
 
-app.MapGet("getMonthlyReport", (DateOnly date, DataService dataService) =>
+app.MapGet("getMonthlyReport", async (HttpContext context, DateOnly date, DataService dataService, DataBaseContext db) =>
 {
-    var response = dataService.GetMonthlyReport(date);
+    var username = context.Request.Headers["X-User-Name"].FirstOrDefault() ?? "guest";
+    var userId = await GetOrCreateUserAsync(username, db);
+    
+    var response = dataService.GetMonthlyReport(date, userId);
 
     return TypedResults.Ok(response);
 });
 
-
-app.MapGet("test", (DataService dataService) =>
+app.MapGet("seed", (DataService dataService) =>
 {
-  dataService.SeedData();
+    dataService.SeedData();
+    return Results.Ok("Seed verileri başarıyla yüklendi.");
 });
 
-app.MapPost("getPatternLocations", async (IFormFile file, StatementService statementService, DataService dataService) =>
-{
-    using var stream = file.OpenReadStream();
-    using var doc = PdfDocument.Open(stream, new ParsingOptions { ClipPaths = true });
-    var parser = new YapiKrediParser();
-    var (bankType, cutOffDate) = statementService.ExtractMetadata(doc);
-    
-    var expenses = parser.ParseExpensesNonTabular(doc);
-
-
-    return TypedResults.Ok(expenses);
-}).DisableAntiforgery();
-
-
-
 app.Run();
-

@@ -33,29 +33,20 @@ public class StringMatchCategoryResolver : ICategoryResolver
 
     public async Task<ExpenseCategory?> ResolveAsync(string locationName)
     {
-        ExpenseCategory? resultCategory = null;
-
         if (string.IsNullOrWhiteSpace(locationName))
             return ExpenseCategory.Diger;
 
-
         var normalized = NormalizerHelper.NormalizeTurkish(locationName);
-
 
         foreach (var (category, keywords) in _categoryKeywords)
         {
             foreach (var keyword in keywords)
             {
                 if (normalized.Contains(keyword))
-                {
-                    resultCategory = category;
-
-                }
-
+                    return category;
             }
         }
 
-
-        return resultCategory;
+        return null;
     }
 }

@@ -53,15 +53,12 @@ public class QnbParser : IBankStatementParser
         var words = doc.GetPage(1).GetWords().ToList();
 
         if (words == null || words.Count == 0)
-        {
-            // error message
-        }
+            throw new InvalidOperationException("PDF'den kelime çıkarılamadı.");
+
         var anchorWord = words.Where(x => x.Text == "Kesim").FirstOrDefault();
 
         if (anchorWord == null)
-        {
-            // error message
-        }
+            throw new InvalidOperationException("QNB ekstre kesim tarihi bulunamadı ('Kesim' anahtar kelimesi mevcut değil).");
 
 
 
@@ -210,7 +207,7 @@ public class QnbParser : IBankStatementParser
                     continue;
 
                 DateOnly date;
-                DateOnly.TryParse(dateMatch.Value, out date);
+                DateOnly.TryParseExact(dateMatch.Value, dateFormats, new CultureInfo("tr-TR"), DateTimeStyles.None, out date);
 
                 Decimal? amount = TryParseAmount(amountMatch.Value);;
                 

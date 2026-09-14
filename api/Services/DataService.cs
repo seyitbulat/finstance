@@ -21,13 +21,13 @@ public class DataService
         _categoryPipeline = categoryPipeline;
     }
 
-    public async Task<bool> IsStatementExistsAsync(DateOnly cutOffDate)
+    public async Task<bool> IsStatementExistsAsync(DateOnly cutOffDate, int userId)
     {
         return await _dbContext.BankStatements
-            .AnyAsync(s => s.CutOffDate == cutOffDate);
+            .AnyAsync(s => s.CutOffDate == cutOffDate && s.UserId == userId);
     }
 
-    public async Task SaveAsync(StatementResult data)
+    public async Task SaveAsync(StatementResult data, int userId)
     {
         await using var transaction = await _dbContext.Database.BeginTransactionAsync();
 
@@ -35,7 +35,7 @@ public class DataService
         {
             var bankStatement = new BankStatementModel
             {
-                UserId = 1,
+                UserId = userId,
                 CutOffDate = data.CutOffDate
             };
             _dbContext.BankStatements.Add(bankStatement);
@@ -47,50 +47,30 @@ public class DataService
 
                 if (location == null)
                 {
+                    var category = await _categoryPipeline.ProcessAsync(expense.Location)
+                                   ?? ExpenseCategory.Diger;
+
                     location = new()
                     {
                         Name = expense.Location,
                         NormalizedName = NormalizerHelper.NormalizeTurkish(expense.Location),
-                        Category = ExpenseCategory.Diger
+                        Category = category
                     };
-
-
-                    var category = await _categoryPipeline.ProcessAsync(expense.Location);
-
-                    if(category == null)
-                    {
-                        category = ExpenseCategory.Diger;
-                    }
-
-                    location.Category = category.Value;
 
                     var newLoc = await _dbContext.Locations.AddAsync(location);
                     await _dbContext.SaveChangesAsync();
+                    location = newLoc.Entity;
+                }
 
-                    var dbExpense = new dbContext.Models.ExpenseModel
-                    {
-                        Date = expense.Date,
-                        Amount = expense.Amount,
-                        LocationId = newLoc.Entity.Id,
-                        UserId = 1,
-                        BankStatementId = bankStatement.Id,
-                        IsInstalment = expense.IsInstalment
-                    };
-                    _dbContext.Expenses.Add(dbExpense);
-                }
-                else
+                _dbContext.Expenses.Add(new dbContext.Models.ExpenseModel
                 {
-                    var dbExpense = new dbContext.Models.ExpenseModel
-                    {
-                        Date = expense.Date,
-                        Amount = expense.Amount,
-                        LocationId = location.Id,
-                        UserId = 1,
-                        BankStatementId = bankStatement.Id,
-                        IsInstalment = expense.IsInstalment
-                    };
-                    _dbContext.Expenses.Add(dbExpense);
-                }
+                    Date = expense.Date,
+                    Amount = expense.Amount,
+                    LocationId = location.Id,
+                    UserId = userId,
+                    BankStatementId = bankStatement.Id,
+                    IsInstalment = expense.IsInstalment
+                });
             }
 
             await _dbContext.SaveChangesAsync();
@@ -103,11 +83,16 @@ public class DataService
         }
     }
 
-    public ReportDto GetMonthlyReport(DateOnly requestDate)
+    public ReportDto GetMonthlyReport(DateOnly requestDate, int userId)
     {
-        var expenses = _dbContext.Expenses.Include(x => x.BankStatement).Include(x => x.Location).Where(x => x.BankStatement.CutOffDate.Month == requestDate.Month).ToList().Select(x =>
-        {
-            return new ReportDetailDto
+        var expenses = _dbContext.Expenses
+            .Include(x => x.BankStatement)
+            .Include(x => x.Location)
+            .Where(x => x.UserId == userId && 
+                        x.BankStatement.CutOffDate.Month == requestDate.Month
+                     && x.BankStatement.CutOffDate.Year == requestDate.Year)
+            .ToList()
+            .Select(x => new ReportDetailDto
             {
                 Id = x.Id,
                 Amount = x.Amount,
@@ -117,9 +102,8 @@ public class DataService
                 LocationId = x.Location.Id,
                 LocationName = x.Location.Name,
                 Category = x.Location.Category.ToString()
-            };
-        }).ToList();
-
+            })
+            .ToList();
 
         ReportDto response = new()
         {

@@ -1,0 +1,486 @@
+﻿-- ============================================================================
+-- Finstance: Remove Category Keywords from public."Locations"
+-- This script deletes generic keywords (e.g., PİDE, KEBAP, DÖNER, KASAP, etc.)
+-- from public."Locations" table so only genuine locations/merchants remain.
+-- Total keywords to remove: 430
+-- ============================================================================
+
+BEGIN;
+
+-- 1. Kontrol: Eğer silinecek anahtar kelimelere bağlı harcama (Expenses) varsa listele:
+/*
+SELECT e."Id", e."Date", e."Amount", l."Id" AS "LocationId", l."Name" AS "LocationName"
+FROM public."Expenses" e
+JOIN public."Locations" l ON e."LocationId" = l."Id"
+WHERE l."Id" IN (
+    43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 257, 258, 259, 260, 261, 287, 288, 289, 290, 308, 309, 310, 311, 318, 319, 321, 322, 323, 342, 343, 344, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 387, 388, 389, 390, 391, 392, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 583, 584, 585, 586, 587, 588, 589, 590, 594, 595, 596, 597, 598, 599, 607, 608, 609, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 683, 684, 685, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 743, 744, 757, 758, 766, 767, 780, 781, 800, 801, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844
+);
+*/
+
+-- 2. (Opsiyonel) Eğer bu kayıtlara bağlı harcamalar varsa ve foreign key hatası almak istemiyorsanız,
+-- harcamaları NULL yapabilir veya harcamanın açıklamasına göre yeni bir lokasyon açtırabilirsiniz:
+-- UPDATE public."Expenses" SET "LocationId" = NULL WHERE "LocationId" IN (...);
+
+-- 3. Locations tablosundaki jenerik keyword kayıtlarını sil:
+DELETE FROM public."Locations"
+WHERE "Id" IN (
+    43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62,
+    63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 135, 136, 137, 138,
+    139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158,
+    159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178,
+    179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198,
+    199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 219,
+    220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239,
+    240, 241, 242, 257, 258, 259, 260, 261, 287, 288, 289, 290, 308, 309, 310, 311, 318, 319, 321, 322,
+    323, 342, 343, 344, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362,
+    363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382,
+    383, 384, 385, 387, 388, 389, 390, 391, 392, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494,
+    495, 496, 497, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515,
+    516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 583, 584,
+    585, 586, 587, 588, 589, 590, 594, 595, 596, 597, 598, 599, 607, 608, 609, 613, 614, 615, 616, 617,
+    618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637,
+    638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657,
+    658, 659, 660, 661, 662, 663, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 683, 684, 685, 688,
+    689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708,
+    709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 743,
+    744, 757, 758, 766, 767, 780, 781, 800, 801, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814,
+    815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834,
+    835, 836, 837, 838, 839, 840, 841, 842, 843, 844
+);
+
+-- 4. Sequence değerini mevcut en büyük Id'ye eşitle:
+SELECT setval(pg_get_serial_sequence('"Locations"', 'Id'), COALESCE((SELECT MAX("Id") FROM "Locations"), 1));
+
+COMMIT;
+
+-- Silinen kayıtların referans listesi:
+-- Id:   43 | Category: Market     | Name: SÜPERMARKET
+-- Id:   44 | Category: Market     | Name: HİPERMARKET
+-- Id:   45 | Category: Market     | Name: MARKET
+-- Id:   46 | Category: Market     | Name: ŞARKÜTERİ
+-- Id:   47 | Category: Market     | Name: BAKKAL
+-- Id:   48 | Category: Market     | Name: MANAV
+-- Id:   49 | Category: Market     | Name: KASAP
+-- Id:   50 | Category: Market     | Name: KURUYEMİŞ
+-- Id:   51 | Category: Market     | Name: ORGANİK PAZAR
+-- Id:   52 | Category: Market     | Name: TOPTAN GIDA
+-- Id:   53 | Category: Market     | Name: TEKEL
+-- Id:   54 | Category: Market     | Name: CHARCUTERIE
+-- Id:   55 | Category: Market     | Name: GOURMET
+-- Id:   56 | Category: Market     | Name: GURME
+-- Id:   57 | Category: Market     | Name: GIDA
+-- Id:   58 | Category: Market     | Name: GIDA PAZARI
+-- Id:   59 | Category: Market     | Name: KASABI
+-- Id:   60 | Category: Market     | Name: KURUYEMİŞÇİ
+-- Id:   61 | Category: Market     | Name: BAKKALİYE
+-- Id:   62 | Category: Market     | Name: GROSMARKET
+-- Id:   63 | Category: Market     | Name: TEKEL BAYİ
+-- Id:   64 | Category: Market     | Name: SÜT ÜRÜNLERİ
+-- Id:   65 | Category: Market     | Name: BAHARAT
+-- Id:   66 | Category: Market     | Name: BAHARATÇI
+-- Id:   67 | Category: Market     | Name: AKTARDİYE
+-- Id:   68 | Category: Market     | Name: AKTAR
+-- Id:   69 | Category: Market     | Name: ZEYTİNCİ
+-- Id:   70 | Category: Market     | Name: YUMURTA
+-- Id:   71 | Category: Market     | Name: YUMURTACI
+-- Id:   72 | Category: Market     | Name: PEYNİRCİ
+-- Id:   73 | Category: Market     | Name: BALIK PAZARI
+-- Id:   74 | Category: Market     | Name: HAL PAZARI
+-- Id:   75 | Category: Market     | Name: KÖY PAZARI
+-- Id:   76 | Category: Market     | Name: KÖY ÜRÜNLERİ
+-- Id:   77 | Category: Market     | Name: YÖRESEL ÜRÜNLER
+-- Id:   78 | Category: Market     | Name: DOĞAL ÜRÜNLER
+-- Id:  135 | Category: Restoran   | Name: RESTORAN
+-- Id:  136 | Category: Restoran   | Name: RESTAURANT
+-- Id:  137 | Category: Restoran   | Name: LOKANTA
+-- Id:  138 | Category: Restoran   | Name: KEBAP
+-- Id:  139 | Category: Restoran   | Name: KEBAPÇI
+-- Id:  140 | Category: Restoran   | Name: DÖNER
+-- Id:  141 | Category: Restoran   | Name: DÖNERCİ
+-- Id:  142 | Category: Restoran   | Name: LAHMACUN
+-- Id:  143 | Category: Restoran   | Name: PİDE
+-- Id:  144 | Category: Restoran   | Name: KOKOREÇ
+-- Id:  145 | Category: Restoran   | Name: MİDYE
+-- Id:  146 | Category: Restoran   | Name: TANTUNİ
+-- Id:  147 | Category: Restoran   | Name: KUMRU
+-- Id:  148 | Category: Restoran   | Name: KUMPİR
+-- Id:  149 | Category: Restoran   | Name: CİĞER
+-- Id:  150 | Category: Restoran   | Name: DÜRÜM
+-- Id:  151 | Category: Restoran   | Name: CAFE
+-- Id:  152 | Category: Restoran   | Name: KAFE
+-- Id:  153 | Category: Restoran   | Name: COFFEE
+-- Id:  154 | Category: Restoran   | Name: COFFE
+-- Id:  155 | Category: Restoran   | Name: KAHVE
+-- Id:  156 | Category: Restoran   | Name: KAHVECİ
+-- Id:  157 | Category: Restoran   | Name: ROASTERY
+-- Id:  158 | Category: Restoran   | Name: BAKERY
+-- Id:  159 | Category: Restoran   | Name: PATISSERIE
+-- Id:  160 | Category: Restoran   | Name: PASTA
+-- Id:  161 | Category: Restoran   | Name: FIRIN
+-- Id:  162 | Category: Restoran   | Name: FIRINCI
+-- Id:  163 | Category: Restoran   | Name: BİSTRO
+-- Id:  164 | Category: Restoran   | Name: BRASSERIE
+-- Id:  165 | Category: Restoran   | Name: PUB
+-- Id:  166 | Category: Restoran   | Name: MEYHANE
+-- Id:  167 | Category: Restoran   | Name: OCAKBAŞI
+-- Id:  168 | Category: Restoran   | Name: STEAKHOUSE
+-- Id:  169 | Category: Restoran   | Name: YEMEK
+-- Id:  170 | Category: Restoran   | Name: TOST
+-- Id:  171 | Category: Restoran   | Name: TATLICI
+-- Id:  172 | Category: Restoran   | Name: BAKLAVA
+-- Id:  173 | Category: Restoran   | Name: DONDURMA
+-- Id:  174 | Category: Restoran   | Name: KAHVALTI
+-- Id:  175 | Category: Restoran   | Name: MANTI
+-- Id:  176 | Category: Restoran   | Name: ÇORBA
+-- Id:  177 | Category: Restoran   | Name: BALIK
+-- Id:  178 | Category: Restoran   | Name: BALIKÇI
+-- Id:  179 | Category: Restoran   | Name: TAVUK
+-- Id:  180 | Category: Restoran   | Name: IZGARA
+-- Id:  181 | Category: Restoran   | Name: BURGER
+-- Id:  182 | Category: Restoran   | Name: PİZZA
+-- Id:  183 | Category: Restoran   | Name: WAFFLE
+-- Id:  184 | Category: Restoran   | Name: KAHVEHANESİ
+-- Id:  185 | Category: Restoran   | Name: ODUN FIRINI
+-- Id:  186 | Category: Restoran   | Name: TAŞ FIRIN
+-- Id:  187 | Category: Restoran   | Name: UNLU MAMULLER
+-- Id:  188 | Category: Restoran   | Name: RESTAURANTS
+-- Id:  189 | Category: Restoran   | Name: YAPRAK DÖNER
+-- Id:  190 | Category: Restoran   | Name: KÖFTE
+-- Id:  191 | Category: Restoran   | Name: KÖFTECİ
+-- Id:  192 | Category: Restoran   | Name: PİDECİ
+-- Id:  193 | Category: Restoran   | Name: LAHMACUNCU
+-- Id:  194 | Category: Restoran   | Name: MANGAL
+-- Id:  195 | Category: Restoran   | Name: IZGARACI
+-- Id:  196 | Category: Restoran   | Name: KÖMÜRDE
+-- Id:  197 | Category: Restoran   | Name: BÜFE
+-- Id:  198 | Category: Restoran   | Name: TOSTÇU
+-- Id:  199 | Category: Restoran   | Name: SANDVİÇ
+-- Id:  200 | Category: Restoran   | Name: PASTANE
+-- Id:  201 | Category: Restoran   | Name: BÖREK
+-- Id:  202 | Category: Restoran   | Name: BÖREKÇİ
+-- Id:  203 | Category: Restoran   | Name: TATLI
+-- Id:  204 | Category: Restoran   | Name: BAKLAVACI
+-- Id:  205 | Category: Restoran   | Name: KÜNEFE
+-- Id:  206 | Category: Restoran   | Name: KÜNEFECİ
+-- Id:  207 | Category: Restoran   | Name: DONDURMACI
+-- Id:  208 | Category: Restoran   | Name: KREP
+-- Id:  209 | Category: Restoran   | Name: LOKMA
+-- Id:  210 | Category: Restoran   | Name: LOKMACI
+-- Id:  211 | Category: Restoran   | Name: PROFİTEROL
+-- Id:  212 | Category: Restoran   | Name: PROFITILOR
+-- Id:  213 | Category: Restoran   | Name: ÇORBACI
+-- Id:  214 | Category: Restoran   | Name: İŞKEMBE
+-- Id:  215 | Category: Restoran   | Name: İŞKEMBECİ
+-- Id:  216 | Category: Restoran   | Name: PİZZERİA
+-- Id:  217 | Category: Restoran   | Name: HAMBURGER
+-- Id:  219 | Category: Restoran   | Name: ÇİĞ KÖFTE
+-- Id:  220 | Category: Restoran   | Name: ÇİĞKÖFTECİ
+-- Id:  221 | Category: Restoran   | Name: TANTUNİCİ
+-- Id:  222 | Category: Restoran   | Name: KOKOREÇÇİ
+-- Id:  223 | Category: Restoran   | Name: MİDYECİ
+-- Id:  224 | Category: Restoran   | Name: CİĞERCİ
+-- Id:  225 | Category: Restoran   | Name: KUMRUCU
+-- Id:  226 | Category: Restoran   | Name: SOKAK LEZZETLERİ
+-- Id:  227 | Category: Restoran   | Name: GASTROPUB
+-- Id:  228 | Category: Restoran   | Name: LOUNGE
+-- Id:  229 | Category: Restoran   | Name: BAR
+-- Id:  230 | Category: Restoran   | Name: BALIK RESTORAN
+-- Id:  231 | Category: Restoran   | Name: DENİZ ÜRÜNLERİ
+-- Id:  232 | Category: Restoran   | Name: MANTICI
+-- Id:  233 | Category: Restoran   | Name: GÖZLEME
+-- Id:  234 | Category: Restoran   | Name: GÖZLEMECİ
+-- Id:  235 | Category: Restoran   | Name: YEMEKÇİLİK
+-- Id:  236 | Category: Restoran   | Name: CATERING
+-- Id:  237 | Category: Restoran   | Name: MUTFAK
+-- Id:  238 | Category: Restoran   | Name: MUTFAĞI
+-- Id:  239 | Category: Restoran   | Name: MUTFAK SANATLARI
+-- Id:  240 | Category: Restoran   | Name: EV YEMEKLERİ
+-- Id:  241 | Category: Restoran   | Name: TABLDOT
+-- Id:  242 | Category: Restoran   | Name: AS EVİ
+-- Id:  257 | Category: Ulasim     | Name: PETROL
+-- Id:  258 | Category: Ulasim     | Name: AKARYAKIT
+-- Id:  259 | Category: Ulasim     | Name: BENZİN
+-- Id:  260 | Category: Ulasim     | Name: BENZİNLİK
+-- Id:  261 | Category: Ulasim     | Name: OTOGAZ
+-- Id:  287 | Category: Ulasim     | Name: VAPUR
+-- Id:  288 | Category: Ulasim     | Name: FERİBOT
+-- Id:  289 | Category: Ulasim     | Name: TRAMVAY
+-- Id:  290 | Category: Ulasim     | Name: TELEFERİK
+-- Id:  308 | Category: Ulasim     | Name: RENT A CAR
+-- Id:  309 | Category: Ulasim     | Name: OTO KİRALAMA
+-- Id:  310 | Category: Ulasim     | Name: TAKSİ
+-- Id:  311 | Category: Ulasim     | Name: TAXI
+-- Id:  318 | Category: Ulasim     | Name: OTOYOL
+-- Id:  319 | Category: Ulasim     | Name: KÖPRÜ GEÇİŞ
+-- Id:  321 | Category: Ulasim     | Name: OTOPARK
+-- Id:  322 | Category: Ulasim     | Name: AUTOPARK
+-- Id:  323 | Category: Ulasim     | Name: PARK ET
+-- Id:  342 | Category: Ulasim     | Name: OTOBÜS
+-- Id:  343 | Category: Ulasim     | Name: OTOGAR
+-- Id:  344 | Category: Ulasim     | Name: AIRPORT
+-- Id:  347 | Category: Ulasim     | Name: LPG
+-- Id:  348 | Category: Ulasim     | Name: ŞARJ İSTASYONU
+-- Id:  349 | Category: Ulasim     | Name: ŞARJ
+-- Id:  350 | Category: Ulasim     | Name: ELEKTRİKLİ ŞARJ
+-- Id:  351 | Category: Ulasim     | Name: CAR PARK
+-- Id:  352 | Category: Ulasim     | Name: VALE
+-- Id:  353 | Category: Ulasim     | Name: PARK ALANI
+-- Id:  354 | Category: Ulasim     | Name: TAKSİCİ
+-- Id:  355 | Category: Ulasim     | Name: DOLMUŞ
+-- Id:  356 | Category: Ulasim     | Name: MİNİBÜS
+-- Id:  357 | Category: Ulasim     | Name: SERVİS
+-- Id:  358 | Category: Ulasim     | Name: TAŞIMACILIK
+-- Id:  359 | Category: Ulasim     | Name: ULAŞIM
+-- Id:  360 | Category: Ulasim     | Name: SEYAHAT
+-- Id:  361 | Category: Ulasim     | Name: BİLET
+-- Id:  362 | Category: Ulasim     | Name: TURİZM
+-- Id:  363 | Category: Ulasim     | Name: ACENTE
+-- Id:  364 | Category: Ulasim     | Name: ACENTASI
+-- Id:  365 | Category: Ulasim     | Name: HAVALİMAN
+-- Id:  366 | Category: Ulasim     | Name: TERMİNAL
+-- Id:  367 | Category: Ulasim     | Name: HAVALİMANI OTOPARK
+-- Id:  368 | Category: Ulasim     | Name: ARAÇ KİRALAMA
+-- Id:  369 | Category: Ulasim     | Name: CAR RENTAL
+-- Id:  370 | Category: Ulasim     | Name: OTO YIKAMA
+-- Id:  371 | Category: Ulasim     | Name: CAR WASH
+-- Id:  372 | Category: Ulasim     | Name: OTO KUAFÖR
+-- Id:  373 | Category: Ulasim     | Name: SELF SERVIS YIKAMA
+-- Id:  374 | Category: Ulasim     | Name: LASTİK
+-- Id:  375 | Category: Ulasim     | Name: LASTİKÇİ
+-- Id:  376 | Category: Ulasim     | Name: OTO LASTİK
+-- Id:  377 | Category: Ulasim     | Name: ROT BALANS
+-- Id:  378 | Category: Ulasim     | Name: JANT
+-- Id:  379 | Category: Ulasim     | Name: OTO SERVİS
+-- Id:  380 | Category: Ulasim     | Name: OTO TAMİR
+-- Id:  381 | Category: Ulasim     | Name: OTO BAKIM
+-- Id:  382 | Category: Ulasim     | Name: YEDEK PARÇA
+-- Id:  383 | Category: Ulasim     | Name: KAPORTA
+-- Id:  384 | Category: Ulasim     | Name: EGZOZ
+-- Id:  385 | Category: Ulasim     | Name: GEÇİŞ ÜCRETİ
+-- Id:  387 | Category: Ulasim     | Name: DENİZ OTOBÜSÜ
+-- Id:  388 | Category: Ulasim     | Name: MOTOR İSKELE
+-- Id:  389 | Category: Ulasim     | Name: ISKELE
+-- Id:  390 | Category: Ulasim     | Name: METRO
+-- Id:  391 | Category: Ulasim     | Name: TREN
+-- Id:  392 | Category: Ulasim     | Name: YHT
+-- Id:  484 | Category: Giyim      | Name: AYAKKABI
+-- Id:  485 | Category: Giyim      | Name: AYAKKABICI
+-- Id:  486 | Category: Giyim      | Name: GİYİM
+-- Id:  487 | Category: Giyim      | Name: TEKSTİL
+-- Id:  488 | Category: Giyim      | Name: TERZİ
+-- Id:  489 | Category: Giyim      | Name: KUMAŞ
+-- Id:  490 | Category: Giyim      | Name: BUTİK
+-- Id:  491 | Category: Giyim      | Name: MODA
+-- Id:  492 | Category: Giyim      | Name: MAĞAZA
+-- Id:  493 | Category: Giyim      | Name: TEKSTİL SANAYİ
+-- Id:  494 | Category: Giyim      | Name: BUTİĞİ
+-- Id:  495 | Category: Giyim      | Name: KUNDURA
+-- Id:  496 | Category: Giyim      | Name: KUNDURACI
+-- Id:  497 | Category: Giyim      | Name: AYAKKABICILIK
+-- Id:  499 | Category: Giyim      | Name: ERKEK GİYİM
+-- Id:  500 | Category: Giyim      | Name: KADIN GİYİM
+-- Id:  501 | Category: Giyim      | Name: ÇOCUK GİYİM
+-- Id:  502 | Category: Giyim      | Name: DİKİMEVİ
+-- Id:  503 | Category: Giyim      | Name: DERİ
+-- Id:  504 | Category: Giyim      | Name: DERİCİ
+-- Id:  505 | Category: Giyim      | Name: DERİ KONFEKSİYON
+-- Id:  506 | Category: Giyim      | Name: KÜRKLÜ
+-- Id:  507 | Category: Giyim      | Name: TRİKO
+-- Id:  508 | Category: Giyim      | Name: TRİKOTAJ
+-- Id:  509 | Category: Giyim      | Name: KONFEKSİYON
+-- Id:  510 | Category: Giyim      | Name: ÇANTA
+-- Id:  511 | Category: Giyim      | Name: ÇANTACI
+-- Id:  512 | Category: Giyim      | Name: SARACİYE
+-- Id:  513 | Category: Giyim      | Name: VALİZ
+-- Id:  514 | Category: Giyim      | Name: İÇ GİYİM
+-- Id:  515 | Category: Giyim      | Name: ÇAMAŞIR
+-- Id:  516 | Category: Giyim      | Name: İÇ ÇAMAŞIRI
+-- Id:  517 | Category: Giyim      | Name: KORSE
+-- Id:  518 | Category: Giyim      | Name: ÇORAP
+-- Id:  519 | Category: Giyim      | Name: MANİFATURA
+-- Id:  520 | Category: Giyim      | Name: KUMAŞÇI
+-- Id:  521 | Category: Giyim      | Name: DÖŞEMELİK
+-- Id:  522 | Category: Giyim      | Name: MEFRUŞAT
+-- Id:  523 | Category: Giyim      | Name: PERDE
+-- Id:  524 | Category: Giyim      | Name: PERDECİ
+-- Id:  525 | Category: Giyim      | Name: GELİNLİK
+-- Id:  526 | Category: Giyim      | Name: DAMATLIK
+-- Id:  527 | Category: Giyim      | Name: ABİYE
+-- Id:  528 | Category: Giyim      | Name: BİJUTERİ
+-- Id:  529 | Category: Giyim      | Name: TAKI
+-- Id:  530 | Category: Giyim      | Name: AKSESUAR
+-- Id:  531 | Category: Giyim      | Name: SPOR GİYİM
+-- Id:  532 | Category: Giyim      | Name: OUTLET
+-- Id:  533 | Category: Giyim      | Name: GİYİM MAĞAZASI
+-- Id:  583 | Category: Eglence    | Name: SİNEMA
+-- Id:  584 | Category: Eglence    | Name: TİYATRO
+-- Id:  585 | Category: Eglence    | Name: KONSER
+-- Id:  586 | Category: Eglence    | Name: FESTİVAL
+-- Id:  587 | Category: Eglence    | Name: ETKİNLİK
+-- Id:  588 | Category: Eglence    | Name: MÜZE
+-- Id:  589 | Category: Eglence    | Name: AKVARYUM
+-- Id:  590 | Category: Eglence    | Name: LUNAPARK
+-- Id:  594 | Category: Eglence    | Name: BOWLING
+-- Id:  595 | Category: Eglence    | Name: ESCAPE ROOM
+-- Id:  596 | Category: Eglence    | Name: BİLARDO
+-- Id:  597 | Category: Eglence    | Name: OYUN PARKI
+-- Id:  598 | Category: Eglence    | Name: EĞLENCE
+-- Id:  599 | Category: Eglence    | Name: OYUN
+-- Id:  607 | Category: Eglence    | Name: KİTAP
+-- Id:  608 | Category: Eglence    | Name: KIRTASİYE
+-- Id:  609 | Category: Eglence    | Name: HOBİ
+-- Id:  613 | Category: Eglence    | Name: CİNE
+-- Id:  614 | Category: Eglence    | Name: CINEMA
+-- Id:  615 | Category: Eglence    | Name: SAHNE
+-- Id:  616 | Category: Eglence    | Name: ORGANİZASYON
+-- Id:  617 | Category: Eglence    | Name: SERGİ
+-- Id:  618 | Category: Eglence    | Name: SANAT GALERİSİ
+-- Id:  619 | Category: Eglence    | Name: TEMA PARK
+-- Id:  620 | Category: Eglence    | Name: AQUAPARK
+-- Id:  621 | Category: Eglence    | Name: MACERA PARKI
+-- Id:  622 | Category: Eglence    | Name: HAYVANAT BAHÇESİ
+-- Id:  623 | Category: Eglence    | Name: OYUN ALANI
+-- Id:  624 | Category: Eglence    | Name: KARTING
+-- Id:  625 | Category: Eglence    | Name: GO KART
+-- Id:  626 | Category: Eglence    | Name: KAÇIŞ OYUNU
+-- Id:  627 | Category: Eglence    | Name: KİTAPÇI
+-- Id:  628 | Category: Eglence    | Name: KİTABEVİ
+-- Id:  629 | Category: Eglence    | Name: KÜTÜPHANE
+-- Id:  630 | Category: Eglence    | Name: KIRTASİYECİ
+-- Id:  631 | Category: Eglence    | Name: FOTOKOPİ
+-- Id:  632 | Category: Eglence    | Name: OZALİT
+-- Id:  633 | Category: Eglence    | Name: BASKI MERKEZİ
+-- Id:  634 | Category: Eglence    | Name: OYUNCAK
+-- Id:  635 | Category: Eglence    | Name: OYUNCAKÇI
+-- Id:  636 | Category: Eglence    | Name: HOBİ MARKET
+-- Id:  637 | Category: Eglence    | Name: MAKET
+-- Id:  638 | Category: Eglence    | Name: SPOR SALONU
+-- Id:  639 | Category: Eglence    | Name: FITNESS
+-- Id:  640 | Category: Eglence    | Name: GYM
+-- Id:  641 | Category: Eglence    | Name: PİLATES
+-- Id:  642 | Category: Eglence    | Name: YOGA
+-- Id:  643 | Category: Eglence    | Name: STÜDYO
+-- Id:  644 | Category: Eglence    | Name: CROSSFIT
+-- Id:  645 | Category: Eglence    | Name: DİJİTAL OYUN
+-- Id:  646 | Category: Eglence    | Name: STREAMING
+-- Id:  647 | Category: Eglence    | Name: DİJİTAL SERVİS
+-- Id:  648 | Category: Eglence    | Name: DİJİTAL İÇERİK
+-- Id:  649 | Category: Saglik     | Name: ECZANE
+-- Id:  650 | Category: Saglik     | Name: PHARMACY
+-- Id:  651 | Category: Saglik     | Name: APOTHEKE
+-- Id:  652 | Category: Saglik     | Name: İLAÇ
+-- Id:  653 | Category: Saglik     | Name: MEDİKAL
+-- Id:  654 | Category: Saglik     | Name: MEDICAL
+-- Id:  655 | Category: Saglik     | Name: ORTOPEDİ
+-- Id:  656 | Category: Saglik     | Name: SAĞLIK ÜRÜNLERİ
+-- Id:  657 | Category: Saglik     | Name: HASTANE
+-- Id:  658 | Category: Saglik     | Name: KLİNİK
+-- Id:  659 | Category: Saglik     | Name: POLİKLİNİK
+-- Id:  660 | Category: Saglik     | Name: HOSPITAL
+-- Id:  661 | Category: Saglik     | Name: TIP MERKEZİ
+-- Id:  662 | Category: Saglik     | Name: SAGLIK OCAK
+-- Id:  663 | Category: Saglik     | Name: SAĞLIK OCAĞI
+-- Id:  672 | Category: Saglik     | Name: DOKTOR
+-- Id:  673 | Category: Saglik     | Name: MUAYENEHANE
+-- Id:  674 | Category: Saglik     | Name: DİŞ HASTANESİ
+-- Id:  675 | Category: Saglik     | Name: DİŞ KLİNİĞİ
+-- Id:  676 | Category: Saglik     | Name: DENTAL
+-- Id:  677 | Category: Saglik     | Name: DENT
+-- Id:  678 | Category: Saglik     | Name: DİŞ HEKİMİ
+-- Id:  679 | Category: Saglik     | Name: DİŞ TEDAVİ
+-- Id:  680 | Category: Saglik     | Name: AĞIZ VE DİŞ
+-- Id:  681 | Category: Saglik     | Name: OPTİK
+-- Id:  683 | Category: Saglik     | Name: GÖZLÜK
+-- Id:  684 | Category: Saglik     | Name: LENS
+-- Id:  685 | Category: Saglik     | Name: OPTO
+-- Id:  688 | Category: Saglik     | Name: VETERİNER
+-- Id:  689 | Category: Saglik     | Name: VET KLİNİK
+-- Id:  690 | Category: Saglik     | Name: HAYVAN HASTANESİ
+-- Id:  691 | Category: Saglik     | Name: PET CLINIC
+-- Id:  692 | Category: Saglik     | Name: PET KLİNİK
+-- Id:  693 | Category: Saglik     | Name: PET HOSPITAL
+-- Id:  694 | Category: Saglik     | Name: LABORATUVAR
+-- Id:  695 | Category: Saglik     | Name: LAB
+-- Id:  696 | Category: Saglik     | Name: RADYOLOJİ
+-- Id:  697 | Category: Saglik     | Name: DİYALİZ
+-- Id:  698 | Category: Saglik     | Name: GÖRÜNTÜLEME
+-- Id:  699 | Category: Saglik     | Name: FİZİK TEDAVİ
+-- Id:  700 | Category: Saglik     | Name: FİZYOTERAPİ
+-- Id:  701 | Category: Saglik     | Name: REHABİLİTASYON
+-- Id:  702 | Category: Saglik     | Name: PSİKOLOG
+-- Id:  703 | Category: Saglik     | Name: PSİKİYATRİ
+-- Id:  704 | Category: Saglik     | Name: DİYETİSYEN
+-- Id:  705 | Category: Saglik     | Name: BESLENME
+-- Id:  706 | Category: Saglik     | Name: SAĞLIK
+-- Id:  707 | Category: Saglik     | Name: TIBBİ CİHAZ
+-- Id:  708 | Category: Saglik     | Name: GÖZLÜKÇÜ
+-- Id:  709 | Category: Saglik     | Name: DİŞ
+-- Id:  710 | Category: Saglik     | Name: DİŞÇİ
+-- Id:  711 | Category: Saglik     | Name: DİŞ POLİKLİNİĞİ
+-- Id:  712 | Category: Saglik     | Name: KLİNİĞİ
+-- Id:  713 | Category: Saglik     | Name: POLİKLİNİĞİ
+-- Id:  714 | Category: Saglik     | Name: AİLE SAĞLIĞI
+-- Id:  715 | Category: Saglik     | Name: ASM
+-- Id:  716 | Category: Saglik     | Name: TABİP
+-- Id:  717 | Category: Saglik     | Name: UZMAN DOKTOR
+-- Id:  718 | Category: Saglik     | Name: VETERİNERLİK
+-- Id:  719 | Category: Saglik     | Name: EMAR
+-- Id:  720 | Category: Saglik     | Name: MR MERKEZİ
+-- Id:  721 | Category: Saglik     | Name: RÖNTGEN
+-- Id:  722 | Category: Saglik     | Name: DİYALİZ MERKEZİ
+-- Id:  723 | Category: Saglik     | Name: FİZYOTERAPİST
+-- Id:  724 | Category: Saglik     | Name: BESLENME VE DİYET
+-- Id:  725 | Category: Saglik     | Name: PSİKOTERAPİ
+-- Id:  726 | Category: Saglik     | Name: İŞİTME CİHAZLARI
+-- Id:  727 | Category: Saglik     | Name: SAĞLIK KABİNİ
+-- Id:  743 | Category: Fatura     | Name: TELEKOMÜNİKASYON
+-- Id:  744 | Category: Fatura     | Name: İNTERNET
+-- Id:  757 | Category: Fatura     | Name: ELEKTRİK
+-- Id:  758 | Category: Fatura     | Name: ENERJİ
+-- Id:  766 | Category: Fatura     | Name: DOĞALGAZ
+-- Id:  767 | Category: Fatura     | Name: GAZ DAĞITIM
+-- Id:  780 | Category: Fatura     | Name: SU FATURASI
+-- Id:  781 | Category: Fatura     | Name: SU VE KANALİZASYON
+-- Id:  800 | Category: Fatura     | Name: BES
+-- Id:  801 | Category: Fatura     | Name: BİREYSEL EMEKLİLİK
+-- Id:  804 | Category: Fatura     | Name: POLİÇE
+-- Id:  805 | Category: Fatura     | Name: SİGORTA
+-- Id:  806 | Category: Fatura     | Name: KASKO
+-- Id:  807 | Category: Fatura     | Name: TRAFİK SİGORTASI
+-- Id:  808 | Category: Fatura     | Name: DASK
+-- Id:  809 | Category: Fatura     | Name: GELİR İDARESİ
+-- Id:  810 | Category: Fatura     | Name: GİB
+-- Id:  811 | Category: Fatura     | Name: İNTERNET VERGİ DAİRESİ
+-- Id:  812 | Category: Fatura     | Name: VERGİ DAİRESİ
+-- Id:  813 | Category: Fatura     | Name: MTV
+-- Id:  814 | Category: Fatura     | Name: BELEDİYE
+-- Id:  815 | Category: Fatura     | Name: HARÇ
+-- Id:  816 | Category: Fatura     | Name: TRAFİK CEZASI
+-- Id:  817 | Category: Fatura     | Name: CEZA ÖDEME
+-- Id:  818 | Category: Fatura     | Name: AİDAT
+-- Id:  819 | Category: Fatura     | Name: SİTE YÖNETİMİ
+-- Id:  820 | Category: Fatura     | Name: APARTMAN YÖNETİMİ
+-- Id:  821 | Category: Fatura     | Name: NOTER
+-- Id:  822 | Category: Fatura     | Name: PASAPORT HARCI
+-- Id:  823 | Category: Fatura     | Name: E-DEVLET
+-- Id:  824 | Category: Fatura     | Name: FATURA
+-- Id:  825 | Category: Fatura     | Name: PERAKENDE ELEKTRİK
+-- Id:  826 | Category: Fatura     | Name: SU İDARESİ
+-- Id:  827 | Category: Fatura     | Name: TELEKOM
+-- Id:  828 | Category: Fatura     | Name: İLETİŞİM
+-- Id:  829 | Category: Fatura     | Name: HABERLEŞME
+-- Id:  830 | Category: Fatura     | Name: FATURA ÖDEME
+-- Id:  831 | Category: Fatura     | Name: FATURA VEYA KURUMLAR
+-- Id:  832 | Category: Fatura     | Name: ABONELİK
+-- Id:  833 | Category: Fatura     | Name: ABONE
+-- Id:  834 | Category: Fatura     | Name: SİGORTACILIK
+-- Id:  835 | Category: Fatura     | Name: SİGORTA ACENTESİ
+-- Id:  836 | Category: Fatura     | Name: HAYAT EMEKLİLİK
+-- Id:  837 | Category: Fatura     | Name: VERGİ
+-- Id:  838 | Category: Fatura     | Name: MOTORLU TAŞITLAR VERGİSİ
+-- Id:  839 | Category: Fatura     | Name: HARÇ ÖDEMESİ
+-- Id:  840 | Category: Fatura     | Name: EHLİYET HARCI
+-- Id:  841 | Category: Fatura     | Name: İDARİ PARA CEZASI
+-- Id:  842 | Category: Fatura     | Name: BİNA YÖNETİMİ
+-- Id:  843 | Category: Fatura     | Name: KAMU
+-- Id:  844 | Category: Fatura     | Name: KAMU ÖDEMESİ

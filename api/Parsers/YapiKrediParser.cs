@@ -54,15 +54,12 @@ public class YapiKrediParser : IBankStatementParser
         var words = doc.GetPage(1).GetWords().ToList();
 
         if (words == null || words.Count == 0)
-        {
-            // error message
-        }
+            throw new InvalidOperationException("PDF'den kelime çıkarılamadı.");
+
         var anchorWord = words.Where(x => x.Text == "Kesim").FirstOrDefault();
 
         if (anchorWord == null)
-        {
-            // error message
-        }
+            throw new InvalidOperationException("Yapı Kredi ekstre kesim tarihi bulunamadı ('Kesim' anahtar kelimesi mevcut değil).");
 
 
 
@@ -219,10 +216,10 @@ public class YapiKrediParser : IBankStatementParser
                     continue;
 
                 DateOnly date;
-                DateOnly.TryParse(dateMatch.Value, out date);
+                DateOnly.TryParseExact(dateMatch.Value, dateFormats, new CultureInfo("tr-TR"), DateTimeStyles.None, out date);
 
                 Decimal amount;
-                Decimal.TryParse(amountMatch.Value, out amount);
+                Decimal.TryParse(amountMatch.Value, cultureInfo, out amount);
 
                 bool isInstalment = false;
 

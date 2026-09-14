@@ -73,10 +73,6 @@ public class FuzzyScorer
                 min = score;
         }
 
-        if(keyword == "OBILET")
-        {
-            Console.WriteLine($"TEXT: {text} SCORE: {(int)((1.0 - (double)min / keyword.Length) * 100)}");
-        }
         return (int)((1.0 - (double)min / keyword.Length) * 100);
     }
 }
