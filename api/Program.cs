@@ -64,11 +64,20 @@ builder.Services.AddScoped<ILocationResolver, FuzzyMatchResolver>();
 builder.Services.AddScoped<LocationPipeline>();
 builder.Services.AddScoped<CategoryPipeline>();
 builder.Services.AddScoped<DataService>();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
+app.UseCors();
 app.UseHttpsRedirection();
 
 

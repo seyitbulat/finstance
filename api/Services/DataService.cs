@@ -109,6 +109,7 @@ public class DataService
         {
             return new ReportDetailDto
             {
+                Id = x.Id,
                 Amount = x.Amount,
                 BankStatementId = x.BankStatement.Id,
                 CutOffDate = x.BankStatement.CutOffDate,
