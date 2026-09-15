@@ -1,0 +1,10 @@
+**/node_modules/
+**/.next/
+**/out/
+**/bin/
+**/obj/
+**/*.tsbuildinfo
+**/.env*
+!**/.env.example
+.DS_Store
+ui/finstance/test-results/

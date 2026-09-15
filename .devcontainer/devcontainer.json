@@ -1,0 +1,17 @@
+{
+  "name": "Finstance",
+  "dockerComposeFile": "compose.yaml",
+  "service": "ui",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "node",
+  "forwardPorts": [3000, 5257],
+  "portsAttributes": { "3000": { "label": "Finstance UI", "onAutoForward": "notify" } },
+  "postCreateCommand": "cd /workspace/ui/finstance && npm ci",
+  "postStartCommand": "bash /workspace/.devcontainer/start-ui.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+      "settings": { "terminal.integrated.cwd": "/workspace/ui/finstance" }
+    }
+  }
+}

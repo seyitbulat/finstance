@@ -1,10 +1,11 @@
-// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
   "name": "Finstance UI",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "forwardPorts": [3000],
+  "dockerComposeFile": "../../.devcontainer/compose.yaml",
+  "service": "ui",
+  "workspaceFolder": "/workspace/ui/finstance",
+  "postCreateCommand": "npm ci",
+  "postStartCommand": "bash /workspace/.devcontainer/start-ui.sh",
+  "forwardPorts": [3000, 5257],
   "remoteUser": "node",
   "customizations": {
     "vscode": {
@@ -13,8 +14,7 @@
       },
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
+        "esbenp.prettier-vscode"
       ]
     }
   }

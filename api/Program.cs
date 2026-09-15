@@ -18,7 +18,9 @@ var connectionStringBuilder = new NpgsqlConnectionStringBuilder
     Port = int.TryParse(builder.Configuration["POSTGRES_PORT"], out var port) ? port : 5432,
     Database = builder.Configuration["POSTGRES_DB"],
     Username = builder.Configuration["POSTGRES_USER"],
-    Password = builder.Configuration["POSTGRES_PASSWORD"]
+    Password = builder.Configuration["POSTGRES_PASSWORD"],
+    SslMode = SslMode.Require,
+    TrustServerCertificate = true
 };
 
 builder.Services.AddDbContext<DataBaseContext>(options =>
@@ -61,6 +63,15 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Bootstrap only explicitly opted-in development databases until migrations exist.
+if (app.Environment.IsDevelopment() && builder.Configuration.GetValue<bool>("Database:Initialize"))
+{
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<DataBaseContext>();
+    await db.Database.EnsureCreatedAsync();
+    scope.ServiceProvider.GetRequiredService<DataService>().SeedData();
+}
+
 // Configure the HTTP request pipeline.
 app.UseCors();
 app.UseHttpsRedirection();
@@ -93,7 +104,7 @@ async Task<int> GetOrCreateUserAsync(string username, DataBaseContext db)
 {
     if (string.IsNullOrWhiteSpace(username))
         username = "guest";
-        
+
     var user = await db.Users.FirstOrDefaultAsync(u => u.Username == username);
     if (user == null)
     {
@@ -139,7 +150,7 @@ app.MapGet("getMonthlyReport", async (HttpContext context, DateOnly date, DataSe
 {
     var username = context.Request.Headers["X-User-Name"].FirstOrDefault() ?? "guest";
     var userId = await GetOrCreateUserAsync(username, db);
-    
+
     var response = dataService.GetMonthlyReport(date, userId);
 
     return TypedResults.Ok(response);
